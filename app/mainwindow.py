@@ -216,18 +216,18 @@ class MainWindow(FrontWindow):
             self.dialog('more_than_one_statement_open')
             return
         if result['is_open'] == True:
-            result = self._Statement.check_statement_before_close([],
+            res = self._Statement.check_statement_before_close([],
                 self._shop['id'],
-                #surplus, #DELETE
                 self._context)
-            if result['to_close'] == False:
+
+            if res['to_close'] == False:
                 return self.dialog('sales_processing').exec_()
-            #self.action_print_statement()
             self._Statement.close_statement([],
                 self._shop['id'],
                 cash_amount,
                 surplus,
                 self._context)
+            self.action_print_statement(result['statement'])
             self.dialog('statement_closed')
             self.message_bar.set('statement_closed')
             self.set_state('cancel')
@@ -694,7 +694,7 @@ class MainWindow(FrontWindow):
         ])
 
         self._action_report_statement, = self._ActionReport.find([
-            ('report_name', '=', 'account.statement.letter'),
+            ('report_name', '=', 'account.statement'),
         ],limit=1)
 
         self._action_report_product_by_location, = self._ActionReport.find([
@@ -876,6 +876,7 @@ class MainWindow(FrontWindow):
         self.create_dialog_new_product()
         self.create_dialog_update_quantity()
         #self.create_dialog_salesman()
+        self.create_dialog_update_template_list_price()
         self.create_dialog_sale_line()
         self.create_dialog_sale_line_from_search()
         self.create_dialog_search_party()
@@ -1032,13 +1033,13 @@ class MainWindow(FrontWindow):
                 'size': self.screen_size,
                 'color': 'gray'
             }),
-            ('delivery_method', {
-                'name': self.tr('ENTREGA'),
-                'readonly': True,
-                'placeholder': False,
-                'size': self.screen_size,
-                'color': 'gray'
-            }),
+            #('delivery_method', {
+            #    'name': self.tr('ENTREGA'),
+            #    'readonly': True,
+            #    'placeholder': False,
+            #    'size': self.screen_size,
+            #    'color': 'gray'
+            #}),
             ('order_number', {
                 'name': self.tr('No ORDER'),
                 'readonly': True,
@@ -1373,6 +1374,53 @@ class MainWindow(FrontWindow):
         else:
             self.dialog_new_product.ok_button.setEnabled(False)
 
+    def update_product_list_price(self):
+        try:
+            code = str(self.field_product_list_price_code.text())
+            name = str(self.field_product_list_price_name.text())
+            cost = float(str(self.field_product_list_price_unit_price.value()))
+        except:
+            code = 0
+            name = ''
+            cost = 0
+
+        products = self._Product.find([('code','=',code)])
+
+        if len(products)>0:
+            product = products[0]
+
+            self.field_product_list_price_name.setText(product.get('template.').get('name'))
+            self.field_product_list_price_unit_price.setValue(
+                product.get('template.').get('list_price'))
+        else:
+            self.field_product_list_price_name.setText('')
+            self.field_product_list_price_unit_price.setValue(0)
+
+        try:
+            if len(name)> 1 and len(code) > 0 and cost>0:
+                self.dialog_product_list_price.ok_button.setEnabled(True)
+            else:
+                self.dialog_product_list_price.ok_button.setEnabled(False)
+        except:
+            pass
+
+    def update_product_list_price_values(self, value, field):
+        try:
+            code = str(self.field_product_list_price_code.text())
+            name = str(self.field_product_list_price_name.text())
+            list_price = float(str(self.field_product_list_price_unit_price.value()))
+            cost_price = float(str(self.field_product_cost_price_unit_price.value()))
+        except:
+            code = 0
+            name = ''
+            list_price = 0
+            cost_price = 0 
+
+        if len(name)> 0 and len(code) > 0 and list_price>0 and cost_price >0:
+            self.dialog_product_list_price.ok_button.setEnabled(True)
+        else:
+            self.dialog_product_list_price.ok_button.setEnabled(False)
+
     def update_product_existence(self):
         code = str(self.field_product_qty_code.text())
         cost = float(str(self.field_product_qty_cost.value()))
@@ -1387,7 +1435,19 @@ class MainWindow(FrontWindow):
             self.dialog('product_not_created').exec_()
         #except:
         #    self.dialog('product_not_created').exec_()
-        return
+    
+    def update_product_list_price_finish(self):
+        name = str(self.field_product_list_price_name.text())
+        code = str(self.field_product_list_price_code.text())
+        list_price = float(str(self.field_product_list_price_unit_price.value()))
+        cost_price = float(str(self.field_product_cost_price_unit_price.value()))
+
+        res = self._Template.update_template_list_price([], code, name, list_price, 
+            cost_price, self._context)
+        if res:
+            self.dialog('product_successfully_created').exec_()
+        else:
+            self.dialog('product_not_created').exec_()
 
     def update_product_qty(self):
         try:
@@ -1567,20 +1627,20 @@ class MainWindow(FrontWindow):
 
     def action_delivery_method(self):
         self._PosSale.update_delivery_method([], self._sale['id'], 'delivery', self._context)
-        self.field_delivery_method.setText('DOMICILIO')
-        self.dialog_select_delivery_method.hide()
+        #self.field_delivery_method.setText('DOMICILIO')
+        #self.dialog_select_delivery_method.hide()
         return
 
     def action_local_table(self):
         self._PosSale.update_delivery_method([], self._sale['id'], 'table', self._context)
-        self.field_delivery_method.setText('MESAS')
-        self.dialog_select_delivery_method.hide()
+        #self.field_delivery_method.setText('MESAS')
+        #self.dialog_select_delivery_method.hide()
         return
 
     def action_take_away(self):
         self._PosSale.update_delivery_method([], self._sale['id'], 'take_away', self._context)
-        self.field_delivery_method.setText('PARA LLEVAR')
-        self.dialog_select_delivery_method.hide()
+        #self.field_delivery_method.setText('PARA LLEVAR')
+        #self.dialog_select_delivery_method.hide()
         return
 
     def action_payment_term_selection_changed(self):
@@ -1608,16 +1668,15 @@ class MainWindow(FrontWindow):
     def action_new_statement(self):
         self.createNewStatement()
 
-    def action_close_statement(self):
-        self.action_print_statement()
-
-    def action_print_statement(self):
-        result = self._Statement.check_open_statement([],
-                self._context)
-        if result==False:
-            return
-        self.print_odt_statement(result['statement'], direct_print=False)
-        return
+    def action_print_statement(self, statement=None):
+        if not statement:
+            result = self._Statement.check_open_statement([],
+                    self._context)
+            if result==False:
+                return
+            self.print_odt_statement(result['statement'], direct_print=False)
+        else:
+            self.print_odt_statement(statement, direct_print=False)
 
     def action_print_label(self):
 
@@ -2896,12 +2955,10 @@ class MainWindow(FrontWindow):
 
             self._model_statement_lines.setDomain(domain=None)
 
-            #FIX ME FOR CRUCERO
-
-            #if self._user.get('company') != 4:
-            #    for line in statement_lines:
-            #        line_id = line['id']
-            #        self._model_statement_lines.appendId(line_id)
+            
+            for line in statement_lines:
+                line_id = line['id']
+                self._model_statement_lines.appendId(line_id)
 
             self.dialog_statement.ok_button.setEnabled(False)
             self.dialog_statement.exec_()
@@ -2949,7 +3006,7 @@ class MainWindow(FrontWindow):
         #self._model_payment_lines.setDomain([('statement.state','=','draft')], \
         #    order=[('id','DESC')])
         self.field_order_number.setText(flat_sale['number'] or '')
-        self.field_delivery_method.setText(flat_sale['delivery_method'] or '')
+        #self.field_delivery_method.setText(flat_sale['delivery_method'] or '')
         self._set_sale_date()
         if hasattr(self, 'field_position'):
             self.field_position.setText(flat_sale['position'] or '')
@@ -3634,6 +3691,72 @@ class MainWindow(FrontWindow):
         #    self.dialog('product_not_created').exec_()
         return
 
+    def create_dialog_update_template_list_price(self):
+        title = self.tr('ACTUALIZAR PRECIO')
+        
+        vbox_qty_product = QVBoxLayout()
+        grid = QGridLayout()
+
+        label_product_qty_code = QLabel(self.tr('CÓDIGO:'))
+        label_product_qty_code.setObjectName('label_product_qty_code')
+        grid.addWidget(label_product_qty_code, 1, 1)
+        self.field_product_list_price_code = QLineEdit()
+        self.field_product_list_price_code.setObjectName('field_product_list_price_code')
+        self.field_product_list_price_code.setAlignment(alignRight)
+        self.field_product_list_price_code.editingFinished.connect(self.update_product_list_price)
+        grid.addWidget(self.field_product_list_price_code, 1, 2)
+
+        label_product_qty_name = QLabel(self.tr('NOMBRE:'))
+        label_product_qty_name.setObjectName('label_product_qty_name')
+        grid.addWidget(label_product_qty_name, 2, 1)
+        self.field_product_list_price_name = QLineEdit()
+        self.field_product_list_price_name.setObjectName('field_product_list_price_name')
+        self.field_product_list_price_name.setAlignment(alignRight)
+        self.field_product_list_price_name.setEnabled(True)
+        self.field_product_list_price_name.textChanged.connect(
+            lambda value: self.update_product_list_price_values(value, 'name')
+        )
+        grid.addWidget(self.field_product_list_price_name, 2, 2)
+
+        label_product_list_price = QLabel(self.tr('PRECIO:'))
+        label_product_list_price.setObjectName('label_product_list_price')
+        grid.addWidget(label_product_list_price, 3, 1)
+        self.field_product_list_price_unit_price = QDoubleSpinBox()
+        self.field_product_list_price_unit_price.setObjectName('field_product_list_price_unit_price')
+        self.field_product_list_price_unit_price.setMinimum(0)
+        self.field_product_list_price_unit_price.setMaximum(100000)
+        self.field_product_list_price_unit_price.setDecimals(2)
+        self.field_product_list_price_unit_price.setAlignment(alignRight)
+        self.field_product_list_price_unit_price.valueChanged.connect(
+            lambda value: self.update_product_list_price_values(value, 'qty')
+        )
+        grid.addWidget(self.field_product_list_price_unit_price, 3, 2)
+
+        label_product_cost_price = QLabel(self.tr('COSTO:'))
+        label_product_cost_price.setObjectName('label_product_cost_price')
+        grid.addWidget(label_product_cost_price, 4, 1)
+        self.field_product_cost_price_unit_price = QDoubleSpinBox()
+        self.field_product_cost_price_unit_price.setObjectName('field_product_cost_price_unit_price')
+        self.field_product_cost_price_unit_price.setMinimum(0)
+        self.field_product_cost_price_unit_price.setMaximum(100000)
+        self.field_product_cost_price_unit_price.setDecimals(2)
+        self.field_product_cost_price_unit_price.setAlignment(alignRight)
+        self.field_product_cost_price_unit_price.valueChanged.connect(
+            lambda value: self.update_product_list_price_values(value, 'qty')
+        )
+        grid.addWidget(self.field_product_cost_price_unit_price, 4, 2)
+
+        
+        vbox_qty_product.addLayout(grid)
+
+        methods = {
+            'on_accepted_method': 'update_product_list_price_finish',
+        }
+        self.dialog_product_list_price = TableDialog(self, methods=methods,
+            widgets=vbox_qty_product, title=title)
+
+        self.dialog_product_list_price.ok_button.setEnabled(False)
+
     # install our own except hook.
     def except_hook(self, exc=None, tb=None):
         if not exc or not tb:
@@ -3695,8 +3818,8 @@ class MainWindow(FrontWindow):
             ('party.name', self.tr('PARTY')),
             ('party.tax_identifier.code', self.tr('TAX ID')),
             ('guest', self.tr('NOMBRE')),
-            ('board', self.tr('MESA')),
-            ('description', self.tr('DESCRIPCIÓN')),
+            #('board', self.tr('MESA')),
+            #('description', self.tr('DESCRIPCIÓN')),
             ('sale_date', self.tr('DATE')),
             ('invoice_with_serie', self.tr('INVOICE')),
             ('total_amount', self.tr('TOTAL AMOUNT')),
@@ -4136,7 +4259,7 @@ class MainWindow(FrontWindow):
         self.field_global_discount_ask.setText('')
         self.field_amount.zero()
         self.field_order_number.setText('')
-        self.field_delivery_method.setText('')
+        #self.field_delivery_method.setText('')
         self.current_comment = ''
         self._model_sale_lines.setDomain([])
         self.clear_input_text()
@@ -4224,7 +4347,7 @@ class MainWindow(FrontWindow):
             self._model_sale_lines.setDomain([('sale', '=', self._sale['id'])])
             self._set_sale_date()
             self.field_order_number.setText(self._sale['number'])
-            self.field_delivery_method.setText('MESAS')
+            #self.field_delivery_method.setText('MESAS')
         self.field_party.setText('CONSUMIDOR INTERNO')
         self.field_address.setText('CIUDAD')
         self.field_nit.setText('CIN')
@@ -5696,6 +5819,13 @@ class MainWindow(FrontWindow):
         self.field_product_qty_existence.setValue(0)
         self.field_product_qty_code.setFocus()
         self.dialog_product_qty.exec_()
+
+    def action_update_price_list(self):
+        self.field_product_list_price_code.setText('')
+        self.field_product_list_price_name.setText('')
+        self.field_product_list_price_unit_price.setValue(0)
+        self.field_product_list_price_code.setFocus()
+        self.dialog_product_list_price.exec_()
 
     def action_expense(self):
         self.row_field_expense_amount.setValue(0)
