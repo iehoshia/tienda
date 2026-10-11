@@ -108,7 +108,7 @@ class MenuWindow(QDialog):
         self.values = values
         self.current_view = None
         if not title:
-            title = self.tr('Menu...')
+            title = self.tr('Menú...')
             self.setWindowTitle(title)
         self.resize(QSize(200, 400))
         self.show_code = False
@@ -167,10 +167,10 @@ class MenuWindow(QDialog):
             id_ += 1
 
     def create_widgets(self):
-        self.pushButtonOk = QPushButton(self.tr("&ACCEPT"))
+        self.pushButtonOk = QPushButton(self.tr("&ACEPTAR"))
         self.pushButtonOk.setAutoDefault(True)
         self.pushButtonOk.setDefault(False)
-        self.pushButtonBack = QPushButton(self.tr("&BACK"))
+        self.pushButtonBack = QPushButton(self.tr("&REGRESAR"))
 
     def create_layout(self):
         pass

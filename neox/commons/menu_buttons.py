@@ -9,8 +9,9 @@ from PyQt5.QtWidgets import (QWidget, QHBoxLayout, QScroller, QVBoxLayout,
     QPushButton, QGridLayout, QScrollArea, QLabel)
 
 from .custom_button import CustomButton
+from neox.commons.resources import resource_path
 
-pkg_dir = str(Path(os.path.dirname(__file__)).parents[0])
+pkg_dir = resource_path('neox')
 file_back_icon = os.path.join(pkg_dir, 'share', 'back.svg')
 file_menu_img = os.path.join(pkg_dir, 'share', 'menu.png')
 

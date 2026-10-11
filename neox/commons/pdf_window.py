@@ -62,7 +62,7 @@ class Main(QDialog):
 class PdfWindow(QDialog):
 
     def __init__(self, parent, current_row,
-            url="", methods, title=None):
+            url="", methods=None, title=None):
         """
             parent: parent window
             on_accepted_method: method to call when triggered the selection
@@ -73,12 +73,12 @@ class PdfWindow(QDialog):
 
         self.parent = parent
         self.url = url
-        self.methods = methods
-        self.on_accepted_method = methods.get('on_accepted_method')
-        self.model = model
+        self.methods = methods or {}
+        self.on_accepted_method = self.methods.get('on_accepted_method')
+        self.model = None
         self.current_row = current_row
-        self.optionals = optionals
-        self.context = context
+        self.optionals = []
+        self.context = {}
 
         self.ok_button = ActionButton('ok', self.dialog_accepted)
         self.ok_button.setFocus()
@@ -86,7 +86,7 @@ class PdfWindow(QDialog):
         self.print_button = ActionButton('print', self.action_print)
 
         if not title:
-            title = self.tr('VIEWFINDER...')
+            title = self.tr('VISOR...')
             self.setWindowTitle(title)
         WIDTH = 550
 
@@ -101,7 +101,7 @@ class PdfWindow(QDialog):
         #args = ([], self.current_row['id'], *optionals, context)
         #getattr(self.parent, self.model,
         #    self.on_accepted_method)(*args)
-        parent._current_pdf_document = self.get_id()
+        self.parent._current_pdf_document = self.get_id()
         if self.parent:
             getattr(self.parent, self.on_accepted_method)()
         self.parent.setFocus()
@@ -138,12 +138,12 @@ class PdfWindow(QDialog):
 
     def show(self):
         self.parent.releaseKeyboard()
-        super(SearchWindow, self).show()
+        super(PdfWindow, self).show()
 
     def hide(self):
         self.parent.grabKeyboard()
         self.parent.setFocus()
-        super(SearchWindow, self).hide()
+        super(PdfWindow, self).hide()
 
     def action_close(self):
         self.close()
@@ -156,4 +156,4 @@ class PdfWindow(QDialog):
             self.hide()
         else:
             pass
-        super(SearchWindow, self).keyPressEvent(event)
+        super(PdfWindow, self).keyPressEvent(event)

@@ -5,9 +5,9 @@ from functools import partial
 
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtWidgets import QLabel, QPushButton, QVBoxLayout, QSizePolicy
+from neox.commons.resources import resource_path
 
-root_dir = Path(__file__).parent.parent
-root_dir = str(root_dir)
+root_dir = resource_path('neox')
 
 css_screens = {
     'small': 'flat_button_small.css',

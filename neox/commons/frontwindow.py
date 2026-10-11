@@ -7,18 +7,18 @@ import time
 import logging
 from pathlib import Path
 
-from PyQt5.QtWidgets import QMainWindow, QDesktopWidget, QLabel
+from PyQt5.QtWidgets import QMainWindow, QDesktopWidget, QLabel, QApplication
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, Qt, QTimer
 
 from neox.commons.dialogs import QuickDialog
 import neox.commons.dblogin as dblogin
 #from neox.commons.idle_queue_dispatcher import ThreadDispatcher
 import neox.commons.rpc as rpc
+from neox.commons.resources import resource_path
 
 __all__ = ['FrontWindow', 'ClearUi']
 
-parent = Path(__file__).parent.parent
-parent = str(parent)
+parent = resource_path('neox')
 file_base_css = os.path.join(parent, 'css', 'base.css')
 _DEFAULT_TIMEOUT = 30  # on segs
 path_trans = os.path.join(os.path.abspath(
@@ -32,11 +32,12 @@ class FrontWindow(QMainWindow):
         super(FrontWindow, self).__init__()
 
         if not title:
-            title = self.tr('APPLICATION')
+            title = self.tr('APLICACIÓN')
 
         self._state = None
         self._keyStates = {}
         self.window().setWindowTitle(title)
+        self._window_icon = icon
         if icon is not None:
             self.window().setWindowIcon(icon)
         self.setObjectName('WinMain')
@@ -56,8 +57,9 @@ class FrontWindow(QMainWindow):
             large screen     > 1366
         """
 
-        screen = QDesktopWidget().screenGeometry()
-        self.setGeometry(0, 0, screen.width(), screen.height())
+        desktop = QDesktopWidget()
+        screen = desktop.availableGeometry(self)
+        self.setGeometry(screen)
         screen_width = screen.width()
         #print("screen_width >> ", screen_width)
         screen_width = 1024
@@ -74,17 +76,32 @@ class FrontWindow(QMainWindow):
 
         if show_mode == 'fullscreen':
             self.window().showFullScreen()
+        elif show_mode == 'maximized':
+            self.window().showMaximized()
         else:
             self.window().show()
+        # Windows registers the taskbar button when the native window is
+        # shown. Reapply the icon after that moment so the taskbar does not
+        # keep Qt's generic icon (especially after the login window closes).
+        QTimer.singleShot(0, self._apply_window_icon)
         self.setFocus()
         self._global_timer = 0
         self.set_timeout()
+
+    def _apply_window_icon(self):
+        if self._window_icon is None:
+            return
+        QApplication.setWindowIcon(self._window_icon)
+        self.setWindowIcon(self._window_icon)
+        window_handle = self.windowHandle()
+        if window_handle is not None:
+            window_handle.setIcon(self._window_icon)
 
     def set_stack_messages(self):
         self.stack_msg = {}
 
     def get_geometry(self):
-        screen = QDesktopWidget().screenGeometry()
+        screen = QDesktopWidget().availableGeometry(self)
         return screen.width(), screen.height()
 
     def set_statusbar(self, values):

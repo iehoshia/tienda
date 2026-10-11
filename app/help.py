@@ -13,7 +13,7 @@ class Help(HelpDialog):
             (self.tr('BUSCAR CLIENTE'), 'F4'),
             (self.tr('CAJA NUEVA'), 'F5'),
             (self.tr('AGREGAR CLIENTE'), 'F6'),
-            (self.tr('IMPRIMIR FACTURA'), 'F7'),
+            (self.tr('IMPRIMIR COTIZACIÓN (VENTA POS)'), 'F7'),
             (self.tr('METODO DE ENTREGA'), 'F8'),
             (self.tr('BUSCAR VENTA'), 'F9'),
             (self.tr('UNIR COMANDAS'), 'F10'),

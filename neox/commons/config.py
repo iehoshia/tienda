@@ -8,6 +8,7 @@ import locale
 from PyQt5.QtCore import QSettings
 
 from neox import __version__
+from neox.commons.resources import resource_path
 
 _ = gettext.gettext
 
@@ -46,17 +47,22 @@ class Params(object):
         HOME_DIR = os.getenv(homex)
 
         default_dir = os.path.join(HOME_DIR, dirconfig)
-        
-        #FIX ME
-        default_dir =  os.getcwd()
 
-        if os.path.exists(default_dir):
-            config_file = os.path.join(default_dir, self.file)
+        if os.path.isabs(self.file):
+            candidates = [self.file]
         else:
-            config_file = os.path.join(dirx, self.file)
-
-        if not os.path.exists(config_file):
-            config_file = self.file
+            candidates = [
+                os.path.join(os.getcwd(), self.file),
+                resource_path(self.file),
+                resource_path('app', self.file),
+                os.path.join(default_dir, self.file),
+                os.path.join(dirx, self.file),
+                self.file,
+            ]
+        config_file = next(
+            (path for path in candidates if os.path.exists(path)),
+            candidates[-1],
+        )
 
         settings = QSettings(config_file, QSettings.IniFormat)
 

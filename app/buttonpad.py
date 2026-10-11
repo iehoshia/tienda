@@ -34,9 +34,9 @@ class ButtonsFunction(QGridLayout):
         self.values.extend([
 
             ['button_search_product', self.tr('PRODUCTO'), 'action_search_product'], #SERVICIOS
-            ['button_new_sale', self.tr('NEW SALE'), 'action_new_sale'],
-            ['button_search_sale', self.tr('S. SALE'), 'action_search_sale'],
-            ['button_cancel', self.tr('CANCEL'), 'action_cancel'],
+            ['button_new_sale', self.tr('NUEVA VENTA'), 'action_new_sale'],
+            ['button_search_sale', self.tr('B. VENTA'), 'action_search_sale'],
+            ['button_cancel', self.tr('CANCELAR'), 'action_cancel'],
             ['button_expense', self.tr('GASTOS'), 'action_expense'],
             #['button_label', self.tr('ETIQUETAS'), \
             #    'action_print_label'],
@@ -266,7 +266,6 @@ class DeliveryFunction(QGridLayout):
 
         self.values.extend([
             ['button_delivery', self.tr('DOMICILIO'), 'action_delivery_method'], #DOMICILIO
-            ['button_local_table', self.tr('MESAS'), 'action_local_table'], #MESAS
             ['button_take_away', self.tr('LLEVAR'), 'action_take_away'], #LLEVAR
         ])
 

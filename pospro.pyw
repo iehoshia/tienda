@@ -3,6 +3,7 @@
 import os
 import sys
 import logging
+import ctypes
 
 import qcrash.api as qcrash
 
@@ -10,6 +11,7 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QTranslator, QSettings, QTimer
 from neox.commons.dblogin import Login
 from app import mainwindow
+from app.common import get_effica_icon
 
 try:
     DIR = os.path.abspath(os.path.normpath(os.path.join(sys.argv[0],
@@ -26,7 +28,13 @@ logging.basicConfig()
 class Client(object):
 
     def __init__(self, parent=None):
+        if os.name == 'nt':
+            try:
+                ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('Effica.POS')
+            except Exception:
+                pass
         self.app = QApplication(sys.argv)
+        self.app.setWindowIcon(get_effica_icon())
         self.translator = QTranslator()
         self.translator.load(locale_app)
         self.app.installTranslator(self.translator)

@@ -1,6 +1,6 @@
 #WinMain {
     width : 100%;
-    background-color: #e7e8e9;
+    background-color: #edf3f5;
 }
 
 QListView {
@@ -40,6 +40,76 @@ QAbstractButton:hover {
 QAbstractButton:pressed {
     background-color: rgb(200, 200, 200);
     border-width: 0px;
+}
+
+/* Entrada de venta y tabla principal */
+#label_input, #field_sign, #field_amount {
+    min-height: 56px;
+    max-height: 64px;
+    background-color: #ffffff;
+    border-top: 1px solid #bfd3d9;
+    border-bottom: 1px solid #bfd3d9;
+}
+
+#label_input {
+    padding: 0 14px;
+    font-size: 24px;
+    color: #173c49;
+    border-left: 1px solid #bfd3d9;
+    border-right: 0;
+    border-radius: 6px 0 0 6px;
+}
+
+#field_sign {
+    min-width: 54px;
+    max-width: 54px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #08718a;
+    background-color: #f6fafb;
+    border-left: 0;
+    border-right: 0;
+}
+
+#field_amount {
+    min-width: 190px;
+    max-width: 250px;
+    padding: 0 12px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #173c49;
+    border-left: 0;
+    border-right: 1px solid #bfd3d9;
+    border-radius: 0 6px 6px 0;
+}
+
+#table_sale_lines {
+    background-color: #ffffff;
+    border: 1px solid #b7cdd3;
+    gridline-color: #e2edf0;
+    alternate-background-color: #f7fbfc;
+    border-radius: 6px;
+    outline: none;
+}
+
+#table_sale_lines::item {
+    padding: 8px 6px;
+    border-bottom: 1px solid #edf1f2;
+}
+
+#table_sale_lines::item:selected {
+    background-color: #d8f1f7;
+    color: #174b5a;
+}
+
+#table_sale_lines QHeaderView::section {
+    min-height: 30px;
+    font-weight: bold;
+    background-color: #dcecf0;
+    color: #155b70;
+    padding: 7px 10px;
+    border: 0;
+    border-right: 1px solid #bfd3d9;
 }
 
 #button_ok {
@@ -105,4 +175,74 @@ QAbstractButton:pressed {
   font : 12pt;
   min-height : 50px;
   min-width : 120px;
+}
+
+/* Fuerza fondo claro en widgets que no estás cubriendo */
+QWidget {
+  background-color: #edf3f5;
+  color: #383838;
+}
+
+/* La zona negra casi siempre es una vista/tablas */
+QAbstractItemView, QTableView, QTableWidget, QListView, QTreeView {
+  background-color: #ffffff;
+  color: #383838;
+  alternate-background-color: #f7f7f7;
+}
+
+/* Headers de tabla */
+QHeaderView::section {
+  background-color: #dcecf0;
+  color: #155b70;
+  border: 1px solid #b7cdd3;
+  padding: 6px;
+}
+
+/* Campos de texto */
+QLineEdit, QTextEdit, QPlainTextEdit, QComboBox, QSpinBox, QDoubleSpinBox {
+  background-color: #ffffff;
+  color: #383838;
+  border: 1px solid #cfcfcf;
+  padding: 6px;
+}
+
+/* ===== INPUTS (LOGIN, PASSWORD, ETC) ===== */
+
+QLineEdit {
+    background-color: #ffffff;
+    color: #111111;
+    border: 1px solid #cfcfcf;
+    padding: 6px;
+    font: 12pt;
+}
+
+QLineEdit:focus {
+    border: 1px solid #37b5e4;
+    background-color: #ffffff;
+}
+
+/* Password igual */
+QLineEdit[echoMode="2"] {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+/* ===== CONTENEDORES ===== */
+
+QFrame, QGroupBox {
+    background-color: #f2f2f2;
+}
+
+/* Si ese login tiene objectName */
+#dialog_login {
+    background-color: #ffffff;
+}
+
+/* Fondo blanco para todos los elementos del formulario de acceso. */
+#dialog_login QLabel,
+#dialog_login QLineEdit,
+#dialog_login QFrame,
+#dialog_login #label_version,
+#dialog_login #field_version {
+    background-color: #ffffff;
 }

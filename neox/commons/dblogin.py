@@ -18,14 +18,16 @@ from neox.commons.config import Params
 from neox.commons.dialogs import QuickDialog
 from neox.commons.forms import GridForm
 from neox.commons.common import get_icon
+from app.common import get_effica_icon, apply_effica_window_icon
 from neox.commons import bus
+from neox.commons.resources import resource_path
 import traceback
 
 _ = gettext.gettext
 
 __all__ = ['Login', 'xconnection']
 
-pkg_dir = str(Path(os.path.dirname(__file__)).parents[0])
+pkg_dir = resource_path('neox')
 path_logo = os.path.join(pkg_dir, 'share', 'login.png')
 file_base_css = os.path.join(pkg_dir, 'css', 'base.css')
 file_tablet_css = os.path.join(pkg_dir, 'css', 'tablet.css')
@@ -78,13 +80,13 @@ class Login(QDialog):
         hbox_logo.setAlignment(label_logo, Qt.AlignHCenter)
 
         values =  OrderedDict([
-            ('version', {'name': self.tr('VERSION'), 'readonly': True}),
-            ('host', {'name': self.tr('HOST'), 'readonly': True,
+            ('version', {'name': self.tr('VERSIÓN'), 'readonly': True}),
+            ('host', {'name': self.tr('SERVIDOR'), 'readonly': True,
                 'invisible':True}),
-            ('database', {'name': self.tr('DATABASE'), 'readonly': True,
+            ('database', {'name': self.tr('BASE DE DATOS'), 'readonly': True,
                 'invisible':True}),
-            ('user', {'name': self.tr('USER')}),
-            ('password', {'name': self.tr('PASSWORD')}), #DEACTIVATE
+            ('user', {'name': self.tr('USUARIO')}),
+            ('password', {'name': self.tr('CONTRASEÑA')}), #DEACTIVATE
         ])
         formLayout = GridForm(self, values=values, col=1)
         self.field_password.setEchoMode(QLineEdit.Password)
@@ -92,10 +94,10 @@ class Login(QDialog):
         self.field_password.textChanged.connect(self.clear_message)
 
         box_buttons = QDialogButtonBox()
-        pushButtonCancel = QPushButton(self.tr("C&ANCEL"))
+        pushButtonCancel = QPushButton(self.tr("&CANCELAR"))
         pushButtonCancel.setObjectName('button_cancel')
         box_buttons.addButton(pushButtonCancel, QDialogButtonBox.RejectRole)
-        pushButtonOk = QPushButton(self.tr("&CONNECT"))
+        pushButtonOk = QPushButton(self.tr("&CONECTAR"))
         pushButtonOk.setAutoDefault(True)
         pushButtonOk.setDefault(False)
         pushButtonOk.setObjectName('button_ok')
@@ -111,7 +113,7 @@ class Login(QDialog):
         hbox_line.addWidget(line)
 
         hbox_msg = QHBoxLayout()
-        MSG = self.tr('Error: username or password invalid...!')
+        MSG = self.tr('Error: ¡usuario o contraseña inválidos!')
         self.error_msg = QLabel(MSG)
         self.error_msg.setObjectName('login_msg_error')
         self.error_msg.setAlignment(Qt.AlignCenter);
@@ -126,7 +128,8 @@ class Login(QDialog):
 
         self.setLayout(vbox_layout)
         self.setWindowTitle('Login Effica')
-        self.setWindowIcon(get_icon('pos-icon'))
+        self.setWindowIcon(get_effica_icon())
+        apply_effica_window_icon(self)
         self.clear_message()
 
         self.field_password.setFocus()

@@ -10,9 +10,9 @@ class ActionButton(QPushButton):
 
         super(ActionButton, self).__init__('')
         if action == 'ok':
-            name = self.tr("&ACCEPT")
+            name = self.tr("&ACEPTAR")
         else:
-            name = self.tr("&CANCEL")
+            name = self.tr("&CANCELAR")
 
         self.setText(name)
         self.clicked.connect(method)

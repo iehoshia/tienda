@@ -40,6 +40,7 @@ from PyQt5.QtWidgets import (QDialogButtonBox, QPushButton,
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
+from neox.commons.resources import resource_path
 
 __all__ = ["JsonrpcProxy", "Login", "Logout", "RPCException",
     "RPCProgress", "RPCExecute", "RPCContextReload",
@@ -50,8 +51,7 @@ logger = logging.getLogger(__name__)
 _slugify_strip_re = re.compile(r'[^\w\s-]')
 _slugify_hyphenate_re = re.compile(r'[-\s]+')
 
-current_dir = os.path.dirname(__file__)
-current_dir = os.path.dirname(current_dir)
+current_dir = resource_path('neox')
 
 def get_icon(name):
     file_icon = name if name else 'fork'
@@ -477,4 +477,3 @@ def idle_add(func):
     def wrapper(*args, **kwargs):
         GLib.idle_add(func, *args, **kwargs)
     return wrapper
-

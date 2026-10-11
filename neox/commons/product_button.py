@@ -6,10 +6,11 @@ from functools import partial
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QLabel, QPushButton
+from neox.commons.resources import resource_path
 
 css_small = 'product_button_small.css'
 css_high = 'product_button_hd.css'
-root_dir = Path(__file__).parent.parent
+root_dir = resource_path('neox')
 
 __all__ = ['ProductButton']
 

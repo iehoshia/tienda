@@ -129,7 +129,6 @@ QAbstractButton {
 #table_sale_lines {
     color : rgb(70, 70, 70);
     font : 11pt;
-    max-height: 580px;
 }
 
 #label_product, #label_qty, #spin_box_qty, #row_field_price,

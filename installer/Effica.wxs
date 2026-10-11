@@ -1,0 +1,1388 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+<Package Name="Effica" Manufacturer="Effica" Version="26.8.33663" UpgradeCode="7B7D0B77-8C91-46BA-9F40-2B17EA0FD4A7" Scope="perMachine">
+<MajorUpgrade AllowSameVersionUpgrades="yes" DowngradeErrorMessage="Ya existe una version mas reciente de Effica instalada." />
+<MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+<Icon Id="EfficaIcon" SourceFile="$(var.IconSource)" />
+<Property Id="ARPPRODUCTICON" Value="EfficaIcon" />
+<WixVariable Id="WixUIBannerBmp" Value="$(var.BannerSource)" />
+<WixVariable Id="WixUIDialogBmp" Value="$(var.DialogSource)" />
+<WixVariable Id="WixUILicenseRtf" Value="$(var.LicenseSource)" />
+<StandardDirectory Id="TARGETDIR"><Directory Id="APPSFOLDER" Name="Apps"><Directory Id="INSTALLFOLDER" Name="Effica">
+<Component Id="C2" Guid="99A5AF52-50BB-41F6-9A91-7FE6C920B86A"><File Id="F2" Source="$(var.SourceDir)\pospro.exe" KeyPath="yes" /></Component>
+<Directory Id="D3" Name="_internal">
+<Component Id="C4" Guid="D9184DC2-7C4A-49C3-AE06-EF76149C019A"><File Id="F4" Source="$(var.SourceDir)\_internal\_asyncio.pyd" KeyPath="yes" /></Component>
+<Component Id="C5" Guid="1A7DEB38-1D29-4BF1-B29E-9BEDEF903D7E"><File Id="F5" Source="$(var.SourceDir)\_internal\_bz2.pyd" KeyPath="yes" /></Component>
+<Component Id="C6" Guid="385F4034-C7CE-43B6-805F-AD1A49CA85C7"><File Id="F6" Source="$(var.SourceDir)\_internal\_cffi_backend.cp39-win_amd64.pyd" KeyPath="yes" /></Component>
+<Component Id="C7" Guid="B32BA984-073A-44D8-8DC5-BBBC9EC92FD4"><File Id="F7" Source="$(var.SourceDir)\_internal\_ctypes.pyd" KeyPath="yes" /></Component>
+<Component Id="C8" Guid="0A1379FD-548B-4925-A7A3-2D295B79D76E"><File Id="F8" Source="$(var.SourceDir)\_internal\_decimal.pyd" KeyPath="yes" /></Component>
+<Component Id="C9" Guid="EDF73D3B-5142-49F4-8D4C-A14A6E9A6992"><File Id="F9" Source="$(var.SourceDir)\_internal\_elementtree.pyd" KeyPath="yes" /></Component>
+<Component Id="C10" Guid="A97953A1-A5D2-45C9-BE99-FBCC4EFD4EDF"><File Id="F10" Source="$(var.SourceDir)\_internal\_hashlib.pyd" KeyPath="yes" /></Component>
+<Component Id="C11" Guid="FBC5DBD6-6911-4DC4-8032-E00C5EFD1C87"><File Id="F11" Source="$(var.SourceDir)\_internal\_lzma.pyd" KeyPath="yes" /></Component>
+<Component Id="C12" Guid="25DBF6FF-E097-439D-9BA0-5DBD21796D3B"><File Id="F12" Source="$(var.SourceDir)\_internal\_multiprocessing.pyd" KeyPath="yes" /></Component>
+<Component Id="C13" Guid="1854600B-FC91-4398-8FC2-9EC92594D15B"><File Id="F13" Source="$(var.SourceDir)\_internal\_overlapped.pyd" KeyPath="yes" /></Component>
+<Component Id="C14" Guid="D3C00169-DA0A-4F06-890B-B804E8BCD52B"><File Id="F14" Source="$(var.SourceDir)\_internal\_queue.pyd" KeyPath="yes" /></Component>
+<Component Id="C15" Guid="248E3DAA-A00E-4B82-97D3-799884EC0BDD"><File Id="F15" Source="$(var.SourceDir)\_internal\_socket.pyd" KeyPath="yes" /></Component>
+<Component Id="C16" Guid="5ADB8346-1BDA-40F3-AB63-6170ADB32818"><File Id="F16" Source="$(var.SourceDir)\_internal\_ssl.pyd" KeyPath="yes" /></Component>
+<Component Id="C17" Guid="6AC7EE38-9449-473F-8A09-36785D2A9653"><File Id="F17" Source="$(var.SourceDir)\_internal\_uuid.pyd" KeyPath="yes" /></Component>
+<Component Id="C18" Guid="817AD280-A276-401C-B090-4735E851959A"><File Id="F18" Source="$(var.SourceDir)\_internal\base_library.zip" KeyPath="yes" /></Component>
+<Component Id="C19" Guid="A40A0C13-B93F-43E0-B4BA-37E2CAF01860"><File Id="F19" Source="$(var.SourceDir)\_internal\config_pos.ini" KeyPath="yes" /></Component>
+<Component Id="C20" Guid="C19FD12F-151C-4679-ADB3-8EC7D99087F4"><File Id="F20" Source="$(var.SourceDir)\_internal\libcrypto-1_1.dll" KeyPath="yes" /></Component>
+<Component Id="C21" Guid="9BEBCF42-7D4C-4389-A143-2B2AB481BFEA"><File Id="F21" Source="$(var.SourceDir)\_internal\libffi-7.dll" KeyPath="yes" /></Component>
+<Component Id="C22" Guid="FB51146E-42E8-44A6-980C-BEC625CA3AE7"><File Id="F22" Source="$(var.SourceDir)\_internal\libssl-1_1.dll" KeyPath="yes" /></Component>
+<Component Id="C23" Guid="8AA34732-A342-4E55-8BF8-329DE319FD8E"><File Id="F23" Source="$(var.SourceDir)\_internal\pyexpat.pyd" KeyPath="yes" /></Component>
+<Component Id="C24" Guid="E534558C-271A-4E42-AB23-A3515B2F8805"><File Id="F24" Source="$(var.SourceDir)\_internal\python3.dll" KeyPath="yes" /></Component>
+<Component Id="C25" Guid="75AF3E95-48A7-4CA6-B65D-3A68AF46CA7E"><File Id="F25" Source="$(var.SourceDir)\_internal\python39.dll" KeyPath="yes" /></Component>
+<Component Id="C26" Guid="74B6109A-C682-42B5-9198-39A23B602965"><File Id="F26" Source="$(var.SourceDir)\_internal\select.pyd" KeyPath="yes" /></Component>
+<Component Id="C27" Guid="8128DDE6-4AE2-4557-BBBE-0146893FFACC"><File Id="F27" Source="$(var.SourceDir)\_internal\unicodedata.pyd" KeyPath="yes" /></Component>
+<Component Id="C28" Guid="876D6A48-6B0E-471F-B646-A4DEAF810DDA"><File Id="F28" Source="$(var.SourceDir)\_internal\VCRUNTIME140.dll" KeyPath="yes" /></Component>
+<Component Id="C29" Guid="D8826D0E-8BCF-4F16-9E8F-9FF9423368DC"><File Id="F29" Source="$(var.SourceDir)\_internal\VCRUNTIME140_1.dll" KeyPath="yes" /></Component>
+<Directory Id="D30" Name="app">
+<Component Id="C31" Guid="1252BF9C-DFC3-4887-9252-1FDE4406F3D2"><File Id="F31" Source="$(var.SourceDir)\_internal\app\app_tablet.css" KeyPath="yes" /></Component>
+<Component Id="C32" Guid="32A055AF-793C-499B-AF95-20C7F8311266"><File Id="F32" Source="$(var.SourceDir)\_internal\app\config_pos.ini" KeyPath="yes" /></Component>
+<Component Id="C33" Guid="707D90A0-1113-4245-B1B8-3461C1E3FB2F"><File Id="F33" Source="$(var.SourceDir)\_internal\app\large_screen.css" KeyPath="yes" /></Component>
+<Component Id="C34" Guid="2AE0404C-18F5-4A96-A152-F2057E2D2D2C"><File Id="F34" Source="$(var.SourceDir)\_internal\app\medium_screen.css" KeyPath="yes" /></Component>
+<Component Id="C35" Guid="78D77397-93CE-4052-B79D-A1837879C238"><File Id="F35" Source="$(var.SourceDir)\_internal\app\small_screen.css" KeyPath="yes" /></Component>
+<Directory Id="D36" Name="share">
+<Component Id="C37" Guid="DC0E11F5-1751-4C25-9760-05F540251692"><File Id="F37" Source="$(var.SourceDir)\_internal\app\share\accept.svg" KeyPath="yes" /></Component>
+<Component Id="C38" Guid="428FEA0D-D678-495E-B80B-006A835825A3"><File Id="F38" Source="$(var.SourceDir)\_internal\app\share\add_product.svg" KeyPath="yes" /></Component>
+<Component Id="C39" Guid="F1CB00D6-0FEA-4C3A-924B-89C4D555EB6A"><File Id="F39" Source="$(var.SourceDir)\_internal\app\share\auth_report.svg" KeyPath="yes" /></Component>
+<Component Id="C40" Guid="87083DE7-D8A4-4BF3-96AC-D30DA7697245"><File Id="F40" Source="$(var.SourceDir)\_internal\app\share\beer.svg" KeyPath="yes" /></Component>
+<Component Id="C41" Guid="DA85259C-9395-440F-AFA8-4FD1209FE9F2"><File Id="F41" Source="$(var.SourceDir)\_internal\app\share\breakfast.svg" KeyPath="yes" /></Component>
+<Component Id="C42" Guid="585E8908-B6BA-42BA-BD69-EA47B1DFC657"><File Id="F42" Source="$(var.SourceDir)\_internal\app\share\burger.svg" KeyPath="yes" /></Component>
+<Component Id="C43" Guid="46CDAF0D-7F33-4E42-8448-00936D081B9C"><File Id="F43" Source="$(var.SourceDir)\_internal\app\share\calendar.svg" KeyPath="yes" /></Component>
+<Component Id="C44" Guid="2A921C60-99E7-4511-B59B-3CB81CE9F36E"><File Id="F44" Source="$(var.SourceDir)\_internal\app\share\cancel.svg" KeyPath="yes" /></Component>
+<Component Id="C45" Guid="6FE18DC9-4D14-408C-8A07-49716BECD56D"><File Id="F45" Source="$(var.SourceDir)\_internal\app\share\cash.svg" KeyPath="yes" /></Component>
+<Component Id="C46" Guid="E7DDFE6B-C099-47D5-8409-EC8CFD180486"><File Id="F46" Source="$(var.SourceDir)\_internal\app\share\cheese.svg" KeyPath="yes" /></Component>
+<Component Id="C47" Guid="F164E31C-AA2B-414D-8944-3629F241A380"><File Id="F47" Source="$(var.SourceDir)\_internal\app\share\chicken-leg.svg" KeyPath="yes" /></Component>
+<Component Id="C48" Guid="9E372932-1AB1-425A-9523-F083F95E67ED"><File Id="F48" Source="$(var.SourceDir)\_internal\app\share\chinese-food.svg" KeyPath="yes" /></Component>
+<Component Id="C49" Guid="B0A5D4A8-3670-45F5-80CE-E136118CE891"><File Id="F49" Source="$(var.SourceDir)\_internal\app\share\coffee.svg" KeyPath="yes" /></Component>
+<Component Id="C50" Guid="DB208175-7394-42C0-B188-9875031E8C36"><File Id="F50" Source="$(var.SourceDir)\_internal\app\share\combo.svg" KeyPath="yes" /></Component>
+<Component Id="C51" Guid="63F9239E-9A93-4860-9211-14C22653249D"><File Id="F51" Source="$(var.SourceDir)\_internal\app\share\comment.svg" KeyPath="yes" /></Component>
+<Component Id="C52" Guid="7A34002B-353E-41BB-98A6-ED958EE943C5"><File Id="F52" Source="$(var.SourceDir)\_internal\app\share\corrective.svg" KeyPath="yes" /></Component>
+<Component Id="C53" Guid="AA2A6733-2DA8-482F-94E8-4108B23B7979"><File Id="F53" Source="$(var.SourceDir)\_internal\app\share\credit_sale.png" KeyPath="yes" /></Component>
+<Component Id="C54" Guid="C076014F-8FF1-4603-8135-875C31614364"><File Id="F54" Source="$(var.SourceDir)\_internal\app\share\credit_sale.svg" KeyPath="yes" /></Component>
+<Component Id="C55" Guid="BE395D7B-7ECE-4A1F-96B9-AF02C602951B"><File Id="F55" Source="$(var.SourceDir)\_internal\app\share\croissant.svg" KeyPath="yes" /></Component>
+<Component Id="C56" Guid="C92D25DB-3CA3-421C-8C18-557C979136E4"><File Id="F56" Source="$(var.SourceDir)\_internal\app\share\delete_line.svg" KeyPath="yes" /></Component>
+<Component Id="C57" Guid="3A165D65-1FA7-481F-AB48-45FF70C833E1"><File Id="F57" Source="$(var.SourceDir)\_internal\app\share\delivery.png" KeyPath="yes" /></Component>
+<Component Id="C58" Guid="C9FB6BAD-8C05-4B7D-9271-4C7764DFEF0C"><File Id="F58" Source="$(var.SourceDir)\_internal\app\share\delivery.svg" KeyPath="yes" /></Component>
+<Component Id="C59" Guid="40EC73A0-52E3-434A-8552-B7275ADBB351"><File Id="F59" Source="$(var.SourceDir)\_internal\app\share\donut.svg" KeyPath="yes" /></Component>
+<Component Id="C60" Guid="A06C55A8-1946-4D0F-8753-F4B24DE9442A"><File Id="F60" Source="$(var.SourceDir)\_internal\app\share\draft.svg" KeyPath="yes" /></Component>
+<Component Id="C61" Guid="146B301E-3A91-4601-A98E-C0B6A5A6C17F"><File Id="F61" Source="$(var.SourceDir)\_internal\app\share\email.svg" KeyPath="yes" /></Component>
+<Component Id="C62" Guid="E660FCE0-0105-4038-B756-6CEBF918E47E"><File Id="F62" Source="$(var.SourceDir)\_internal\app\share\enameled_feet.svg" KeyPath="yes" /></Component>
+<Component Id="C63" Guid="55FCED9D-2A00-4AB3-99FA-897451A7C2C7"><File Id="F63" Source="$(var.SourceDir)\_internal\app\share\enameled_manicure.svg" KeyPath="yes" /></Component>
+<Component Id="C64" Guid="26EC3EA6-BF72-45CB-8EA6-F3ADA03F00C0"><File Id="F64" Source="$(var.SourceDir)\_internal\app\share\expense.svg" KeyPath="yes" /></Component>
+<Component Id="C65" Guid="6C1B8AFC-3D0B-4BBC-A75D-D8612CE3E228"><File Id="F65" Source="$(var.SourceDir)\_internal\app\share\fifth_agent.svg" KeyPath="yes" /></Component>
+<Component Id="C66" Guid="5BFD6073-6227-4D90-99FA-6DFBF4175A85"><File Id="F66" Source="$(var.SourceDir)\_internal\app\share\first_agent.svg" KeyPath="yes" /></Component>
+<Component Id="C67" Guid="7E5146DA-9904-43B2-A1D7-AD29D841DE7E"><File Id="F67" Source="$(var.SourceDir)\_internal\app\share\fork.svg" KeyPath="yes" /></Component>
+<Component Id="C68" Guid="B8580167-5DF2-4509-A2FA-DDB5F65A80B1"><File Id="F68" Source="$(var.SourceDir)\_internal\app\share\fourth_agent.svg" KeyPath="yes" /></Component>
+<Component Id="C69" Guid="47D6A273-AE39-4C8C-9E31-F92FCE7EA38C"><File Id="F69" Source="$(var.SourceDir)\_internal\app\share\gel_polish.svg" KeyPath="yes" /></Component>
+<Component Id="C70" Guid="B31B01E4-4BDB-409D-8147-CBDEEEAADEF1"><File Id="F70" Source="$(var.SourceDir)\_internal\app\share\global_discount.svg" KeyPath="yes" /></Component>
+<Component Id="C71" Guid="0A0B94A3-90F9-49C1-BFBE-B42CF678129D"><File Id="F71" Source="$(var.SourceDir)\_internal\app\share\hot-dog.svg" KeyPath="yes" /></Component>
+<Component Id="C72" Guid="EFCF2558-2568-4997-B7D0-23FBD16CE05B"><File Id="F72" Source="$(var.SourceDir)\_internal\app\share\ice-cream.svg" KeyPath="yes" /></Component>
+<Component Id="C73" Guid="590D1136-B064-4EA6-9FC3-A6A03E353B3B"><File Id="F73" Source="$(var.SourceDir)\_internal\app\share\icon_auth_report.svg" KeyPath="yes" /></Component>
+<Component Id="C74" Guid="D32624B4-0C88-4F9B-AA96-26771AA16A5A"><File Id="F74" Source="$(var.SourceDir)\_internal\app\share\icon_cancel.svg" KeyPath="yes" /></Component>
+<Component Id="C75" Guid="326C0871-D194-4509-B8F7-7F3DE2FB94AC"><File Id="F75" Source="$(var.SourceDir)\_internal\app\share\icon_comment.svg" KeyPath="yes" /></Component>
+<Component Id="C76" Guid="46AECCBE-A285-4AC3-9DF8-6335569B7AFA"><File Id="F76" Source="$(var.SourceDir)\_internal\app\share\icon_delete_line.svg" KeyPath="yes" /></Component>
+<Component Id="C77" Guid="A04E1703-0C39-41B3-8CD7-D6D858126F58"><File Id="F77" Source="$(var.SourceDir)\_internal\app\share\icon_invoice_report.svg" KeyPath="yes" /></Component>
+<Component Id="C78" Guid="C9BC3D23-F91C-4A71-8D9D-E4244569DAFA"><File Id="F78" Source="$(var.SourceDir)\_internal\app\share\icon_new_sale.svg" KeyPath="yes" /></Component>
+<Component Id="C79" Guid="45C25054-01B5-4911-8E9C-71564B9C9C40"><File Id="F79" Source="$(var.SourceDir)\_internal\app\share\icon_party.svg" KeyPath="yes" /></Component>
+<Component Id="C80" Guid="7A1C45BA-F4CF-4B8C-8DC9-B40403579FC6"><File Id="F80" Source="$(var.SourceDir)\_internal\app\share\icon_payment.svg" KeyPath="yes" /></Component>
+<Component Id="C81" Guid="F85B8A0C-CEF8-4CF0-A36B-AE3842F26F81"><File Id="F81" Source="$(var.SourceDir)\_internal\app\share\icon_position.svg" KeyPath="yes" /></Component>
+<Component Id="C82" Guid="51D66D8B-CD13-4C6B-81EF-32B3AB0E1149"><File Id="F82" Source="$(var.SourceDir)\_internal\app\share\icon_print_order.svg" KeyPath="yes" /></Component>
+<Component Id="C83" Guid="87D9441F-D347-4395-B35A-C478AA909ADF"><File Id="F83" Source="$(var.SourceDir)\_internal\app\share\icon_print_sale.svg" KeyPath="yes" /></Component>
+<Component Id="C84" Guid="A26C5FB7-2D97-461A-92DE-2660DD6F9D3C"><File Id="F84" Source="$(var.SourceDir)\_internal\app\share\icon_salesman.svg" KeyPath="yes" /></Component>
+<Component Id="C85" Guid="BA40773E-0EC4-402A-848F-2D35FAD7A54B"><File Id="F85" Source="$(var.SourceDir)\_internal\app\share\icon_search_product.svg" KeyPath="yes" /></Component>
+<Component Id="C86" Guid="69C97459-44F7-449E-A769-07B7CB643D5E"><File Id="F86" Source="$(var.SourceDir)\_internal\app\share\icon_search_sale.svg" KeyPath="yes" /></Component>
+<Component Id="C87" Guid="4AC5B6B5-871F-4796-9942-58DF8F11C9D2"><File Id="F87" Source="$(var.SourceDir)\_internal\app\share\infantile.svg" KeyPath="yes" /></Component>
+<Component Id="C88" Guid="11A23D58-2B69-4CD6-BFB8-9A65552D806E"><File Id="F88" Source="$(var.SourceDir)\_internal\app\share\invoice_report.svg" KeyPath="yes" /></Component>
+<Component Id="C89" Guid="11FB92FD-0B17-4F50-A11B-A2800738ACD1"><File Id="F89" Source="$(var.SourceDir)\_internal\app\share\invoice_reprint.png" KeyPath="yes" /></Component>
+<Component Id="C90" Guid="567FBE4A-F9D4-4AA9-9CA5-15D2C08544A7"><File Id="F90" Source="$(var.SourceDir)\_internal\app\share\invoice_reprint.svg" KeyPath="yes" /></Component>
+<Component Id="C91" Guid="8DBB34FA-2BAC-48EE-8FA8-D4A68C51E50D"><File Id="F91" Source="$(var.SourceDir)\_internal\app\share\join_sales.jpg" KeyPath="yes" /></Component>
+<Component Id="C92" Guid="FDE98076-5ADE-4450-8CB4-D14D45B721D8"><File Id="F92" Source="$(var.SourceDir)\_internal\app\share\join_sales.svg" KeyPath="yes" /></Component>
+<Component Id="C93" Guid="0B33A7D7-603E-420F-B679-7867DD277D12"><File Id="F93" Source="$(var.SourceDir)\_internal\app\share\kebab.svg" KeyPath="yes" /></Component>
+<Component Id="C94" Guid="E5F6DAED-4808-45F2-88B2-BE5E49C15162"><File Id="F94" Source="$(var.SourceDir)\_internal\app\share\label.svg" KeyPath="yes" /></Component>
+<Component Id="C95" Guid="A39AB4B6-BF1F-4570-803D-9F3F8EA200F9"><File Id="F95" Source="$(var.SourceDir)\_internal\app\share\local_table.png" KeyPath="yes" /></Component>
+<Component Id="C96" Guid="BCC7823A-1932-4CEA-8DDE-AA9355EC24CC"><File Id="F96" Source="$(var.SourceDir)\_internal\app\share\local_table.svg" KeyPath="yes" /></Component>
+<Component Id="C97" Guid="0881476F-436F-42D5-99B7-97F1EF3FFE53"><File Id="F97" Source="$(var.SourceDir)\_internal\app\share\massage.svg" KeyPath="yes" /></Component>
+<Component Id="C98" Guid="72B5ED7C-8178-4EAA-9963-0F06310A2E6E"><File Id="F98" Source="$(var.SourceDir)\_internal\app\share\menu.svg" KeyPath="yes" /></Component>
+<Component Id="C99" Guid="367E4190-FF0E-4F8D-AC7E-46BF5FB981C2"><File Id="F99" Source="$(var.SourceDir)\_internal\app\share\menu_section.svg" KeyPath="yes" /></Component>
+<Component Id="C100" Guid="B0C0FB6E-61E0-4B35-B61E-5BF46745AC4B"><File Id="F100" Source="$(var.SourceDir)\_internal\app\share\milkshake.svg" KeyPath="yes" /></Component>
+<Component Id="C101" Guid="E85BFA86-7345-4375-AAA3-983FB33634C9"><File Id="F101" Source="$(var.SourceDir)\_internal\app\share\new_sale.svg" KeyPath="yes" /></Component>
+<Component Id="C102" Guid="F1A6D081-1B57-428D-9F2D-5E9F5D418D3E"><File Id="F102" Source="$(var.SourceDir)\_internal\app\share\nit.svg" KeyPath="yes" /></Component>
+<Component Id="C103" Guid="431C73D2-697A-48EE-8FA4-07F31431DDF5"><File Id="F103" Source="$(var.SourceDir)\_internal\app\share\party.svg" KeyPath="yes" /></Component>
+<Component Id="C104" Guid="6AB780E5-1670-40F6-BB1B-C4FFE7A70EE3"><File Id="F104" Source="$(var.SourceDir)\_internal\app\share\payment.svg" KeyPath="yes" /></Component>
+<Component Id="C105" Guid="8B77ECB8-B8F2-4043-A59C-73D37330802C"><File Id="F105" Source="$(var.SourceDir)\_internal\app\share\payment_term.svg" KeyPath="yes" /></Component>
+<Component Id="C106" Guid="BC5E53D5-2D96-4D32-9FD9-9A442B7AA73C"><File Id="F106" Source="$(var.SourceDir)\_internal\app\share\pizza-slice.svg" KeyPath="yes" /></Component>
+<Component Id="C107" Guid="3DAD6AE9-9254-4172-A1A4-A5CF122C9B15"><File Id="F107" Source="$(var.SourceDir)\_internal\app\share\plus.jpg" KeyPath="yes" /></Component>
+<Component Id="C108" Guid="EEC815E3-C7B2-4D5F-AD48-3A9F1ACC23DB"><File Id="F108" Source="$(var.SourceDir)\_internal\app\share\plus.svg" KeyPath="yes" /></Component>
+<Component Id="C109" Guid="5CC446BC-33E6-4FF8-86F1-B0CA7EB37131"><File Id="F109" Source="$(var.SourceDir)\_internal\app\share\pos_banner.png" KeyPath="yes" /></Component>
+<Component Id="C110" Guid="2A16CE6C-C881-425F-BD77-CEB1B81E43B2"><File Id="F110" Source="$(var.SourceDir)\_internal\app\share\pos_banner_backup.png" KeyPath="yes" /></Component>
+<Component Id="C111" Guid="4B23556F-DAC6-4FEC-811B-1D248A8591A1"><File Id="F111" Source="$(var.SourceDir)\_internal\app\share\pos-icon.ico" KeyPath="yes" /></Component>
+<Component Id="C112" Guid="DCCD2652-0141-4388-B372-55D93E6DE5D4"><File Id="F112" Source="$(var.SourceDir)\_internal\app\share\pos-icon.svg" KeyPath="yes" /></Component>
+<Component Id="C113" Guid="D8FA5C1A-67DD-4927-9674-06612828EF3A"><File Id="F113" Source="$(var.SourceDir)\_internal\app\share\pos-icon-01.ico" KeyPath="yes" /></Component>
+<Component Id="C114" Guid="7A39B7C6-F40C-4ADB-BE97-8A8EAF335ED7"><File Id="F114" Source="$(var.SourceDir)\_internal\app\share\pos-icon-01.png" KeyPath="yes" /></Component>
+<Component Id="C115" Guid="EBFC0992-1B1C-441F-B8C5-CD39A983DFDB"><File Id="F115" Source="$(var.SourceDir)\_internal\app\share\pos-icon-02.ico" KeyPath="yes" /></Component>
+<Component Id="C116" Guid="26D58B3F-5065-4257-A54B-979B57A1E264"><File Id="F116" Source="$(var.SourceDir)\_internal\app\share\pos-icon-02.png" KeyPath="yes" /></Component>
+<Component Id="C117" Guid="FD419A26-B536-4C19-95F2-2952F3E1FBC0"><File Id="F117" Source="$(var.SourceDir)\_internal\app\share\pos-icon-03.png" KeyPath="yes" /></Component>
+<Component Id="C118" Guid="F546A1ED-CDB9-44C5-9929-34E2543DB473"><File Id="F118" Source="$(var.SourceDir)\_internal\app\share\position.svg" KeyPath="yes" /></Component>
+<Component Id="C119" Guid="67E7BC22-BC72-4BD6-9DF0-D4CA8374CBCB"><File Id="F119" Source="$(var.SourceDir)\_internal\app\share\print_order.svg" KeyPath="yes" /></Component>
+<Component Id="C120" Guid="0893791D-D257-43DC-A4D0-94B9D370BF25"><File Id="F120" Source="$(var.SourceDir)\_internal\app\share\print_sale.svg" KeyPath="yes" /></Component>
+<Component Id="C121" Guid="FF7CCE89-3597-4A1C-BF05-FBAE3C57A2E7"><File Id="F121" Source="$(var.SourceDir)\_internal\app\share\product_by_location.svg" KeyPath="yes" /></Component>
+<Component Id="C122" Guid="FF80A1DB-77D9-45EB-9F98-4708F957DA42"><File Id="F122" Source="$(var.SourceDir)\_internal\app\share\production.svg" KeyPath="yes" /></Component>
+<Component Id="C123" Guid="88D1E684-5213-4156-9FF1-97DC7CBC09D3"><File Id="F123" Source="$(var.SourceDir)\_internal\app\share\prohealth.svg" KeyPath="yes" /></Component>
+<Component Id="C124" Guid="CD63F32C-FBB9-4C5A-B856-04872E8CBA0E"><File Id="F124" Source="$(var.SourceDir)\_internal\app\share\purchase.png" KeyPath="yes" /></Component>
+<Component Id="C125" Guid="563018FE-6D3E-4288-8F7D-9E9EF5788E15"><File Id="F125" Source="$(var.SourceDir)\_internal\app\share\purchase.svg" KeyPath="yes" /></Component>
+<Component Id="C126" Guid="92836EE7-DABF-481F-BD6B-85F75029121C"><File Id="F126" Source="$(var.SourceDir)\_internal\app\share\quotation.svg" KeyPath="yes" /></Component>
+<Component Id="C127" Guid="B527DF8F-F0F8-4648-B7DF-D29FC722025D"><File Id="F127" Source="$(var.SourceDir)\_internal\app\share\reservations.svg" KeyPath="yes" /></Component>
+<Component Id="C128" Guid="52008C6E-128D-464F-BF60-B19F1480811E"><File Id="F128" Source="$(var.SourceDir)\_internal\app\share\salesman.svg" KeyPath="yes" /></Component>
+<Component Id="C129" Guid="B9B01639-B582-46C1-BEDC-1080A574D701"><File Id="F129" Source="$(var.SourceDir)\_internal\app\share\search_category.svg" KeyPath="yes" /></Component>
+<Component Id="C130" Guid="01411628-F89D-419E-8A1A-92F22D6DFB28"><File Id="F130" Source="$(var.SourceDir)\_internal\app\share\search_combo.svg" KeyPath="yes" /></Component>
+<Component Id="C131" Guid="FF03C0BF-D302-4222-9D33-ADCF3E0A676D"><File Id="F131" Source="$(var.SourceDir)\_internal\app\share\search_fuel.svg" KeyPath="yes" /></Component>
+<Component Id="C132" Guid="EF34DD04-9E55-4622-AA6C-423B5EFF8D46"><File Id="F132" Source="$(var.SourceDir)\_internal\app\share\search_product.svg" KeyPath="yes" /></Component>
+<Component Id="C133" Guid="92546141-DB4F-4E10-8E30-69086905B397"><File Id="F133" Source="$(var.SourceDir)\_internal\app\share\search_product_category.svg" KeyPath="yes" /></Component>
+<Component Id="C134" Guid="628288EE-03EA-4286-AE0D-477805E82433"><File Id="F134" Source="$(var.SourceDir)\_internal\app\share\search_sale.svg" KeyPath="yes" /></Component>
+<Component Id="C135" Guid="714FF0E5-F0BE-46E4-B6E3-365E103CB7F3"><File Id="F135" Source="$(var.SourceDir)\_internal\app\share\second_agent.svg" KeyPath="yes" /></Component>
+<Component Id="C136" Guid="8F67C5DB-E0C5-4F04-A53A-736DCC27FD2B"><File Id="F136" Source="$(var.SourceDir)\_internal\app\share\sixth_agent.svg" KeyPath="yes" /></Component>
+<Component Id="C137" Guid="BF5C0901-D56B-4740-9740-F96353A1AA1F"><File Id="F137" Source="$(var.SourceDir)\_internal\app\share\specialized_manicure.svg" KeyPath="yes" /></Component>
+<Component Id="C138" Guid="3D88BB1B-AE99-4DE7-8C17-449BB0B5F5C9"><File Id="F138" Source="$(var.SourceDir)\_internal\app\share\statement.svg" KeyPath="yes" /></Component>
+<Component Id="C139" Guid="9D8755B9-F2E3-4DC5-8B5D-A9E731F5B844"><File Id="F139" Source="$(var.SourceDir)\_internal\app\share\table.svg" KeyPath="yes" /></Component>
+<Component Id="C140" Guid="767B27FE-567C-4FC7-8C1C-EF879C07524C"><File Id="F140" Source="$(var.SourceDir)\_internal\app\share\tables.svg" KeyPath="yes" /></Component>
+<Component Id="C141" Guid="2190D648-DE7F-47EC-8BE9-A960C7B69F5C"><File Id="F141" Source="$(var.SourceDir)\_internal\app\share\taco.svg" KeyPath="yes" /></Component>
+<Component Id="C142" Guid="DB882900-B011-4B40-B425-9ED42638F892"><File Id="F142" Source="$(var.SourceDir)\_internal\app\share\take_away.png" KeyPath="yes" /></Component>
+<Component Id="C143" Guid="80AB55FF-A954-422F-BEB1-839E8B67147B"><File Id="F143" Source="$(var.SourceDir)\_internal\app\share\take_away.svg" KeyPath="yes" /></Component>
+<Component Id="C144" Guid="42C47BA2-14CA-4730-A73A-E904020D9948"><File Id="F144" Source="$(var.SourceDir)\_internal\app\share\tea.svg" KeyPath="yes" /></Component>
+<Component Id="C145" Guid="FF88B589-EB73-486E-9492-8FC98E9F35B5"><File Id="F145" Source="$(var.SourceDir)\_internal\app\share\third_agent.svg" KeyPath="yes" /></Component>
+<Component Id="C146" Guid="5458A484-F125-4F44-B59C-B66EFB992B80"><File Id="F146" Source="$(var.SourceDir)\_internal\app\share\tip.svg" KeyPath="yes" /></Component>
+<Component Id="C147" Guid="2E9E4C78-F47E-4582-B226-4168AED10F10"><File Id="F147" Source="$(var.SourceDir)\_internal\app\share\update_list_price.svg" KeyPath="yes" /></Component>
+<Component Id="C148" Guid="D5E73B58-FF47-4D11-A07F-402F0B11D8E5"><File Id="F148" Source="$(var.SourceDir)\_internal\app\share\update_quantity.svg" KeyPath="yes" /></Component>
+<Component Id="C149" Guid="4587AF71-4173-42A2-A098-8E4AE23E8D41"><File Id="F149" Source="$(var.SourceDir)\_internal\app\share\waffle.svg" KeyPath="yes" /></Component>
+<Component Id="C150" Guid="2CB478A2-9960-4460-AACA-C81FA6E535B9"><File Id="F150" Source="$(var.SourceDir)\_internal\app\share\waiter.svg" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D151" Name="tmp">
+<Component Id="C152" Guid="137E4865-8E09-4CBD-B293-65E00F698194"><File Id="F152" Source="$(var.SourceDir)\_internal\app\tmp\1-2-pollo-asado.png" KeyPath="yes" /></Component>
+<Component Id="C153" Guid="65A1E528-25CC-4C8B-A115-917DD7B9C726"><File Id="F153" Source="$(var.SourceDir)\_internal\app\tmp\1-4-de-libra.png" KeyPath="yes" /></Component>
+<Component Id="C154" Guid="EA6D4FBF-A6B6-492F-93EC-28C9BBF5BB81"><File Id="F154" Source="$(var.SourceDir)\_internal\app\tmp\1-4-pollo-asado.png" KeyPath="yes" /></Component>
+<Component Id="C155" Guid="7499F3C1-D358-4319-AD70-3C58A8BB7777"><File Id="F155" Source="$(var.SourceDir)\_internal\app\tmp\1-4-pollo-asado-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C156" Guid="4A3850F2-6C6F-447F-934D-AC5D8895488D"><File Id="F156" Source="$(var.SourceDir)\_internal\app\tmp\1-hamburguesa-de-milanesa-1-gaseosa-1-papita.png" KeyPath="yes" /></Component>
+<Component Id="C157" Guid="BCF58501-B1B0-4C15-A18E-B7B1D6EF2AAB"><File Id="F157" Source="$(var.SourceDir)\_internal\app\tmp\1-hamburguesa-de-torta-de-carne-1-gaseosa-1-papita.png" KeyPath="yes" /></Component>
+<Component Id="C158" Guid="9963BC7F-02F5-4B8D-8236-7EEB10B4A4C5"><File Id="F158" Source="$(var.SourceDir)\_internal\app\tmp\adrenalina.png" KeyPath="yes" /></Component>
+<Component Id="C159" Guid="9BBBDB03-356A-4BF0-BFC5-610F4A834706"><File Id="F159" Source="$(var.SourceDir)\_internal\app\tmp\agua-botella.png" KeyPath="yes" /></Component>
+<Component Id="C160" Guid="E7CAD4B1-18BB-4B27-8603-EB2355E770CA"><File Id="F160" Source="$(var.SourceDir)\_internal\app\tmp\agua-pura.png" KeyPath="yes" /></Component>
+<Component Id="C161" Guid="9A604DF6-7E73-4F1A-A5E0-F0CD304E1A84"><File Id="F161" Source="$(var.SourceDir)\_internal\app\tmp\agua-pura-botella.png" KeyPath="yes" /></Component>
+<Component Id="C162" Guid="CF5D992A-1962-4649-AF8F-D0856DF58F3B"><File Id="F162" Source="$(var.SourceDir)\_internal\app\tmp\ala.png" KeyPath="yes" /></Component>
+<Component Id="C163" Guid="B72636C1-F2BE-41C6-B957-53E9EAD33A22"><File Id="F163" Source="$(var.SourceDir)\_internal\app\tmp\ala-combo.png" KeyPath="yes" /></Component>
+<Component Id="C164" Guid="AC41ACE5-7972-42DB-9709-5CB70BF4732E"><File Id="F164" Source="$(var.SourceDir)\_internal\app\tmp\ala-combo-gaseosa-vidrio.png" KeyPath="yes" /></Component>
+<Component Id="C165" Guid="84F6144B-A1A5-4784-A409-93DAADABDEDF"><File Id="F165" Source="$(var.SourceDir)\_internal\app\tmp\ala-cuadril.png" KeyPath="yes" /></Component>
+<Component Id="C166" Guid="FA47F6A6-F193-4685-866B-B99C983D7CD4"><File Id="F166" Source="$(var.SourceDir)\_internal\app\tmp\ala-cuadril-combo.png" KeyPath="yes" /></Component>
+<Component Id="C167" Guid="8B21FCF8-C600-4C1E-877A-914F1E093A9C"><File Id="F167" Source="$(var.SourceDir)\_internal\app\tmp\ala-cuadril-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C168" Guid="09C0DE57-FDDF-40E3-99DB-112A9BF6F1CC"><File Id="F168" Source="$(var.SourceDir)\_internal\app\tmp\ala-cuadril-ensalada-combo.png" KeyPath="yes" /></Component>
+<Component Id="C169" Guid="ECE7D2A2-BD63-49F7-8191-EF448FE59AFA"><File Id="F169" Source="$(var.SourceDir)\_internal\app\tmp\ala-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C170" Guid="063C9D90-340C-4FE3-BEB3-8DE123F8FBA0"><File Id="F170" Source="$(var.SourceDir)\_internal\app\tmp\ala-gaseosa-lata.png" KeyPath="yes" /></Component>
+<Component Id="C171" Guid="CBB71DEE-6EE5-4D91-8D8E-D84ACFD23B07"><File Id="F171" Source="$(var.SourceDir)\_internal\app\tmp\ala-gaseosa-vidrio.png" KeyPath="yes" /></Component>
+<Component Id="C172" Guid="6A242868-BAB3-4A16-B9E1-C552DFF3BE28"><File Id="F172" Source="$(var.SourceDir)\_internal\app\tmp\ala-pieza-frito.png" KeyPath="yes" /></Component>
+<Component Id="C173" Guid="0CEB833D-AB2E-4ADF-ADA1-80791FC07630"><File Id="F173" Source="$(var.SourceDir)\_internal\app\tmp\a-la-plancha.png" KeyPath="yes" /></Component>
+<Component Id="C174" Guid="3A90755A-BC8D-4DCC-A16F-B9324E444551"><File Id="F174" Source="$(var.SourceDir)\_internal\app\tmp\almuerzos.png" KeyPath="yes" /></Component>
+<Component Id="C175" Guid="91D130E7-E90D-4CB1-BB91-A9616D820BA4"><File Id="F175" Source="$(var.SourceDir)\_internal\app\tmp\almuerzos-y-desayunos.png" KeyPath="yes" /></Component>
+<Component Id="C176" Guid="ABC5D20A-1D4A-4162-863C-D0A27EC1E70A"><File Id="F176" Source="$(var.SourceDir)\_internal\app\tmp\almuerzos-y-papas-fritas.png" KeyPath="yes" /></Component>
+<Component Id="C177" Guid="1DBA5B20-251E-4D62-A2FF-6AA6C6B2D66C"><File Id="F177" Source="$(var.SourceDir)\_internal\app\tmp\aloe-vera-desechable.png" KeyPath="yes" /></Component>
+<Component Id="C178" Guid="DA52770E-1CA3-4C2F-8B27-3667974317B1"><File Id="F178" Source="$(var.SourceDir)\_internal\app\tmp\amp-365-botella-600-ml.png" KeyPath="yes" /></Component>
+<Component Id="C179" Guid="8FCFB80B-376F-4978-9659-65B00428BB2C"><File Id="F179" Source="$(var.SourceDir)\_internal\app\tmp\antojitos.png" KeyPath="yes" /></Component>
+<Component Id="C180" Guid="56E6F4F7-616E-41C4-9949-7B9640AD19B8"><File Id="F180" Source="$(var.SourceDir)\_internal\app\tmp\bebidas.png" KeyPath="yes" /></Component>
+<Component Id="C181" Guid="35270AE7-C6C2-450C-A14C-2FEE496FDA6B"><File Id="F181" Source="$(var.SourceDir)\_internal\app\tmp\bebidas-calientes.png" KeyPath="yes" /></Component>
+<Component Id="C182" Guid="7C8E1F8B-A0C7-4440-BA59-32E7324A140A"><File Id="F182" Source="$(var.SourceDir)\_internal\app\tmp\bebidas-frias.png" KeyPath="yes" /></Component>
+<Component Id="C183" Guid="FA2F1FD9-0D2F-498D-B513-E89D1CC06796"><File Id="F183" Source="$(var.SourceDir)\_internal\app\tmp\bebidas-gaseosas.png" KeyPath="yes" /></Component>
+<Component Id="C184" Guid="2E800965-80E7-4004-9363-A8660B929B26"><File Id="F184" Source="$(var.SourceDir)\_internal\app\tmp\bebidas-varias.png" KeyPath="yes" /></Component>
+<Component Id="C185" Guid="62EF3BAF-AD07-4B9D-BC73-341F8B9C5CF3"><File Id="F185" Source="$(var.SourceDir)\_internal\app\tmp\burrito.png" KeyPath="yes" /></Component>
+<Component Id="C186" Guid="25ED2372-DA09-4070-B282-881A0AE30996"><File Id="F186" Source="$(var.SourceDir)\_internal\app\tmp\burrito-de-asada.png" KeyPath="yes" /></Component>
+<Component Id="C187" Guid="4589AE1C-4B95-4214-B987-20FB5D3A671D"><File Id="F187" Source="$(var.SourceDir)\_internal\app\tmp\burrito-de-azada-2.png" KeyPath="yes" /></Component>
+<Component Id="C188" Guid="3D1FEAC9-2B3D-41E3-9CD8-80F1B6281E3D"><File Id="F188" Source="$(var.SourceDir)\_internal\app\tmp\cafe.png" KeyPath="yes" /></Component>
+<Component Id="C189" Guid="EEE90323-DCCE-4EEA-A994-BF7867CF429F"><File Id="F189" Source="$(var.SourceDir)\_internal\app\tmp\cafe-americano.png" KeyPath="yes" /></Component>
+<Component Id="C190" Guid="38B75F75-CCA6-4778-AADA-E29F776B8074"><File Id="F190" Source="$(var.SourceDir)\_internal\app\tmp\cafe-con-leche.png" KeyPath="yes" /></Component>
+<Component Id="C191" Guid="BB3D696C-1D96-489E-9C03-08AB3EE33002"><File Id="F191" Source="$(var.SourceDir)\_internal\app\tmp\cafe-con-leche-grande.png" KeyPath="yes" /></Component>
+<Component Id="C192" Guid="B6E1477B-3B5E-475E-9ADD-F03FBA2F6551"><File Id="F192" Source="$(var.SourceDir)\_internal\app\tmp\cafe-con-leche-pequeno.png" KeyPath="yes" /></Component>
+<Component Id="C193" Guid="26016354-6D4B-4EFA-AAAC-6A710E0E1B83"><File Id="F193" Source="$(var.SourceDir)\_internal\app\tmp\cafe-expreso.png" KeyPath="yes" /></Component>
+<Component Id="C194" Guid="12D6F73B-E677-4EE0-9AA1-9EC5F668CC1D"><File Id="F194" Source="$(var.SourceDir)\_internal\app\tmp\cafe-grande.png" KeyPath="yes" /></Component>
+<Component Id="C195" Guid="8B490F57-BD97-41A9-92CC-879CCCB041D9"><File Id="F195" Source="$(var.SourceDir)\_internal\app\tmp\cafe-pequeno.png" KeyPath="yes" /></Component>
+<Component Id="C196" Guid="F74552FD-2A45-475D-86A0-B26832C6BAF8"><File Id="F196" Source="$(var.SourceDir)\_internal\app\tmp\cafe-simple.png" KeyPath="yes" /></Component>
+<Component Id="C197" Guid="CFB41913-9B39-4384-802F-4278AF6CE93C"><File Id="F197" Source="$(var.SourceDir)\_internal\app\tmp\california.png" KeyPath="yes" /></Component>
+<Component Id="C198" Guid="A20290D9-EB2F-43B5-AA14-3B9DD84E58DA"><File Id="F198" Source="$(var.SourceDir)\_internal\app\tmp\cappuccino.png" KeyPath="yes" /></Component>
+<Component Id="C199" Guid="BB286D29-BBCE-4A0E-BCCE-1D9ABBC8BCCA"><File Id="F199" Source="$(var.SourceDir)\_internal\app\tmp\cappuccino-saborizado.png" KeyPath="yes" /></Component>
+<Component Id="C200" Guid="8925C944-26CB-4A1E-8492-20BAF67D936A"><File Id="F200" Source="$(var.SourceDir)\_internal\app\tmp\capuccino.png" KeyPath="yes" /></Component>
+<Component Id="C201" Guid="34BFFDCE-21F0-4796-9DFD-DBCB877B42E4"><File Id="F201" Source="$(var.SourceDir)\_internal\app\tmp\capuchino.png" KeyPath="yes" /></Component>
+<Component Id="C202" Guid="B003301D-DA87-4992-87A0-22C01028292D"><File Id="F202" Source="$(var.SourceDir)\_internal\app\tmp\capuchino-grande.png" KeyPath="yes" /></Component>
+<Component Id="C203" Guid="94E4C154-FF2A-4978-A58A-54DF572608A7"><File Id="F203" Source="$(var.SourceDir)\_internal\app\tmp\capuchino-pequeno.png" KeyPath="yes" /></Component>
+<Component Id="C204" Guid="C989DD16-2F6E-4533-ADF3-9B86584AD6FD"><File Id="F204" Source="$(var.SourceDir)\_internal\app\tmp\cazuela-de-la-abuelita.png" KeyPath="yes" /></Component>
+<Component Id="C205" Guid="AAD0B8CA-EF8E-43B4-B766-6C8AB72B5C6E"><File Id="F205" Source="$(var.SourceDir)\_internal\app\tmp\cazuela-don-meme.png" KeyPath="yes" /></Component>
+<Component Id="C206" Guid="929F25A3-4F1D-48C2-B838-A1D709EFE6CC"><File Id="F206" Source="$(var.SourceDir)\_internal\app\tmp\chocolate.png" KeyPath="yes" /></Component>
+<Component Id="C207" Guid="2560910A-A5AD-451C-B4D4-654162894D5C"><File Id="F207" Source="$(var.SourceDir)\_internal\app\tmp\chocolate-con-leche.png" KeyPath="yes" /></Component>
+<Component Id="C208" Guid="2DED5E06-6AEF-4158-BAE3-3BAE83285D22"><File Id="F208" Source="$(var.SourceDir)\_internal\app\tmp\chocolate-con-leche-grande.png" KeyPath="yes" /></Component>
+<Component Id="C209" Guid="39260EE3-F360-478D-A213-DAFAF818EE19"><File Id="F209" Source="$(var.SourceDir)\_internal\app\tmp\chocolate-con-leche-pequeno.png" KeyPath="yes" /></Component>
+<Component Id="C210" Guid="9470BF7B-640D-4A5D-9339-03DC1C3A6FEF"><File Id="F210" Source="$(var.SourceDir)\_internal\app\tmp\chocolate-frio.png" KeyPath="yes" /></Component>
+<Component Id="C211" Guid="90762180-5769-4C66-B421-C4402FF724C2"><File Id="F211" Source="$(var.SourceDir)\_internal\app\tmp\chocolate-puro-grande.png" KeyPath="yes" /></Component>
+<Component Id="C212" Guid="C909DCEE-EC69-438E-993C-0F6826C4CD77"><File Id="F212" Source="$(var.SourceDir)\_internal\app\tmp\chocolate-puro-pequeno.png" KeyPath="yes" /></Component>
+<Component Id="C213" Guid="02B27A60-0B35-45C8-A56F-2883E9378CB5"><File Id="F213" Source="$(var.SourceDir)\_internal\app\tmp\chuchitos.png" KeyPath="yes" /></Component>
+<Component Id="C214" Guid="89D42CF4-D8EA-44FC-8737-CD099623A819"><File Id="F214" Source="$(var.SourceDir)\_internal\app\tmp\churrasco.png" KeyPath="yes" /></Component>
+<Component Id="C215" Guid="62A749C2-5490-4E78-84D6-30D391739E84"><File Id="F215" Source="$(var.SourceDir)\_internal\app\tmp\coca-cola-1-5-litros.png" KeyPath="yes" /></Component>
+<Component Id="C216" Guid="7594B1F4-0571-43ED-88E7-779A0B54C005"><File Id="F216" Source="$(var.SourceDir)\_internal\app\tmp\coca-cola-2-5-litro.png" KeyPath="yes" /></Component>
+<Component Id="C217" Guid="274C11F3-5C82-4351-8F5F-39097838F8F0"><File Id="F217" Source="$(var.SourceDir)\_internal\app\tmp\coca-cola-2-5-litros.png" KeyPath="yes" /></Component>
+<Component Id="C218" Guid="234EA80A-D33A-4AE7-A055-4F00099A271B"><File Id="F218" Source="$(var.SourceDir)\_internal\app\tmp\coca-cola-2-litros.png" KeyPath="yes" /></Component>
+<Component Id="C219" Guid="A23689C3-A504-4C44-BBEA-6002E2CCD13A"><File Id="F219" Source="$(var.SourceDir)\_internal\app\tmp\coca-cola-botella.png" KeyPath="yes" /></Component>
+<Component Id="C220" Guid="F1C74E89-FC9E-400C-9BA3-4C01F468ABCD"><File Id="F220" Source="$(var.SourceDir)\_internal\app\tmp\coca-cola-desechable.png" KeyPath="yes" /></Component>
+<Component Id="C221" Guid="F659405C-376E-4DDF-9032-52FB1525C6B2"><File Id="F221" Source="$(var.SourceDir)\_internal\app\tmp\coca-cola-lata.png" KeyPath="yes" /></Component>
+<Component Id="C222" Guid="A9DF5078-AE74-45FB-963D-FE108457A981"><File Id="F222" Source="$(var.SourceDir)\_internal\app\tmp\coca-cola-mini.png" KeyPath="yes" /></Component>
+<Component Id="C223" Guid="A0FE9EBD-E3E1-49C7-A03C-C2EDA8F04765"><File Id="F223" Source="$(var.SourceDir)\_internal\app\tmp\coca-desechable-600ml.png" KeyPath="yes" /></Component>
+<Component Id="C224" Guid="2F669A8E-537F-47B0-91EC-CE236C5F83C4"><File Id="F224" Source="$(var.SourceDir)\_internal\app\tmp\coctel-de-frutas.png" KeyPath="yes" /></Component>
+<Component Id="C225" Guid="0A3ACA28-C00E-4E65-8970-8421D9E1E046"><File Id="F225" Source="$(var.SourceDir)\_internal\app\tmp\comb-libra-molleja-frita.png" KeyPath="yes" /></Component>
+<Component Id="C226" Guid="417424A9-D0C2-44A0-BB97-65A7B8D3DFD3"><File Id="F226" Source="$(var.SourceDir)\_internal\app\tmp\combo-12-piezas.png" KeyPath="yes" /></Component>
+<Component Id="C227" Guid="27E1C0B7-67B9-4977-9AD8-871920358E9B"><File Id="F227" Source="$(var.SourceDir)\_internal\app\tmp\combo-5-piezas.png" KeyPath="yes" /></Component>
+<Component Id="C228" Guid="06BE71E1-44D9-420E-B900-9D6B1A5D9B69"><File Id="F228" Source="$(var.SourceDir)\_internal\app\tmp\combo-8-piezas.png" KeyPath="yes" /></Component>
+<Component Id="C229" Guid="C03CCB1A-82B7-46EB-8DCF-FE56E8FD9412"><File Id="F229" Source="$(var.SourceDir)\_internal\app\tmp\combo-ala.png" KeyPath="yes" /></Component>
+<Component Id="C230" Guid="3B6968F8-4FE3-43D3-BA74-063A5E0B1C31"><File Id="F230" Source="$(var.SourceDir)\_internal\app\tmp\combo-ala-con-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C231" Guid="81E7567D-940E-42A6-8176-9712AD28F2DA"><File Id="F231" Source="$(var.SourceDir)\_internal\app\tmp\combo-ala-cuadril.png" KeyPath="yes" /></Component>
+<Component Id="C232" Guid="3274B5F1-FEEE-41E1-8C9C-DB90DBFFF929"><File Id="F232" Source="$(var.SourceDir)\_internal\app\tmp\combo-ala-cuadril-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C233" Guid="CFD84D55-8C9A-4D91-8787-F719981EF158"><File Id="F233" Source="$(var.SourceDir)\_internal\app\tmp\combo-ala-gaseosa-lata.png" KeyPath="yes" /></Component>
+<Component Id="C234" Guid="5072CEB2-43D5-4BA2-89AC-454642D18181"><File Id="F234" Source="$(var.SourceDir)\_internal\app\tmp\combo-alitas.png" KeyPath="yes" /></Component>
+<Component Id="C235" Guid="3A64605A-11F8-4EDD-8FD1-5D808634B5A5"><File Id="F235" Source="$(var.SourceDir)\_internal\app\tmp\combo-burrito.png" KeyPath="yes" /></Component>
+<Component Id="C236" Guid="8CCBB7EC-4978-4A84-A836-39CF96E79E68"><File Id="F236" Source="$(var.SourceDir)\_internal\app\tmp\combo-burrito-de-asada.png" KeyPath="yes" /></Component>
+<Component Id="C237" Guid="0495276C-E770-439B-9A1B-49F5ED6386F1"><File Id="F237" Source="$(var.SourceDir)\_internal\app\tmp\combo-cuadril.png" KeyPath="yes" /></Component>
+<Component Id="C238" Guid="5ED68E6F-DD29-44F6-A9CA-7120F4EF3EDC"><File Id="F238" Source="$(var.SourceDir)\_internal\app\tmp\combo-cuadril-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C239" Guid="5107EE8A-3113-41C6-BCC2-353C33DBB555"><File Id="F239" Source="$(var.SourceDir)\_internal\app\tmp\combo-cuadril-gaseosa-lata.png" KeyPath="yes" /></Component>
+<Component Id="C240" Guid="D5CF16AD-0E43-4BC5-A38C-33B317BF875D"><File Id="F240" Source="$(var.SourceDir)\_internal\app\tmp\combo-de-alitas.png" KeyPath="yes" /></Component>
+<Component Id="C241" Guid="F4B64820-74D3-455D-9399-92A5BCBCE997"><File Id="F241" Source="$(var.SourceDir)\_internal\app\tmp\combo-de-hamburguesas.png" KeyPath="yes" /></Component>
+<Component Id="C242" Guid="C2B6DD0A-F8A4-497E-9CB0-F9F4F02BF478"><File Id="F242" Source="$(var.SourceDir)\_internal\app\tmp\combo-de-mollejas-frita.png" KeyPath="yes" /></Component>
+<Component Id="C243" Guid="5E1F8EB9-7018-48C0-8745-998E311E61D4"><File Id="F243" Source="$(var.SourceDir)\_internal\app\tmp\combo-de-piezas.png" KeyPath="yes" /></Component>
+<Component Id="C244" Guid="C5DAD4CE-7062-48F2-8469-0523C819FAFC"><File Id="F244" Source="$(var.SourceDir)\_internal\app\tmp\combo-gringa.png" KeyPath="yes" /></Component>
+<Component Id="C245" Guid="DCDC8FDF-9EFA-49A4-B960-D36BFBB88F25"><File Id="F245" Source="$(var.SourceDir)\_internal\app\tmp\combo-gringa-asada.png" KeyPath="yes" /></Component>
+<Component Id="C246" Guid="954D6FDA-C7BF-44B2-9111-7627D07A6AE5"><File Id="F246" Source="$(var.SourceDir)\_internal\app\tmp\combo-gringas.png" KeyPath="yes" /></Component>
+<Component Id="C247" Guid="425417FF-B42D-49AF-8DBF-00B435FAAEE6"><File Id="F247" Source="$(var.SourceDir)\_internal\app\tmp\combo-hamburguesa-de-milanesa.png" KeyPath="yes" /></Component>
+<Component Id="C248" Guid="279ADA02-BA11-42BA-865B-380854CD7952"><File Id="F248" Source="$(var.SourceDir)\_internal\app\tmp\combo-hamburguesa-de-torta-de-carne.png" KeyPath="yes" /></Component>
+<Component Id="C249" Guid="8DBE463F-C397-4249-97D9-03E9AC08E1F4"><File Id="F249" Source="$(var.SourceDir)\_internal\app\tmp\combo-hamburguesa-torta-de-carne.png" KeyPath="yes" /></Component>
+<Component Id="C250" Guid="C007062B-B0FB-479D-AB1B-ED38BBEA2B67"><File Id="F250" Source="$(var.SourceDir)\_internal\app\tmp\combo-pechuga.png" KeyPath="yes" /></Component>
+<Component Id="C251" Guid="35DE4037-A046-449A-94B8-B6F8066E0102"><File Id="F251" Source="$(var.SourceDir)\_internal\app\tmp\combo-pierna.png" KeyPath="yes" /></Component>
+<Component Id="C252" Guid="DADF7E35-ED11-4A86-A50C-6442D61347E1"><File Id="F252" Source="$(var.SourceDir)\_internal\app\tmp\combo-pierna-ala.png" KeyPath="yes" /></Component>
+<Component Id="C253" Guid="9652B47C-7FF9-4E72-B9FD-45F801548651"><File Id="F253" Source="$(var.SourceDir)\_internal\app\tmp\combo-pierna-cuadril.png" KeyPath="yes" /></Component>
+<Component Id="C254" Guid="4B3B5C99-73D9-44FB-B395-B54AB603DAEC"><File Id="F254" Source="$(var.SourceDir)\_internal\app\tmp\combo-pierna-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C255" Guid="32C6A352-C4A2-42B5-8252-274BEEC1BF24"><File Id="F255" Source="$(var.SourceDir)\_internal\app\tmp\combo-quesadillas.png" KeyPath="yes" /></Component>
+<Component Id="C256" Guid="20555A17-C4B2-4AED-A59E-2F9C2D698CDE"><File Id="F256" Source="$(var.SourceDir)\_internal\app\tmp\combos.png" KeyPath="yes" /></Component>
+<Component Id="C257" Guid="BF945F2B-A41C-4A5D-99AA-E087C085E568"><File Id="F257" Source="$(var.SourceDir)\_internal\app\tmp\combos-personales.png" KeyPath="yes" /></Component>
+<Component Id="C258" Guid="8C22058F-4491-4169-8BD1-3471F67E2F97"><File Id="F258" Source="$(var.SourceDir)\_internal\app\tmp\comb-por-mollejas-frita.png" KeyPath="yes" /></Component>
+<Component Id="C259" Guid="2C607B25-3A78-46DE-9809-A548BDF207F6"><File Id="F259" Source="$(var.SourceDir)\_internal\app\tmp\cuadril.png" KeyPath="yes" /></Component>
+<Component Id="C260" Guid="046F2EC2-B8A1-40B5-82C9-1641CB88F955"><File Id="F260" Source="$(var.SourceDir)\_internal\app\tmp\cuadril-combo.png" KeyPath="yes" /></Component>
+<Component Id="C261" Guid="159F4C21-77CD-4611-B5C3-CDB07A648EE3"><File Id="F261" Source="$(var.SourceDir)\_internal\app\tmp\cuadril-combo-gaseosa-vidrio.png" KeyPath="yes" /></Component>
+<Component Id="C262" Guid="69560026-64F2-48C9-8875-EC5237243D4A"><File Id="F262" Source="$(var.SourceDir)\_internal\app\tmp\cuadril-ensalada-combo.png" KeyPath="yes" /></Component>
+<Component Id="C263" Guid="BBFD9511-1246-4BEA-ACE6-1E80AB8104BA"><File Id="F263" Source="$(var.SourceDir)\_internal\app\tmp\cuadril-gaseosa-lata.png" KeyPath="yes" /></Component>
+<Component Id="C264" Guid="AC421EA8-0955-4A50-A036-1FD8A246D147"><File Id="F264" Source="$(var.SourceDir)\_internal\app\tmp\cuadril-pieza-frito.png" KeyPath="yes" /></Component>
+<Component Id="C265" Guid="31C7E118-9C97-42AC-AE8C-04604BC9D589"><File Id="F265" Source="$(var.SourceDir)\_internal\app\tmp\cudril-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C266" Guid="3ED8507C-EEBE-4FC1-829B-94C2EBC38DC3"><File Id="F266" Source="$(var.SourceDir)\_internal\app\tmp\desayunos.png" KeyPath="yes" /></Component>
+<Component Id="C267" Guid="5C0F1D5C-595D-4DA7-ABDC-1EC975A20D10"><File Id="F267" Source="$(var.SourceDir)\_internal\app\tmp\desayunos-y-cenas.png" KeyPath="yes" /></Component>
+<Component Id="C268" Guid="0CDE8596-9F8A-4490-98E9-2FBD4CFC09A7"><File Id="F268" Source="$(var.SourceDir)\_internal\app\tmp\dulceria.png" KeyPath="yes" /></Component>
+<Component Id="C269" Guid="4388AA72-B92E-4B12-9E7D-16B1330BBB43"><File Id="F269" Source="$(var.SourceDir)\_internal\app\tmp\enchiladas-de-curtido.png" KeyPath="yes" /></Component>
+<Component Id="C270" Guid="D0407C38-234C-41F3-9B3A-21872A8175A8"><File Id="F270" Source="$(var.SourceDir)\_internal\app\tmp\enchiladas-de-frijol.png" KeyPath="yes" /></Component>
+<Component Id="C271" Guid="82AEBD5E-58C1-4BA7-BAC9-CC7D5886BBB0"><File Id="F271" Source="$(var.SourceDir)\_internal\app\tmp\enchiladas-de-pollo.png" KeyPath="yes" /></Component>
+<Component Id="C272" Guid="04DAB0D7-E808-466C-8145-C7DAD4DB335C"><File Id="F272" Source="$(var.SourceDir)\_internal\app\tmp\enchiladas-de-res.png" KeyPath="yes" /></Component>
+<Component Id="C273" Guid="9B54BDC5-1ADB-4A48-AAF7-1926ACF3632F"><File Id="F273" Source="$(var.SourceDir)\_internal\app\tmp\ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C274" Guid="B088225D-F3C5-447F-8DBA-16BC735E099A"><File Id="F274" Source="$(var.SourceDir)\_internal\app\tmp\entero-gaseosa-2-litros.png" KeyPath="yes" /></Component>
+<Component Id="C275" Guid="A77783E0-84F9-4E7F-B91B-0E16AE0A214D"><File Id="F275" Source="$(var.SourceDir)\_internal\app\tmp\extra.png" KeyPath="yes" /></Component>
+<Component Id="C276" Guid="19876BA3-1C94-4EE0-9EF8-7729D31A12AA"><File Id="F276" Source="$(var.SourceDir)\_internal\app\tmp\frappuccino.png" KeyPath="yes" /></Component>
+<Component Id="C277" Guid="4E944292-6B83-4F47-B6B7-82DF58325324"><File Id="F277" Source="$(var.SourceDir)\_internal\app\tmp\frituras.png" KeyPath="yes" /></Component>
+<Component Id="C278" Guid="5DCC23B1-E8BA-4BD4-97E3-9E609A5ED710"><File Id="F278" Source="$(var.SourceDir)\_internal\app\tmp\fruta-fresca.png" KeyPath="yes" /></Component>
+<Component Id="C279" Guid="535ADD95-6140-490E-BADF-C73CA63CA967"><File Id="F279" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-2-litros.png" KeyPath="yes" /></Component>
+<Component Id="C280" Guid="3A586D2D-855A-47C9-83A8-70CECD64B761"><File Id="F280" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-3-litros.png" KeyPath="yes" /></Component>
+<Component Id="C281" Guid="A9F55254-6D09-49BC-A136-3A127EC5A74E"><File Id="F281" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-botella-vidrio.png" KeyPath="yes" /></Component>
+<Component Id="C282" Guid="B800E9D1-5242-485A-931D-1AFF86413B9F"><File Id="F282" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-botella-vidro.png" KeyPath="yes" /></Component>
+<Component Id="C283" Guid="94BE325B-7C65-4325-AC98-72DFF7D9B2C5"><File Id="F283" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-coca-cola-botella.png" KeyPath="yes" /></Component>
+<Component Id="C284" Guid="9BABA8CC-668C-4160-87A6-0ACE03772D5C"><File Id="F284" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-de-1-5-litros.png" KeyPath="yes" /></Component>
+<Component Id="C285" Guid="6130081F-537F-4B26-9CFE-FA7A6AD0F21C"><File Id="F285" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-de-2-5-litro.png" KeyPath="yes" /></Component>
+<Component Id="C286" Guid="2E2DB8F5-A636-4CD2-A0BB-A42A37210FF8"><File Id="F286" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-de-2-litros.png" KeyPath="yes" /></Component>
+<Component Id="C287" Guid="BE686D1F-4690-4E5B-99DB-8A78B2FB5AFD"><File Id="F287" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-desechable-600ml.png" KeyPath="yes" /></Component>
+<Component Id="C288" Guid="0A6CD955-BC3B-4E19-AD0C-47BF7037C0C8"><File Id="F288" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-fanta-botella.png" KeyPath="yes" /></Component>
+<Component Id="C289" Guid="28E03F45-3679-4BE2-8926-BB0869ED551D"><File Id="F289" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-lata.png" KeyPath="yes" /></Component>
+<Component Id="C290" Guid="CB223377-6303-4A13-936B-3AFBF1BE3229"><File Id="F290" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-orange-botella.png" KeyPath="yes" /></Component>
+<Component Id="C291" Guid="4A524F69-21E6-41DC-A6E8-C25F77A2F60E"><File Id="F291" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-pepsi-lata.png" KeyPath="yes" /></Component>
+<Component Id="C292" Guid="AD555623-2FF1-4645-87A3-018D750F7554"><File Id="F292" Source="$(var.SourceDir)\_internal\app\tmp\gaseosas.png" KeyPath="yes" /></Component>
+<Component Id="C293" Guid="227EDFE6-29A3-44A5-B053-8A9877B30AA6"><File Id="F293" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-sprint-botella.png" KeyPath="yes" /></Component>
+<Component Id="C294" Guid="E41FE253-A28B-4EFB-BEB7-AB0A54FB3AFD"><File Id="F294" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-tiky-botella.png" KeyPath="yes" /></Component>
+<Component Id="C295" Guid="477A21AB-F398-4DFF-8660-7AA9556F453B"><File Id="F295" Source="$(var.SourceDir)\_internal\app\tmp\gaseosa-tiky-lata.png" KeyPath="yes" /></Component>
+<Component Id="C296" Guid="38E06087-C479-4F0B-820B-156D9A1E0D5C"><File Id="F296" Source="$(var.SourceDir)\_internal\app\tmp\gatorade-grande.png" KeyPath="yes" /></Component>
+<Component Id="C297" Guid="A0E4CAD2-99A4-4408-8E1C-1F5A78BF6766"><File Id="F297" Source="$(var.SourceDir)\_internal\app\tmp\gatorade-mediano.png" KeyPath="yes" /></Component>
+<Component Id="C298" Guid="CACD7DBE-5D73-45E5-BDCB-1CA5349CDB8D"><File Id="F298" Source="$(var.SourceDir)\_internal\app\tmp\gatorade-pequeno.png" KeyPath="yes" /></Component>
+<Component Id="C299" Guid="11D05526-8B16-4837-BECA-1A9759EE2CE6"><File Id="F299" Source="$(var.SourceDir)\_internal\app\tmp\GRANIZADA.jpg" KeyPath="yes" /></Component>
+<Component Id="C300" Guid="6D58EFB3-25F5-4CA4-BC81-998770A5C425"><File Id="F300" Source="$(var.SourceDir)\_internal\app\tmp\gringas.png" KeyPath="yes" /></Component>
+<Component Id="C301" Guid="D8F9C621-FFAE-420B-984B-EFB2BA5770A9"><File Id="F301" Source="$(var.SourceDir)\_internal\app\tmp\hamburgesas.png" KeyPath="yes" /></Component>
+<Component Id="C302" Guid="70925693-9C78-4CD8-95C0-B083D6AD629E"><File Id="F302" Source="$(var.SourceDir)\_internal\app\tmp\hamburgesas-y-tortas.png" KeyPath="yes" /></Component>
+<Component Id="C303" Guid="E73D3153-86A1-4DC7-9AFE-CBC5716796DE"><File Id="F303" Source="$(var.SourceDir)\_internal\app\tmp\hamburguesa-de-milanesa.png" KeyPath="yes" /></Component>
+<Component Id="C304" Guid="363A510E-59BB-430E-A806-B1A9392DE0BC"><File Id="F304" Source="$(var.SourceDir)\_internal\app\tmp\hamburguesa-de-pollo.png" KeyPath="yes" /></Component>
+<Component Id="C305" Guid="6CB86D81-C248-454C-BACE-5C1959143271"><File Id="F305" Source="$(var.SourceDir)\_internal\app\tmp\hamburguesa-de-torta-de-carne.png" KeyPath="yes" /></Component>
+<Component Id="C306" Guid="6BF86960-7A1C-473F-9B20-E4A34523E21D"><File Id="F306" Source="$(var.SourceDir)\_internal\app\tmp\hamburguesas.png" KeyPath="yes" /></Component>
+<Component Id="C307" Guid="93E19397-5E5E-452A-BFC6-97D99078D60A"><File Id="F307" Source="$(var.SourceDir)\_internal\app\tmp\hamburguesas-de-milanesa.png" KeyPath="yes" /></Component>
+<Component Id="C308" Guid="996DD802-15BE-44AB-B796-A53D8A77DDB9"><File Id="F308" Source="$(var.SourceDir)\_internal\app\tmp\hamburguesas-de-milanesa-3-25.png" KeyPath="yes" /></Component>
+<Component Id="C309" Guid="D0E7F330-B4DC-4153-B613-219BA404FC90"><File Id="F309" Source="$(var.SourceDir)\_internal\app\tmp\hamburguesas-de-milanesa-3-30.png" KeyPath="yes" /></Component>
+<Component Id="C310" Guid="794B04BF-D41F-461B-9BAE-D190B5B2FD3F"><File Id="F310" Source="$(var.SourceDir)\_internal\app\tmp\hamburguesas-de-torta-de-carne.png" KeyPath="yes" /></Component>
+<Component Id="C311" Guid="6847E574-BE6C-4723-AC8A-E8CBE0F742D2"><File Id="F311" Source="$(var.SourceDir)\_internal\app\tmp\hamburguesas-de-torta-de-carne-2-25.png" KeyPath="yes" /></Component>
+<Component Id="C312" Guid="695DFC07-DD27-4D6D-B7B2-613E3E822AF1"><File Id="F312" Source="$(var.SourceDir)\_internal\app\tmp\hamburguesa-torta-de-carne-2-30.png" KeyPath="yes" /></Component>
+<Component Id="C313" Guid="88831CB9-5073-47A0-A88A-FB4D32A76253"><File Id="F313" Source="$(var.SourceDir)\_internal\app\tmp\huevos-con-chorizo.png" KeyPath="yes" /></Component>
+<Component Id="C314" Guid="368AC8CE-EA1A-43AB-8267-F2977C1054D4"><File Id="F314" Source="$(var.SourceDir)\_internal\app\tmp\huevos-con-tocino.png" KeyPath="yes" /></Component>
+<Component Id="C315" Guid="DDD72C15-70ED-4606-B36B-04397229DA74"><File Id="F315" Source="$(var.SourceDir)\_internal\app\tmp\huevos-divorciados.png" KeyPath="yes" /></Component>
+<Component Id="C316" Guid="BD5BDAC5-B43A-4B34-BAF0-DA54B3D52505"><File Id="F316" Source="$(var.SourceDir)\_internal\app\tmp\huevos-revueltos-con-jamon.png" KeyPath="yes" /></Component>
+<Component Id="C317" Guid="B5D6B2C6-2757-4967-849A-689BE6C7EFD3"><File Id="F317" Source="$(var.SourceDir)\_internal\app\tmp\jugo-del-valle-naranja.png" KeyPath="yes" /></Component>
+<Component Id="C318" Guid="7E8AD80B-C88A-4BEB-B4CF-CC75D563B302"><File Id="F318" Source="$(var.SourceDir)\_internal\app\tmp\jugo-de-naranja.png" KeyPath="yes" /></Component>
+<Component Id="C319" Guid="2D954DF3-21D2-4BF8-BDFB-0D28F237CDD1"><File Id="F319" Source="$(var.SourceDir)\_internal\app\tmp\jugos-del-frutal.png" KeyPath="yes" /></Component>
+<Component Id="C320" Guid="65929D1A-921B-4F12-B937-F6EFC51307F5"><File Id="F320" Source="$(var.SourceDir)\_internal\app\tmp\leche-grande.png" KeyPath="yes" /></Component>
+<Component Id="C321" Guid="0AF0472D-4C56-41EA-BAFF-CAE7B5C00F06"><File Id="F321" Source="$(var.SourceDir)\_internal\app\tmp\leche-pequena.png" KeyPath="yes" /></Component>
+<Component Id="C322" Guid="27771479-68CC-473C-AEA5-FC30BDB8B01F"><File Id="F322" Source="$(var.SourceDir)\_internal\app\tmp\libra-de-mollejas.png" KeyPath="yes" /></Component>
+<Component Id="C323" Guid="26069C0D-CDA9-4375-83FD-27A194ADC918"><File Id="F323" Source="$(var.SourceDir)\_internal\app\tmp\libra-de-mollejas-frita.png" KeyPath="yes" /></Component>
+<Component Id="C324" Guid="D41F5CE4-4C28-45C3-A94A-F0CCA3305CE8"><File Id="F324" Source="$(var.SourceDir)\_internal\app\tmp\libra-molleja-frita.png" KeyPath="yes" /></Component>
+<Component Id="C325" Guid="38341837-8A9B-491A-9948-A88EC551079D"><File Id="F325" Source="$(var.SourceDir)\_internal\app\tmp\licuado-de-banano.png" KeyPath="yes" /></Component>
+<Component Id="C326" Guid="7947D035-C510-4728-BFAD-B068D3C6FD3B"><File Id="F326" Source="$(var.SourceDir)\_internal\app\tmp\licuado-de-chocomilk.png" KeyPath="yes" /></Component>
+<Component Id="C327" Guid="320EB167-2749-4813-985C-BD1FDB636D07"><File Id="F327" Source="$(var.SourceDir)\_internal\app\tmp\licuado-de-fresa.png" KeyPath="yes" /></Component>
+<Component Id="C328" Guid="3795BC23-7FC9-456A-8154-8ADF17D3BC49"><File Id="F328" Source="$(var.SourceDir)\_internal\app\tmp\licuado-de-frutas-con-agua.png" KeyPath="yes" /></Component>
+<Component Id="C329" Guid="1BFDED13-B63F-4DC4-A107-7B2BBDA32872"><File Id="F329" Source="$(var.SourceDir)\_internal\app\tmp\licuado-de-frutas-con-leche.png" KeyPath="yes" /></Component>
+<Component Id="C330" Guid="8202C42A-DA48-46A5-9EFB-103CB9A52072"><File Id="F330" Source="$(var.SourceDir)\_internal\app\tmp\licuado-de-mania.png" KeyPath="yes" /></Component>
+<Component Id="C331" Guid="CC73697C-C231-4C49-8617-68434C8C7B79"><File Id="F331" Source="$(var.SourceDir)\_internal\app\tmp\licuado-de-melon.png" KeyPath="yes" /></Component>
+<Component Id="C332" Guid="970AC697-4185-4F85-814F-11F1908EE73D"><File Id="F332" Source="$(var.SourceDir)\_internal\app\tmp\licuado-de-papaya.png" KeyPath="yes" /></Component>
+<Component Id="C333" Guid="F2B70B83-AF7B-4499-9B1D-9D3C0B7691E4"><File Id="F333" Source="$(var.SourceDir)\_internal\app\tmp\licuado-de-papaya-con-agua.png" KeyPath="yes" /></Component>
+<Component Id="C334" Guid="3D5183C8-823E-4B13-88FE-69C64CCFD102"><File Id="F334" Source="$(var.SourceDir)\_internal\app\tmp\licuado-mania.png" KeyPath="yes" /></Component>
+<Component Id="C335" Guid="961C1A79-67BE-4EA7-B194-37AD5AB9E4D5"><File Id="F335" Source="$(var.SourceDir)\_internal\app\tmp\licuado-mixto.png" KeyPath="yes" /></Component>
+<Component Id="C336" Guid="326BDA37-8764-49BA-AAC9-D3E5100E4B8B"><File Id="F336" Source="$(var.SourceDir)\_internal\app\tmp\licuados.png" KeyPath="yes" /></Component>
+<Component Id="C337" Guid="FBBF1EBC-A498-4E34-8C16-94CF18880D94"><File Id="F337" Source="$(var.SourceDir)\_internal\app\tmp\llevar.png" KeyPath="yes" /></Component>
+<Component Id="C338" Guid="5F62FD30-F6D9-40BB-B063-EA9052F70BC8"><File Id="F338" Source="$(var.SourceDir)\_internal\app\tmp\mollejas.png" KeyPath="yes" /></Component>
+<Component Id="C339" Guid="E2FC9490-E8BE-470E-A8FE-4944589B1098"><File Id="F339" Source="$(var.SourceDir)\_internal\app\tmp\nachos-con-carne-y-queso.png" KeyPath="yes" /></Component>
+<Component Id="C340" Guid="49BA5473-CC29-439A-806D-C1D0AC00B310"><File Id="F340" Source="$(var.SourceDir)\_internal\app\tmp\nachos-de-la-casa.png" KeyPath="yes" /></Component>
+<Component Id="C341" Guid="689E0D03-3A76-44A9-B849-703124986F57"><File Id="F341" Source="$(var.SourceDir)\_internal\app\tmp\naranjada-con-soda.png" KeyPath="yes" /></Component>
+<Component Id="C342" Guid="440D2243-DDC5-4896-AAE5-C58070089CE4"><File Id="F342" Source="$(var.SourceDir)\_internal\app\tmp\naranjada-simple.png" KeyPath="yes" /></Component>
+<Component Id="C343" Guid="999525C2-C678-4735-B6DF-0DB52D740BCD"><File Id="F343" Source="$(var.SourceDir)\_internal\app\tmp\pan.png" KeyPath="yes" /></Component>
+<Component Id="C344" Guid="045A02D4-D770-4E25-A88F-A6B157A0334F"><File Id="F344" Source="$(var.SourceDir)\_internal\app\tmp\panqueques.png" KeyPath="yes" /></Component>
+<Component Id="C345" Guid="398DE5A3-F853-4FC9-9CC8-DC3E5E627CE3"><File Id="F345" Source="$(var.SourceDir)\_internal\app\tmp\papas.png" KeyPath="yes" /></Component>
+<Component Id="C346" Guid="184EAB0E-0D41-42D1-8B0B-C8BEFB9A0D7E"><File Id="F346" Source="$(var.SourceDir)\_internal\app\tmp\papas-fritas.png" KeyPath="yes" /></Component>
+<Component Id="C347" Guid="A121D88C-B39F-43CE-93C8-CEBEFACF7C3F"><File Id="F347" Source="$(var.SourceDir)\_internal\app\tmp\papas-grandes.png" KeyPath="yes" /></Component>
+<Component Id="C348" Guid="74C1ABA1-2182-413C-ABE2-B0E4DB9E526D"><File Id="F348" Source="$(var.SourceDir)\_internal\app\tmp\papas-medianas.png" KeyPath="yes" /></Component>
+<Component Id="C349" Guid="7916704E-A769-4F19-852E-D6CE05583450"><File Id="F349" Source="$(var.SourceDir)\_internal\app\tmp\pechuga.png" KeyPath="yes" /></Component>
+<Component Id="C350" Guid="E2F1FA48-FB00-42FF-B3CC-A6256DF30BFE"><File Id="F350" Source="$(var.SourceDir)\_internal\app\tmp\pechuga-combo.png" KeyPath="yes" /></Component>
+<Component Id="C351" Guid="8E200304-E18D-4BA1-878F-00482DF4550B"><File Id="F351" Source="$(var.SourceDir)\_internal\app\tmp\pechuga-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C352" Guid="243980EE-ECC9-4976-83DA-4F71998516A6"><File Id="F352" Source="$(var.SourceDir)\_internal\app\tmp\pechuga-ensalada-combo.png" KeyPath="yes" /></Component>
+<Component Id="C353" Guid="97096DCE-A8FF-4F0B-850B-43C89F24F202"><File Id="F353" Source="$(var.SourceDir)\_internal\app\tmp\pechuga-pieza-frito.png" KeyPath="yes" /></Component>
+<Component Id="C354" Guid="14E5B629-47EE-44B9-BE77-A4EF809BF743"><File Id="F354" Source="$(var.SourceDir)\_internal\app\tmp\pepsi-2-litros.png" KeyPath="yes" /></Component>
+<Component Id="C355" Guid="B32B268A-3146-466F-B74A-E38D7D9A0988"><File Id="F355" Source="$(var.SourceDir)\_internal\app\tmp\pepsi-botella.png" KeyPath="yes" /></Component>
+<Component Id="C356" Guid="FA2BAF0B-7F41-4A58-9FD7-F0659239A3A7"><File Id="F356" Source="$(var.SourceDir)\_internal\app\tmp\pepsi-lata.png" KeyPath="yes" /></Component>
+<Component Id="C357" Guid="2A03C438-93BE-47C9-91E3-13D3044433B8"><File Id="F357" Source="$(var.SourceDir)\_internal\app\tmp\petit-caja.png" KeyPath="yes" /></Component>
+<Component Id="C358" Guid="A0316FEA-3338-4ACE-90DA-E23D9A156667"><File Id="F358" Source="$(var.SourceDir)\_internal\app\tmp\petit-lata.png" KeyPath="yes" /></Component>
+<Component Id="C359" Guid="068D7F71-EE93-4872-A09E-EB88FA21D65C"><File Id="F359" Source="$(var.SourceDir)\_internal\app\tmp\pierna.png" KeyPath="yes" /></Component>
+<Component Id="C360" Guid="801B6890-DD17-4F2E-83F6-872031948B97"><File Id="F360" Source="$(var.SourceDir)\_internal\app\tmp\pierna-combo.png" KeyPath="yes" /></Component>
+<Component Id="C361" Guid="14108EE7-BBE7-4AD6-9BC5-31640C0B1FA0"><File Id="F361" Source="$(var.SourceDir)\_internal\app\tmp\pierna-combo-gaseosa-vidrio.png" KeyPath="yes" /></Component>
+<Component Id="C362" Guid="D476E8CE-B404-48E4-9281-D440AB75CEF0"><File Id="F362" Source="$(var.SourceDir)\_internal\app\tmp\pierna-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C363" Guid="ADABA5D3-B40B-4CB7-AFFB-AFD2400860CB"><File Id="F363" Source="$(var.SourceDir)\_internal\app\tmp\pierna-ensalada-combo.png" KeyPath="yes" /></Component>
+<Component Id="C364" Guid="C51BE6E9-C91C-480D-BCB0-64B57FDE9527"><File Id="F364" Source="$(var.SourceDir)\_internal\app\tmp\pierna-gaseosa-lata.png" KeyPath="yes" /></Component>
+<Component Id="C365" Guid="B2DEF1F3-4ADB-411E-B98A-638D7A22C768"><File Id="F365" Source="$(var.SourceDir)\_internal\app\tmp\pierna-gaseosa-vidrio.png" KeyPath="yes" /></Component>
+<Component Id="C366" Guid="A1D65718-2144-46E2-BABA-97D567BC61DB"><File Id="F366" Source="$(var.SourceDir)\_internal\app\tmp\pierna-pieza-frito.png" KeyPath="yes" /></Component>
+<Component Id="C367" Guid="1940D833-8E67-4E1F-A08F-53047DC94042"><File Id="F367" Source="$(var.SourceDir)\_internal\app\tmp\PLATANITO.png" KeyPath="yes" /></Component>
+<Component Id="C368" Guid="A59B2B7F-F9CF-4B6E-8B69-A2EAE1CAB7E4"><File Id="F368" Source="$(var.SourceDir)\_internal\app\tmp\pollo-azado.png" KeyPath="yes" /></Component>
+<Component Id="C369" Guid="DA06C63B-651C-4DE8-AF6E-D25F921FC5A9"><File Id="F369" Source="$(var.SourceDir)\_internal\app\tmp\pollo-entero-asado.png" KeyPath="yes" /></Component>
+<Component Id="C370" Guid="E8164358-EA20-4034-9A98-9A839AC29DD2"><File Id="F370" Source="$(var.SourceDir)\_internal\app\tmp\pollo-entero-gaseosa-2-litros.png" KeyPath="yes" /></Component>
+<Component Id="C371" Guid="9D3A3528-5DB6-4FB4-AAFE-C151E86FF462"><File Id="F371" Source="$(var.SourceDir)\_internal\app\tmp\pollo-entero-gaseosa-2-litros-pepsi.png" KeyPath="yes" /></Component>
+<Component Id="C372" Guid="091102E0-A5A9-466D-BF4B-12EDBC87F8CE"><File Id="F372" Source="$(var.SourceDir)\_internal\app\tmp\pollo-frito-en-piezas.png" KeyPath="yes" /></Component>
+<Component Id="C373" Guid="305B4568-749A-4A4A-8440-58528747F462"><File Id="F373" Source="$(var.SourceDir)\_internal\app\tmp\porcion-de-mollejas.png" KeyPath="yes" /></Component>
+<Component Id="C374" Guid="05042E38-7A9A-4465-8CF8-A08F327A6CAE"><File Id="F374" Source="$(var.SourceDir)\_internal\app\tmp\porcion-de-mollejas-frita.png" KeyPath="yes" /></Component>
+<Component Id="C375" Guid="4230DFFE-980B-4A7A-8114-7792E8DBAED8"><File Id="F375" Source="$(var.SourceDir)\_internal\app\tmp\porcion-molleja-frita.png" KeyPath="yes" /></Component>
+<Component Id="C376" Guid="5E5693CB-6D9E-4224-82A5-D3446E7949E7"><File Id="F376" Source="$(var.SourceDir)\_internal\app\tmp\postres.png" KeyPath="yes" /></Component>
+<Component Id="C377" Guid="1FBBD366-5202-41B5-AB17-B4EB7938049C"><File Id="F377" Source="$(var.SourceDir)\_internal\app\tmp\power.png" KeyPath="yes" /></Component>
+<Component Id="C378" Guid="2A86458C-3A49-4DA3-AA03-E29289B3B3BB"><File Id="F378" Source="$(var.SourceDir)\_internal\app\tmp\prom-combo-12-piezas.png" KeyPath="yes" /></Component>
+<Component Id="C379" Guid="B981E1AD-3CA9-44EC-B664-D82B917F7D1F"><File Id="F379" Source="$(var.SourceDir)\_internal\app\tmp\prom-combo-5-piezas.png" KeyPath="yes" /></Component>
+<Component Id="C380" Guid="0C40E743-A1E9-4A0D-894D-9506241215EB"><File Id="F380" Source="$(var.SourceDir)\_internal\app\tmp\prom-combo-8-piezas.png" KeyPath="yes" /></Component>
+<Component Id="C381" Guid="08BC7BF7-CFA8-499A-B224-3D3915D29C49"><File Id="F381" Source="$(var.SourceDir)\_internal\app\tmp\prom-hamburguesas-y-familiares.png" KeyPath="yes" /></Component>
+<Component Id="C382" Guid="C7202085-171E-4A68-AAB2-3562C8B6CA6E"><File Id="F382" Source="$(var.SourceDir)\_internal\app\tmp\promocion-de-hamburguesas.png" KeyPath="yes" /></Component>
+<Component Id="C383" Guid="B1F56E58-6820-4EF9-8935-6CE34D9E5ED5"><File Id="F383" Source="$(var.SourceDir)\_internal\app\tmp\promocion-papas.png" KeyPath="yes" /></Component>
+<Component Id="C384" Guid="9FC44F78-2D9D-4AF5-AB28-37D40E7677F9"><File Id="F384" Source="$(var.SourceDir)\_internal\app\tmp\q10-00-gatorade-mediano.png" KeyPath="yes" /></Component>
+<Component Id="C385" Guid="C29A9D8C-C38E-47BB-BF5D-FA972A882477"><File Id="F385" Source="$(var.SourceDir)\_internal\app\tmp\q10-00-hamburguesas-de-milanesa.png" KeyPath="yes" /></Component>
+<Component Id="C386" Guid="E43CD37D-F863-4816-84C5-1DFE7A8A27C4"><File Id="F386" Source="$(var.SourceDir)\_internal\app\tmp\q11-00-adrenalina.png" KeyPath="yes" /></Component>
+<Component Id="C387" Guid="9AF8A530-242C-4972-9AEE-56D5D6465050"><File Id="F387" Source="$(var.SourceDir)\_internal\app\tmp\q11-00-aloe-vera-desechable.png" KeyPath="yes" /></Component>
+<Component Id="C388" Guid="DA9D8E2F-D222-413A-9370-0BDF39AC7414"><File Id="F388" Source="$(var.SourceDir)\_internal\app\tmp\q11-00-gatorade-grande.png" KeyPath="yes" /></Component>
+<Component Id="C389" Guid="110DB22D-42A3-44F4-9EE9-5077D34C6F32"><File Id="F389" Source="$(var.SourceDir)\_internal\app\tmp\q11-00-pepsi-2-litros.png" KeyPath="yes" /></Component>
+<Component Id="C390" Guid="E4388779-0031-432B-8B1E-3BECD6ADDA02"><File Id="F390" Source="$(var.SourceDir)\_internal\app\tmp\q12-00-gaseosa-de-1-5-litros.png" KeyPath="yes" /></Component>
+<Component Id="C391" Guid="328266D5-55FC-4391-B11A-61A9F9532272"><File Id="F391" Source="$(var.SourceDir)\_internal\app\tmp\q14-00-gaseosa-2-litros.png" KeyPath="yes" /></Component>
+<Component Id="C392" Guid="DBE05CA1-EFBA-4631-8583-6D9A7FE70901"><File Id="F392" Source="$(var.SourceDir)\_internal\app\tmp\q16-00-gaseosa-3-litros.png" KeyPath="yes" /></Component>
+<Component Id="C393" Guid="D73B8B18-0ABD-4309-B344-02C8970BF293"><File Id="F393" Source="$(var.SourceDir)\_internal\app\tmp\q17-00-libra-de-mollejas.png" KeyPath="yes" /></Component>
+<Component Id="C394" Guid="D1602C06-007F-496A-8230-FBD6F1D2F8CE"><File Id="F394" Source="$(var.SourceDir)\_internal\app\tmp\q18-000-combo-hamburguesa-de-milanesa.png" KeyPath="yes" /></Component>
+<Component Id="C395" Guid="84C7B86B-B055-425D-B91C-17228B27AA31"><File Id="F395" Source="$(var.SourceDir)\_internal\app\tmp\q18-00-ala-combo.png" KeyPath="yes" /></Component>
+<Component Id="C396" Guid="BE577163-4479-4F7D-9C64-89F62FFCB3F2"><File Id="F396" Source="$(var.SourceDir)\_internal\app\tmp\q18-00-cuadril-combo.png" KeyPath="yes" /></Component>
+<Component Id="C397" Guid="F8AC1D33-CED8-4606-9251-4794C7BADDD4"><File Id="F397" Source="$(var.SourceDir)\_internal\app\tmp\q18-00-gaseosa-de-2-5-litro.png" KeyPath="yes" /></Component>
+<Component Id="C398" Guid="C0180617-D262-4C7A-B7F7-C30B976BE9E3"><File Id="F398" Source="$(var.SourceDir)\_internal\app\tmp\q18-00-pierna-combo.png" KeyPath="yes" /></Component>
+<Component Id="C399" Guid="3D1D3468-C25D-468B-BB0B-8B24DEB074F2"><File Id="F399" Source="$(var.SourceDir)\_internal\app\tmp\q20-00-ala-cuadril-ensalada-combo.png" KeyPath="yes" /></Component>
+<Component Id="C400" Guid="9928B5DA-AEF7-4CBA-BA35-A6E8EC11BB80"><File Id="F400" Source="$(var.SourceDir)\_internal\app\tmp\q20-00-ala-ensalada.png" KeyPath="yes" /></Component>
+<Component Id="C401" Guid="2D64B613-6758-4245-BCCB-298D46420347"><File Id="F401" Source="$(var.SourceDir)\_internal\app\tmp\q20-00-cuadril-ensalada-combo.png" KeyPath="yes" /></Component>
+<Component Id="C402" Guid="B0BE538C-2AE1-4846-98D1-B98AEE159365"><File Id="F402" Source="$(var.SourceDir)\_internal\app\tmp\q20-00-pierna-ensalada-combo.png" KeyPath="yes" /></Component>
+<Component Id="C403" Guid="99638967-D4AD-417D-AFAD-C07566400A98"><File Id="F403" Source="$(var.SourceDir)\_internal\app\tmp\q23-00-pechuga-ensalada-combo.png" KeyPath="yes" /></Component>
+<Component Id="C404" Guid="292512F4-8017-40F8-8FEE-70B8E1BBF9A8"><File Id="F404" Source="$(var.SourceDir)\_internal\app\tmp\q24-00-combo-hamburguesa-de-torta-de-carne.png" KeyPath="yes" /></Component>
+<Component Id="C405" Guid="3CA3813C-9DE5-4DF0-B5B6-FF4C5C9B3AB1"><File Id="F405" Source="$(var.SourceDir)\_internal\app\tmp\q25-00-hamburguesas-de-milanesa-3-25.png" KeyPath="yes" /></Component>
+<Component Id="C406" Guid="890840FC-27DD-462F-A8AE-7DEDD722456D"><File Id="F406" Source="$(var.SourceDir)\_internal\app\tmp\q25-00-hamburguesas-de-torta-de-carne-2-25.png" KeyPath="yes" /></Component>
+<Component Id="C407" Guid="5289F511-A942-44A3-A50F-EBB0733B615F"><File Id="F407" Source="$(var.SourceDir)\_internal\app\tmp\q27-00-ala-cuadril-combo.png" KeyPath="yes" /></Component>
+<Component Id="C408" Guid="3DD55752-5308-4092-BB04-A53EA5ADC46E"><File Id="F408" Source="$(var.SourceDir)\_internal\app\tmp\q30-00-1-2-pollo-asado.png" KeyPath="yes" /></Component>
+<Component Id="C409" Guid="9490730A-DD75-4B12-84A6-D947ED25331D"><File Id="F409" Source="$(var.SourceDir)\_internal\app\tmp\q3-00-coca-cola-mini.png" KeyPath="yes" /></Component>
+<Component Id="C410" Guid="3C8F2AAA-40A7-494C-9756-FD6A0841AB39"><File Id="F410" Source="$(var.SourceDir)\_internal\app\tmp\q4-00-fruta-fresca.png" KeyPath="yes" /></Component>
+<Component Id="C411" Guid="46CE14B2-1924-408E-A73C-A9532119CA29"><File Id="F411" Source="$(var.SourceDir)\_internal\app\tmp\q4-00-gaseosa-botella-vidro.png" KeyPath="yes" /></Component>
+<Component Id="C412" Guid="0DB1E851-77C9-48EC-AC36-D881F0E4E675"><File Id="F412" Source="$(var.SourceDir)\_internal\app\tmp\q4-00-jugo-del-valle-naranja.png" KeyPath="yes" /></Component>
+<Component Id="C413" Guid="A96F6F58-0B18-4F51-B9EC-8DA3F4D96DC9"><File Id="F413" Source="$(var.SourceDir)\_internal\app\tmp\q4-00-petit-caja.png" KeyPath="yes" /></Component>
+<Component Id="C414" Guid="6BD65F1E-CE2B-4BF1-82A4-E465014D6676"><File Id="F414" Source="$(var.SourceDir)\_internal\app\tmp\q4-00-petit-lata.png" KeyPath="yes" /></Component>
+<Component Id="C415" Guid="8A668B47-A96B-4D5A-9D1E-5A9862166276"><File Id="F415" Source="$(var.SourceDir)\_internal\app\tmp\q45-00-combo-alitas.png" KeyPath="yes" /></Component>
+<Component Id="C416" Guid="C66B8B20-ED02-43BE-A5B8-22376E03333A"><File Id="F416" Source="$(var.SourceDir)\_internal\app\tmp\q5-00-gaseosa-lata.png" KeyPath="yes" /></Component>
+<Component Id="C417" Guid="9DE2945D-B235-4B57-B159-BBF884C9A6F4"><File Id="F417" Source="$(var.SourceDir)\_internal\app\tmp\q5-00-gatorade-pequeno.png" KeyPath="yes" /></Component>
+<Component Id="C418" Guid="2C43F595-867F-4179-BF4F-6604D9FBB8E2"><File Id="F418" Source="$(var.SourceDir)\_internal\app\tmp\q5-00-te-lipton-botella.png" KeyPath="yes" /></Component>
+<Component Id="C419" Guid="EFB6D595-72AD-42FF-91C9-F1478BA0E874"><File Id="F419" Source="$(var.SourceDir)\_internal\app\tmp\q6-00-amp-365-botella-600-ml.png" KeyPath="yes" /></Component>
+<Component Id="C420" Guid="4B84A147-E9F1-4E94-9043-FE0293D9BFFA"><File Id="F420" Source="$(var.SourceDir)\_internal\app\tmp\q6-00-power.png" KeyPath="yes" /></Component>
+<Component Id="C421" Guid="23DD59BA-934D-47A4-B5DE-B0CC53633316"><File Id="F421" Source="$(var.SourceDir)\_internal\app\tmp\q7-00-california.png" KeyPath="yes" /></Component>
+<Component Id="C422" Guid="9012436A-2AF2-43AD-A80C-2944492DA183"><File Id="F422" Source="$(var.SourceDir)\_internal\app\tmp\q7-00-gaseosa-desechable-600ml.png" KeyPath="yes" /></Component>
+<Component Id="C423" Guid="B69D1555-C6B8-4E6E-8425-687480E36CC7"><File Id="F423" Source="$(var.SourceDir)\_internal\app\tmp\q9-00-porcion-de-mollejas.png" KeyPath="yes" /></Component>
+<Component Id="C424" Guid="E3B860DA-23D4-40BE-8068-8216945B5BB9"><File Id="F424" Source="$(var.SourceDir)\_internal\app\tmp\quesadillas.png" KeyPath="yes" /></Component>
+<Component Id="C425" Guid="40ED4B41-778B-493D-B0F8-9645F4819DF8"><File Id="F425" Source="$(var.SourceDir)\_internal\app\tmp\quesoburguesa.png" KeyPath="yes" /></Component>
+<Component Id="C426" Guid="A3A49EC0-198D-4656-A45C-BDC9C493BD4C"><File Id="F426" Source="$(var.SourceDir)\_internal\app\tmp\quetzal-de-tortilla.png" KeyPath="yes" /></Component>
+<Component Id="C427" Guid="A38074F1-C0DE-4122-9EBD-BA578D65C595"><File Id="F427" Source="$(var.SourceDir)\_internal\app\tmp\refresco.png" KeyPath="yes" /></Component>
+<Component Id="C428" Guid="1C1CAF11-53CC-49D9-AC9F-B5B6F3860C3E"><File Id="F428" Source="$(var.SourceDir)\_internal\app\tmp\rellenitos.png" KeyPath="yes" /></Component>
+<Component Id="C429" Guid="D438AC9B-E1D1-4AA0-B17B-5972559DD0C4"><File Id="F429" Source="$(var.SourceDir)\_internal\app\tmp\ryanlerch_hotdog_-_colour (1).png" KeyPath="yes" /></Component>
+<Component Id="C430" Guid="FD3C091B-7A84-4353-A6CF-FAEE85C80269"><File Id="F430" Source="$(var.SourceDir)\_internal\app\tmp\sandwich-de-pollo.png" KeyPath="yes" /></Component>
+<Component Id="C431" Guid="63C352EE-5275-4EDC-B6EB-1D160F1635AF"><File Id="F431" Source="$(var.SourceDir)\_internal\app\tmp\sandwiches-de-la-casa.png" KeyPath="yes" /></Component>
+<Component Id="C432" Guid="F468D974-2AD5-4B32-9DF3-97A87B5AB3FC"><File Id="F432" Source="$(var.SourceDir)\_internal\app\tmp\san-miguel-combos.png" KeyPath="yes" /></Component>
+<Component Id="C433" Guid="3C72B67A-C31D-4919-92C5-3AE3DBF297F4"><File Id="F433" Source="$(var.SourceDir)\_internal\app\tmp\shaka-laka.png" KeyPath="yes" /></Component>
+<Component Id="C434" Guid="589B78BF-C8C8-4301-A5F3-B722BD884620"><File Id="F434" Source="$(var.SourceDir)\_internal\app\tmp\smoothie.png" KeyPath="yes" /></Component>
+<Component Id="C435" Guid="112760CC-5BA8-49DA-B810-5A25928E024B"><File Id="F435" Source="$(var.SourceDir)\_internal\app\tmp\squiz.png" KeyPath="yes" /></Component>
+<Component Id="C436" Guid="27B2A2CA-1B48-45EA-BA5C-EE3410663731"><File Id="F436" Source="$(var.SourceDir)\_internal\app\tmp\super.png" KeyPath="yes" /></Component>
+<Component Id="C437" Guid="EC1049EF-C01C-4E5F-B8EF-51E0A5D43DD2"><File Id="F437" Source="$(var.SourceDir)\_internal\app\tmp\super-pieza-grande-frito.png" KeyPath="yes" /></Component>
+<Component Id="C438" Guid="270B8702-4E4A-4963-A8DD-071A0134056C"><File Id="F438" Source="$(var.SourceDir)\_internal\app\tmp\super-pieza-pequeno-frito.png" KeyPath="yes" /></Component>
+<Component Id="C439" Guid="20EEF969-0676-462D-91F9-40116D3C9FA0"><File Id="F439" Source="$(var.SourceDir)\_internal\app\tmp\tamalitos-de-chipilin.png" KeyPath="yes" /></Component>
+<Component Id="C440" Guid="B2F471E4-64A7-4FCF-99AF-9708CD8DD26C"><File Id="F440" Source="$(var.SourceDir)\_internal\app\tmp\taza-chocolate-amargo.png" KeyPath="yes" /></Component>
+<Component Id="C441" Guid="E02EDF51-D336-4BE2-BF30-384AE708E983"><File Id="F441" Source="$(var.SourceDir)\_internal\app\tmp\te-con-leche.png" KeyPath="yes" /></Component>
+<Component Id="C442" Guid="078D8C40-7F65-4335-A153-22EADF17BC69"><File Id="F442" Source="$(var.SourceDir)\_internal\app\tmp\te-de-jengibre-limon.png" KeyPath="yes" /></Component>
+<Component Id="C443" Guid="B387725A-E229-4AA0-97E4-4A177BA58FB2"><File Id="F443" Source="$(var.SourceDir)\_internal\app\tmp\te-frio.png" KeyPath="yes" /></Component>
+<Component Id="C444" Guid="89C457D1-8931-49B2-93EF-47EECC6C734F"><File Id="F444" Source="$(var.SourceDir)\_internal\app\tmp\te-grande.png" KeyPath="yes" /></Component>
+<Component Id="C445" Guid="86C5B66D-40D2-4313-A201-E7E2A611B1BE"><File Id="F445" Source="$(var.SourceDir)\_internal\app\tmp\te-jamaica.png" KeyPath="yes" /></Component>
+<Component Id="C446" Guid="A67E8F8E-3929-4F6A-870F-07B4943B0804"><File Id="F446" Source="$(var.SourceDir)\_internal\app\tmp\te-lepton-desechable.png" KeyPath="yes" /></Component>
+<Component Id="C447" Guid="D7039E49-74EE-4C87-AF8D-086FDD8C3A8D"><File Id="F447" Source="$(var.SourceDir)\_internal\app\tmp\te-lipton.png" KeyPath="yes" /></Component>
+<Component Id="C448" Guid="570ADBCB-E962-4DF7-ADDF-5D69C09C88F0"><File Id="F448" Source="$(var.SourceDir)\_internal\app\tmp\te-lipton-botella.png" KeyPath="yes" /></Component>
+<Component Id="C449" Guid="B267EDEE-BDA5-4C56-B3FD-DFA7F4B73251"><File Id="F449" Source="$(var.SourceDir)\_internal\app\tmp\te-lipton-botella-vidrio.png" KeyPath="yes" /></Component>
+<Component Id="C450" Guid="3113AF5E-2A8E-484B-8C39-396F9AD1592F"><File Id="F450" Source="$(var.SourceDir)\_internal\app\tmp\te-lipton-desechable.png" KeyPath="yes" /></Component>
+<Component Id="C451" Guid="CCB5288A-F412-48BD-A2D4-5A263BEC25DD"><File Id="F451" Source="$(var.SourceDir)\_internal\app\tmp\te-manzanilla.png" KeyPath="yes" /></Component>
+<Component Id="C452" Guid="C923D203-7448-436D-BB02-F52EF8BE8F52"><File Id="F452" Source="$(var.SourceDir)\_internal\app\tmp\te-negro.png" KeyPath="yes" /></Component>
+<Component Id="C453" Guid="8492535B-0430-408F-82C8-94F3445E682E"><File Id="F453" Source="$(var.SourceDir)\_internal\app\tmp\te-pequeno.png" KeyPath="yes" /></Component>
+<Component Id="C454" Guid="690899AC-7FC2-4981-9251-F0FA92DF075F"><File Id="F454" Source="$(var.SourceDir)\_internal\app\tmp\te-verde.png" KeyPath="yes" /></Component>
+<Component Id="C455" Guid="B9C4BEF3-4F89-444F-941A-CD11A17239EB"><File Id="F455" Source="$(var.SourceDir)\_internal\app\tmp\tipico.png" KeyPath="yes" /></Component>
+<Component Id="C456" Guid="CE9F94AB-FE99-4181-AA3F-51DC0D583D21"><File Id="F456" Source="$(var.SourceDir)\_internal\app\tmp\torito.png" KeyPath="yes" /></Component>
+<Component Id="C457" Guid="5077B845-C534-4249-83C8-1F5AD300C492"><File Id="F457" Source="$(var.SourceDir)\_internal\app\tmp\torta-jamon-y-salchicha.png" KeyPath="yes" /></Component>
+<Component Id="C458" Guid="6AD58CC7-DDF2-4655-8544-3833768EC88B"><File Id="F458" Source="$(var.SourceDir)\_internal\app\tmp\torta-mexicana.png" KeyPath="yes" /></Component>
+<Component Id="C459" Guid="52A5CA62-32E2-4259-91A8-A38203BD2B40"><File Id="F459" Source="$(var.SourceDir)\_internal\app\tmp\torta-mixta.png" KeyPath="yes" /></Component>
+<Component Id="C460" Guid="40B03ABD-1030-43D5-8DF8-B0225EEC64F3"><File Id="F460" Source="$(var.SourceDir)\_internal\app\tmp\torta-mixta-1-ingrediente.png" KeyPath="yes" /></Component>
+<Component Id="C461" Guid="089D8AB5-FB08-45D4-9E90-B55BD17718BC"><File Id="F461" Source="$(var.SourceDir)\_internal\app\tmp\torta-mixta-3-ingredientes.png" KeyPath="yes" /></Component>
+<Component Id="C462" Guid="6FABAD0D-A2E7-42D9-936F-C12A0E481FE8"><File Id="F462" Source="$(var.SourceDir)\_internal\app\tmp\tortilla-con-chorizo.png" KeyPath="yes" /></Component>
+<Component Id="C463" Guid="EBD4815C-88CD-42A3-8E41-E05B6B4ACF44"><File Id="F463" Source="$(var.SourceDir)\_internal\app\tmp\tortilla-con-longaniza.png" KeyPath="yes" /></Component>
+<Component Id="C464" Guid="75A4BAEB-E475-4826-ACE4-4AC0BC593435"><File Id="F464" Source="$(var.SourceDir)\_internal\app\tmp\tradicional.png" KeyPath="yes" /></Component>
+<Component Id="C465" Guid="9B572936-C6A5-45DE-8F48-6A9C041D23D9"><File Id="F465" Source="$(var.SourceDir)\_internal\app\tmp\varios.png" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D466" Name="translations">
+<Component Id="C467" Guid="D82F6A2E-912C-4612-893D-C05F452A4006"><File Id="F467" Source="$(var.SourceDir)\_internal\app\translations\i18n_es.qm" KeyPath="yes" /></Component>
+</Directory>
+</Directory>
+<Directory Id="D468" Name="dateutil">
+<Directory Id="D469" Name="zoneinfo">
+<Component Id="C470" Guid="C3AAE138-3DEB-4050-AD6F-0850A1A7F936"><File Id="F470" Source="$(var.SourceDir)\_internal\dateutil\zoneinfo\dateutil-zoneinfo.tar.gz" KeyPath="yes" /></Component>
+</Directory>
+</Directory>
+<Directory Id="D471" Name="importlib_metadata-8.7.0.dist-info">
+<Component Id="C472" Guid="E802FCC7-63E3-4D0A-9E67-733B66D22DD9"><File Id="F472" Source="$(var.SourceDir)\_internal\importlib_metadata-8.7.0.dist-info\INSTALLER" KeyPath="yes" /></Component>
+<Component Id="C473" Guid="3F6C2CC6-0308-433E-B8E4-EDF31EC787AB"><File Id="F473" Source="$(var.SourceDir)\_internal\importlib_metadata-8.7.0.dist-info\METADATA" KeyPath="yes" /></Component>
+<Component Id="C474" Guid="3C7C679D-97C8-4F87-BB4D-FD212885DACC"><File Id="F474" Source="$(var.SourceDir)\_internal\importlib_metadata-8.7.0.dist-info\RECORD" KeyPath="yes" /></Component>
+<Component Id="C475" Guid="5198C2C7-241A-4D13-AA1B-619255AF0823"><File Id="F475" Source="$(var.SourceDir)\_internal\importlib_metadata-8.7.0.dist-info\top_level.txt" KeyPath="yes" /></Component>
+<Component Id="C476" Guid="A8A94B12-7253-4091-A3D0-D756485515A0"><File Id="F476" Source="$(var.SourceDir)\_internal\importlib_metadata-8.7.0.dist-info\WHEEL" KeyPath="yes" /></Component>
+<Directory Id="D477" Name="licenses">
+<Component Id="C478" Guid="6A4577E5-6A98-45E2-8E04-4494109C9C40"><File Id="F478" Source="$(var.SourceDir)\_internal\importlib_metadata-8.7.0.dist-info\licenses\LICENSE" KeyPath="yes" /></Component>
+</Directory>
+</Directory>
+<Directory Id="D479" Name="keyring-25.6.0.dist-info">
+<Component Id="C480" Guid="C0501C38-2C39-4C3C-B8B4-B8D7525445CA"><File Id="F480" Source="$(var.SourceDir)\_internal\keyring-25.6.0.dist-info\entry_points.txt" KeyPath="yes" /></Component>
+<Component Id="C481" Guid="74E342D0-3A9B-40B1-B019-A3D0980F6D32"><File Id="F481" Source="$(var.SourceDir)\_internal\keyring-25.6.0.dist-info\INSTALLER" KeyPath="yes" /></Component>
+<Component Id="C482" Guid="22F8C477-559C-4BEB-9E24-AA9CC9508FD0"><File Id="F482" Source="$(var.SourceDir)\_internal\keyring-25.6.0.dist-info\LICENSE" KeyPath="yes" /></Component>
+<Component Id="C483" Guid="F17ECB9B-41D8-40CB-84B9-53232C54135F"><File Id="F483" Source="$(var.SourceDir)\_internal\keyring-25.6.0.dist-info\METADATA" KeyPath="yes" /></Component>
+<Component Id="C484" Guid="D95CAE99-633D-49CD-BD03-2764A14F9648"><File Id="F484" Source="$(var.SourceDir)\_internal\keyring-25.6.0.dist-info\RECORD" KeyPath="yes" /></Component>
+<Component Id="C485" Guid="60DD3A78-3957-4706-9A42-A081A33A09AE"><File Id="F485" Source="$(var.SourceDir)\_internal\keyring-25.6.0.dist-info\top_level.txt" KeyPath="yes" /></Component>
+<Component Id="C486" Guid="C6DC5C45-C5A1-4D93-8C84-E5A9F2ECF318"><File Id="F486" Source="$(var.SourceDir)\_internal\keyring-25.6.0.dist-info\WHEEL" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D487" Name="neox">
+<Directory Id="D488" Name="css">
+<Component Id="C489" Guid="B1CCA2DF-B40D-4B12-A483-08E8A4DEB18B"><File Id="F489" Source="$(var.SourceDir)\_internal\neox\css\base.css" KeyPath="yes" /></Component>
+<Component Id="C490" Guid="6DBBF903-3FFE-4054-96A8-CCCF41B1A31E"><File Id="F490" Source="$(var.SourceDir)\_internal\neox\css\custom_button_small.css" KeyPath="yes" /></Component>
+<Component Id="C491" Guid="623187E6-8192-43AE-B310-08C8C8FDA794"><File Id="F491" Source="$(var.SourceDir)\_internal\neox\css\flat_button_large.css" KeyPath="yes" /></Component>
+<Component Id="C492" Guid="2BE63089-F517-4B84-96F5-7766EB4E9014"><File Id="F492" Source="$(var.SourceDir)\_internal\neox\css\flat_button_medium.css" KeyPath="yes" /></Component>
+<Component Id="C493" Guid="6EDDE7B4-5E99-4B9F-A363-BC8D0061E821"><File Id="F493" Source="$(var.SourceDir)\_internal\neox\css\flat_button_small.css" KeyPath="yes" /></Component>
+<Component Id="C494" Guid="0A25386A-AEB4-4875-9739-9CE958F686D8"><File Id="F494" Source="$(var.SourceDir)\_internal\neox\css\tablet.css" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D495" Name="locale">
+<Component Id="C496" Guid="782D8155-C03D-458A-852E-DC1D908EB000"><File Id="F496" Source="$(var.SourceDir)\_internal\neox\locale\i18n_es.qm" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D497" Name="share">
+<Component Id="C498" Guid="321EA7C2-3CF1-4458-8685-989D4E61119F"><File Id="F498" Source="$(var.SourceDir)\_internal\neox\share\back.svg" KeyPath="yes" /></Component>
+<Component Id="C499" Guid="BBEF2326-4F32-4401-8DC5-650147A95330"><File Id="F499" Source="$(var.SourceDir)\_internal\neox\share\icon-error.png" KeyPath="yes" /></Component>
+<Component Id="C500" Guid="A15A963D-3352-47A9-9B78-5D1961251269"><File Id="F500" Source="$(var.SourceDir)\_internal\neox\share\icon-help.png" KeyPath="yes" /></Component>
+<Component Id="C501" Guid="5A1884BD-6F46-42E7-B626-D66207427B55"><File Id="F501" Source="$(var.SourceDir)\_internal\neox\share\icon-info.png" KeyPath="yes" /></Component>
+<Component Id="C502" Guid="659D35A6-FD29-4B31-A568-420C527784F3"><File Id="F502" Source="$(var.SourceDir)\_internal\neox\share\icon-photo.png" KeyPath="yes" /></Component>
+<Component Id="C503" Guid="6BE49C4D-AB7B-475C-BB0A-A86788F5DB3A"><File Id="F503" Source="$(var.SourceDir)\_internal\neox\share\icon-print.png" KeyPath="yes" /></Component>
+<Component Id="C504" Guid="1410EDE3-02C8-453F-9572-4EAD33DD3BDF"><File Id="F504" Source="$(var.SourceDir)\_internal\neox\share\icon-question.png" KeyPath="yes" /></Component>
+<Component Id="C505" Guid="2655E851-0987-4E5C-94C8-7D37759183FE"><File Id="F505" Source="$(var.SourceDir)\_internal\neox\share\icon-stock.png" KeyPath="yes" /></Component>
+<Component Id="C506" Guid="8DC5E56C-21E5-45F7-BC66-01B702C01169"><File Id="F506" Source="$(var.SourceDir)\_internal\neox\share\icon-stock.svg" KeyPath="yes" /></Component>
+<Component Id="C507" Guid="6D68D520-009A-4C28-BE7E-F6C3A9152BFA"><File Id="F507" Source="$(var.SourceDir)\_internal\neox\share\icon-warning.png" KeyPath="yes" /></Component>
+<Component Id="C508" Guid="D15A8FC8-4765-4D9D-93CE-1C12467F9C4D"><File Id="F508" Source="$(var.SourceDir)\_internal\neox\share\login.png" KeyPath="yes" /></Component>
+<Component Id="C509" Guid="1F97D889-80F3-43C7-8FED-C5FC9584E287"><File Id="F509" Source="$(var.SourceDir)\_internal\neox\share\menu.png" KeyPath="yes" /></Component>
+<Component Id="C510" Guid="73FEAAF1-5E65-4F6D-B77C-1C297F4C58A7"><File Id="F510" Source="$(var.SourceDir)\_internal\neox\share\menu_section.svg" KeyPath="yes" /></Component>
+<Component Id="C511" Guid="3EEFDA7B-7550-4B85-8C6B-DFFFF90EF2E1"><File Id="F511" Source="$(var.SourceDir)\_internal\neox\share\photo-camera.svg" KeyPath="yes" /></Component>
+<Component Id="C512" Guid="6BA027B4-DB8D-4F98-A117-9AF4F8C5D8A4"><File Id="F512" Source="$(var.SourceDir)\_internal\neox\share\pos-icon.svg" KeyPath="yes" /></Component>
+</Directory>
+</Directory>
+<Directory Id="D513" Name="PIL">
+<Component Id="C514" Guid="5833AE1C-479E-45B6-B030-C3C5CB7A967A"><File Id="F514" Source="$(var.SourceDir)\_internal\PIL\_avif.cp39-win_amd64.pyd" KeyPath="yes" /></Component>
+<Component Id="C515" Guid="97F21D72-3377-4CB7-BEC9-BE492FF71695"><File Id="F515" Source="$(var.SourceDir)\_internal\PIL\_imaging.cp39-win_amd64.pyd" KeyPath="yes" /></Component>
+<Component Id="C516" Guid="408FB4F6-8662-4C94-82AF-156FD064EA61"><File Id="F516" Source="$(var.SourceDir)\_internal\PIL\_imagingcms.cp39-win_amd64.pyd" KeyPath="yes" /></Component>
+<Component Id="C517" Guid="AD415208-AF3A-4037-B101-D279F04FE019"><File Id="F517" Source="$(var.SourceDir)\_internal\PIL\_imagingft.cp39-win_amd64.pyd" KeyPath="yes" /></Component>
+<Component Id="C518" Guid="B9C7109C-E3FE-48E6-A960-4DBB9424E7F7"><File Id="F518" Source="$(var.SourceDir)\_internal\PIL\_imagingmath.cp39-win_amd64.pyd" KeyPath="yes" /></Component>
+<Component Id="C519" Guid="8751293E-4D9E-46A4-9356-B0E35BBC0727"><File Id="F519" Source="$(var.SourceDir)\_internal\PIL\_imagingtk.cp39-win_amd64.pyd" KeyPath="yes" /></Component>
+<Component Id="C520" Guid="30A72241-2F36-47AC-8480-A70C5813C8CD"><File Id="F520" Source="$(var.SourceDir)\_internal\PIL\_webp.cp39-win_amd64.pyd" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D521" Name="PyQt5">
+<Component Id="C522" Guid="178A86EF-B7F6-4DC4-875E-621608A587ED"><File Id="F522" Source="$(var.SourceDir)\_internal\PyQt5\QtCore.pyd" KeyPath="yes" /></Component>
+<Component Id="C523" Guid="440C4DC0-937B-4F0F-A570-DF1BCF3ADEA8"><File Id="F523" Source="$(var.SourceDir)\_internal\PyQt5\QtGui.pyd" KeyPath="yes" /></Component>
+<Component Id="C524" Guid="7F8E918A-22C0-4C79-830C-98BDAC7D4050"><File Id="F524" Source="$(var.SourceDir)\_internal\PyQt5\QtPrintSupport.pyd" KeyPath="yes" /></Component>
+<Component Id="C525" Guid="21C9FF3A-CF18-4307-BF51-35D9E3B616E4"><File Id="F525" Source="$(var.SourceDir)\_internal\PyQt5\QtWidgets.pyd" KeyPath="yes" /></Component>
+<Component Id="C526" Guid="7FF03475-30CD-4E63-9BC0-B519C269A22B"><File Id="F526" Source="$(var.SourceDir)\_internal\PyQt5\sip.cp39-win_amd64.pyd" KeyPath="yes" /></Component>
+<Directory Id="D527" Name="Qt5">
+<Directory Id="D528" Name="bin">
+<Component Id="C529" Guid="A37599DC-DE20-48E9-A45A-12AFAEEEE0B3"><File Id="F529" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\d3dcompiler_47.dll" KeyPath="yes" /></Component>
+<Component Id="C530" Guid="EF51C0E6-5ECA-4277-BBA2-7E2F8D21ABF2"><File Id="F530" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\libEGL.dll" KeyPath="yes" /></Component>
+<Component Id="C531" Guid="35F2D861-165F-4A8B-BCCA-E808D5C9ECFC"><File Id="F531" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\libGLESv2.dll" KeyPath="yes" /></Component>
+<Component Id="C532" Guid="3DD107C0-783F-4764-9E97-8F257425A712"><File Id="F532" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\MSVCP140.dll" KeyPath="yes" /></Component>
+<Component Id="C533" Guid="8FB3D4E8-5298-4938-8C59-F0BE529973B9"><File Id="F533" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\MSVCP140_1.dll" KeyPath="yes" /></Component>
+<Component Id="C534" Guid="D9D8F57E-57FA-4932-9D2D-C3C86FAD20D6"><File Id="F534" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\opengl32sw.dll" KeyPath="yes" /></Component>
+<Component Id="C535" Guid="8C8F0FD0-0B40-42CB-A2E6-874C51B1519A"><File Id="F535" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5Core.dll" KeyPath="yes" /></Component>
+<Component Id="C536" Guid="68422E8C-E027-499D-A7F3-17B6143906B4"><File Id="F536" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5DBus.dll" KeyPath="yes" /></Component>
+<Component Id="C537" Guid="5DD78D44-BB32-4C3D-9D3D-11B803722521"><File Id="F537" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5Gui.dll" KeyPath="yes" /></Component>
+<Component Id="C538" Guid="9958A465-3E79-4FE3-865B-8E087DA5F8CD"><File Id="F538" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5Network.dll" KeyPath="yes" /></Component>
+<Component Id="C539" Guid="75F6EEBE-A15E-4F1A-91E7-D23D1443E506"><File Id="F539" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5PrintSupport.dll" KeyPath="yes" /></Component>
+<Component Id="C540" Guid="B90CF239-E4A6-40BD-8368-19F7743C8B02"><File Id="F540" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5Qml.dll" KeyPath="yes" /></Component>
+<Component Id="C541" Guid="3B9AFA8D-B4CF-4BAA-BA07-AE3D1370AABD"><File Id="F541" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5QmlModels.dll" KeyPath="yes" /></Component>
+<Component Id="C542" Guid="C57006C7-2DE1-401F-9BB8-6EBAE982828E"><File Id="F542" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5Quick.dll" KeyPath="yes" /></Component>
+<Component Id="C543" Guid="1B863D2A-D9D7-4A63-A421-253EF4E53296"><File Id="F543" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5Svg.dll" KeyPath="yes" /></Component>
+<Component Id="C544" Guid="DC9987F2-F6BE-4EF6-9A5E-56459D90D37E"><File Id="F544" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5WebSockets.dll" KeyPath="yes" /></Component>
+<Component Id="C545" Guid="CA378798-02B8-47AB-8F4B-20AE31DE4042"><File Id="F545" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\Qt5Widgets.dll" KeyPath="yes" /></Component>
+<Component Id="C546" Guid="F8B83EE2-D84B-4321-AE09-151A19C609F1"><File Id="F546" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\VCRUNTIME140.dll" KeyPath="yes" /></Component>
+<Component Id="C547" Guid="DF507149-64FC-428C-B0FA-17E520B61CF3"><File Id="F547" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\bin\VCRUNTIME140_1.dll" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D548" Name="plugins">
+<Directory Id="D549" Name="generic">
+<Component Id="C550" Guid="C1BAA446-E297-4E2D-A424-46B0A0D09EE5"><File Id="F550" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\generic\qtuiotouchplugin.dll" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D551" Name="iconengines">
+<Component Id="C552" Guid="7E1BF140-A0A6-4C00-9D05-DF2CCCA6FDED"><File Id="F552" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\iconengines\qsvgicon.dll" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D553" Name="imageformats">
+<Component Id="C554" Guid="8A3A1104-8B54-4BDC-934C-717382708E8A"><File Id="F554" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\imageformats\qgif.dll" KeyPath="yes" /></Component>
+<Component Id="C555" Guid="3D63C12A-F1B0-4410-A556-0885C0D049D6"><File Id="F555" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\imageformats\qicns.dll" KeyPath="yes" /></Component>
+<Component Id="C556" Guid="63909AB7-B1FC-4B32-AE5F-5A159C05130B"><File Id="F556" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\imageformats\qico.dll" KeyPath="yes" /></Component>
+<Component Id="C557" Guid="F62E294A-669E-4D1D-82A9-5465DB574053"><File Id="F557" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\imageformats\qjpeg.dll" KeyPath="yes" /></Component>
+<Component Id="C558" Guid="E0208490-79AC-40E4-947F-997A5A9B3089"><File Id="F558" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\imageformats\qsvg.dll" KeyPath="yes" /></Component>
+<Component Id="C559" Guid="3DE6EE6C-8100-4734-9F96-AF0BA9D9D9B8"><File Id="F559" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\imageformats\qtga.dll" KeyPath="yes" /></Component>
+<Component Id="C560" Guid="015BC43C-CB91-4AB8-90EC-932D1A888903"><File Id="F560" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\imageformats\qtiff.dll" KeyPath="yes" /></Component>
+<Component Id="C561" Guid="9A3E7D34-305F-4760-AD86-44074124B2BB"><File Id="F561" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\imageformats\qwbmp.dll" KeyPath="yes" /></Component>
+<Component Id="C562" Guid="F4C20AE4-C160-480C-A759-859625FE53B8"><File Id="F562" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\imageformats\qwebp.dll" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D563" Name="platforms">
+<Component Id="C564" Guid="12A08C89-B769-4056-B571-C7022723548B"><File Id="F564" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\platforms\qminimal.dll" KeyPath="yes" /></Component>
+<Component Id="C565" Guid="F1BD4149-42D0-4DA6-BC9A-7DB44933FCAA"><File Id="F565" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\platforms\qoffscreen.dll" KeyPath="yes" /></Component>
+<Component Id="C566" Guid="9606DF43-0593-49B3-B408-3433E93DD1FD"><File Id="F566" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\platforms\qwebgl.dll" KeyPath="yes" /></Component>
+<Component Id="C567" Guid="2E29AE5F-A0D1-405E-846A-FFA27C792B7A"><File Id="F567" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\platforms\qwindows.dll" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D568" Name="platformthemes">
+<Component Id="C569" Guid="EC3F3FA2-F1E9-417A-BE1A-ED722DC2DA4C"><File Id="F569" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\platformthemes\qxdgdesktopportal.dll" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D570" Name="printsupport">
+<Component Id="C571" Guid="209B5EE5-DAFB-4704-8725-AF354CDE35AC"><File Id="F571" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\printsupport\windowsprintersupport.dll" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D572" Name="styles">
+<Component Id="C573" Guid="DA5F105B-3FB2-4457-9116-7DC8ABEF14A0"><File Id="F573" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\plugins\styles\qwindowsvistastyle.dll" KeyPath="yes" /></Component>
+</Directory>
+</Directory>
+<Directory Id="D574" Name="translations">
+<Component Id="C575" Guid="EF4E8291-D2B9-4CFD-9143-B094121B79CF"><File Id="F575" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_ar.qm" KeyPath="yes" /></Component>
+<Component Id="C576" Guid="988AED28-9AE2-4E78-8CB7-A4D6B8E9125A"><File Id="F576" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_bg.qm" KeyPath="yes" /></Component>
+<Component Id="C577" Guid="4C4CCE5C-AA2B-4EED-8EF2-420268464724"><File Id="F577" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_ca.qm" KeyPath="yes" /></Component>
+<Component Id="C578" Guid="FE6402CD-2804-4F1E-9039-C89993C4BFB2"><File Id="F578" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_cs.qm" KeyPath="yes" /></Component>
+<Component Id="C579" Guid="04FF431B-8E19-4008-97B8-1A091950BD9B"><File Id="F579" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_da.qm" KeyPath="yes" /></Component>
+<Component Id="C580" Guid="D3C3DB01-279A-486F-9FB5-2F8D2D83B012"><File Id="F580" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_de.qm" KeyPath="yes" /></Component>
+<Component Id="C581" Guid="DB5A10D0-E3F2-42D0-A319-B7943DD3FF91"><File Id="F581" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_en.qm" KeyPath="yes" /></Component>
+<Component Id="C582" Guid="C2291C39-FA27-461F-AA90-317D0AC4F809"><File Id="F582" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_es.qm" KeyPath="yes" /></Component>
+<Component Id="C583" Guid="09EA31B3-7AB1-46EB-9D3C-E4F02FEBD74F"><File Id="F583" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_fa.qm" KeyPath="yes" /></Component>
+<Component Id="C584" Guid="7CA4523D-B2D9-450C-A018-497569269164"><File Id="F584" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_fi.qm" KeyPath="yes" /></Component>
+<Component Id="C585" Guid="3965DCA6-7B1F-45EE-A5EA-92741E1BB525"><File Id="F585" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_fr.qm" KeyPath="yes" /></Component>
+<Component Id="C586" Guid="17AE9DDC-45C4-4711-8B45-7D638BEC6D60"><File Id="F586" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_gd.qm" KeyPath="yes" /></Component>
+<Component Id="C587" Guid="807F1EFD-C4A8-4781-AA90-A696F00F4047"><File Id="F587" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_gl.qm" KeyPath="yes" /></Component>
+<Component Id="C588" Guid="A8FD078B-957C-446D-AE5A-DDD89C2C4C47"><File Id="F588" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_he.qm" KeyPath="yes" /></Component>
+<Component Id="C589" Guid="C182BCAE-262C-4407-8761-CBBF0A55B83D"><File Id="F589" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_ar.qm" KeyPath="yes" /></Component>
+<Component Id="C590" Guid="F01CC17E-FF13-4235-AD8A-EC6E4045B03E"><File Id="F590" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_bg.qm" KeyPath="yes" /></Component>
+<Component Id="C591" Guid="5248B358-E8B4-46D5-872F-6DAA6F25CDD9"><File Id="F591" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_ca.qm" KeyPath="yes" /></Component>
+<Component Id="C592" Guid="F5905199-A936-4D5C-A18D-81EEB425C6B5"><File Id="F592" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_cs.qm" KeyPath="yes" /></Component>
+<Component Id="C593" Guid="7B8EADF3-1DF9-4A60-A5E2-AD46AF38CA81"><File Id="F593" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_da.qm" KeyPath="yes" /></Component>
+<Component Id="C594" Guid="A9FFD23E-2CEB-49EA-83D7-75846E48CFB8"><File Id="F594" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_de.qm" KeyPath="yes" /></Component>
+<Component Id="C595" Guid="E73797E4-B0AA-4DAA-B5B8-B96B32B40D54"><File Id="F595" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_en.qm" KeyPath="yes" /></Component>
+<Component Id="C596" Guid="91097378-44BD-41C5-89B9-D3DBC5301482"><File Id="F596" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_es.qm" KeyPath="yes" /></Component>
+<Component Id="C597" Guid="C87B5DB4-4E4F-441E-84D0-B89D8290DF02"><File Id="F597" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_fr.qm" KeyPath="yes" /></Component>
+<Component Id="C598" Guid="92FEF212-68FD-4CDC-BD2F-79372BAB3805"><File Id="F598" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_gl.qm" KeyPath="yes" /></Component>
+<Component Id="C599" Guid="520A777E-0E1F-40D0-9DCB-3F1EA0375E3A"><File Id="F599" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_hu.qm" KeyPath="yes" /></Component>
+<Component Id="C600" Guid="2C53DA6E-1E0D-4840-9370-E648CFDDE19D"><File Id="F600" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_it.qm" KeyPath="yes" /></Component>
+<Component Id="C601" Guid="AC3DF094-8ED9-47FC-8CD6-7A61FA2B20AD"><File Id="F601" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_ja.qm" KeyPath="yes" /></Component>
+<Component Id="C602" Guid="C0A42122-E4BD-4D9E-80D4-3CF0E5A62D5C"><File Id="F602" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_ko.qm" KeyPath="yes" /></Component>
+<Component Id="C603" Guid="B1332DF1-6A41-4A23-AE20-D63021B265D2"><File Id="F603" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_pl.qm" KeyPath="yes" /></Component>
+<Component Id="C604" Guid="6265A5ED-387E-433B-BB7F-0B154E1CD912"><File Id="F604" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_ru.qm" KeyPath="yes" /></Component>
+<Component Id="C605" Guid="3C446BAF-6A8C-4D53-8245-B219F1D4883C"><File Id="F605" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_sk.qm" KeyPath="yes" /></Component>
+<Component Id="C606" Guid="A64FD951-47FB-47D9-9D20-1E924AC1D4C6"><File Id="F606" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_sl.qm" KeyPath="yes" /></Component>
+<Component Id="C607" Guid="19F6A9FF-46F4-4EE7-BF87-FE32C6C5BFCB"><File Id="F607" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_tr.qm" KeyPath="yes" /></Component>
+<Component Id="C608" Guid="99FB5DFF-8B7B-4C54-A888-5CCFE331A32F"><File Id="F608" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_uk.qm" KeyPath="yes" /></Component>
+<Component Id="C609" Guid="FB13DFEF-3F8B-4B66-BB1C-98FF090AE704"><File Id="F609" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_zh_CN.qm" KeyPath="yes" /></Component>
+<Component Id="C610" Guid="28BAF8F4-53EC-43CE-9023-C0C1E275D044"><File Id="F610" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_help_zh_TW.qm" KeyPath="yes" /></Component>
+<Component Id="C611" Guid="93D00FF3-5686-4230-B01D-E3025CBD7C6F"><File Id="F611" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_hu.qm" KeyPath="yes" /></Component>
+<Component Id="C612" Guid="02115C46-9C60-4B2E-8489-48548914E835"><File Id="F612" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_it.qm" KeyPath="yes" /></Component>
+<Component Id="C613" Guid="FBCCFF9B-BFB2-4C2E-A251-D2565FEEC603"><File Id="F613" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_ja.qm" KeyPath="yes" /></Component>
+<Component Id="C614" Guid="B9D5463E-9526-4CC6-AA7B-79AEB699F23C"><File Id="F614" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_ko.qm" KeyPath="yes" /></Component>
+<Component Id="C615" Guid="8C3864EF-625A-444D-B2F6-00A736D60122"><File Id="F615" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_lt.qm" KeyPath="yes" /></Component>
+<Component Id="C616" Guid="5E6B984E-9E25-4865-8DAA-B423382CBFF3"><File Id="F616" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_lv.qm" KeyPath="yes" /></Component>
+<Component Id="C617" Guid="CFFF7259-2133-4463-A4D6-F26FEFAB938D"><File Id="F617" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_pl.qm" KeyPath="yes" /></Component>
+<Component Id="C618" Guid="B4DD0B1E-693E-4270-AAC4-81A0334E6159"><File Id="F618" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_pt.qm" KeyPath="yes" /></Component>
+<Component Id="C619" Guid="DDF94942-0DCA-464B-BD2C-4B2E7B316A88"><File Id="F619" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_ru.qm" KeyPath="yes" /></Component>
+<Component Id="C620" Guid="C70F2AC0-CD59-468E-B74A-5C8D1A977634"><File Id="F620" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_sk.qm" KeyPath="yes" /></Component>
+<Component Id="C621" Guid="D717E969-1277-483A-9768-0D52DD16F088"><File Id="F621" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_sl.qm" KeyPath="yes" /></Component>
+<Component Id="C622" Guid="E0D567C4-6F80-42E8-9A40-4AAB64ABC2B0"><File Id="F622" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_sv.qm" KeyPath="yes" /></Component>
+<Component Id="C623" Guid="013A200D-D064-401E-8C5A-F507539264AB"><File Id="F623" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_tr.qm" KeyPath="yes" /></Component>
+<Component Id="C624" Guid="A6041789-40C5-4606-9557-2F2CBE83348D"><File Id="F624" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_uk.qm" KeyPath="yes" /></Component>
+<Component Id="C625" Guid="FBE31621-95F2-4A0F-ACEC-4ACE83C4A379"><File Id="F625" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_zh_CN.qm" KeyPath="yes" /></Component>
+<Component Id="C626" Guid="D9D18B8F-9327-49CD-BA97-657FCFDF3F90"><File Id="F626" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qt_zh_TW.qm" KeyPath="yes" /></Component>
+<Component Id="C627" Guid="031AA0FD-0168-43F2-AE82-3DFE85864731"><File Id="F627" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_ar.qm" KeyPath="yes" /></Component>
+<Component Id="C628" Guid="C4C1A3C0-E0E6-4E5F-B97E-C12370D68412"><File Id="F628" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_bg.qm" KeyPath="yes" /></Component>
+<Component Id="C629" Guid="9D22988B-AA75-4326-9F11-974E5D3331CD"><File Id="F629" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_ca.qm" KeyPath="yes" /></Component>
+<Component Id="C630" Guid="AA8E156B-2D77-47B3-AB40-8F80329C2ED5"><File Id="F630" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_cs.qm" KeyPath="yes" /></Component>
+<Component Id="C631" Guid="706A4F62-5E2C-40DE-A151-381A4FBABCD1"><File Id="F631" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_da.qm" KeyPath="yes" /></Component>
+<Component Id="C632" Guid="C73DFD4C-C251-4BFF-8504-186884898D27"><File Id="F632" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_de.qm" KeyPath="yes" /></Component>
+<Component Id="C633" Guid="F286A013-57B4-40E0-9B64-0356337961BC"><File Id="F633" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_en.qm" KeyPath="yes" /></Component>
+<Component Id="C634" Guid="896747F5-D5AB-4C29-8952-3C1E1A616BF8"><File Id="F634" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_es.qm" KeyPath="yes" /></Component>
+<Component Id="C635" Guid="77132E18-30C4-4D10-A0C9-D80DCFC73CC7"><File Id="F635" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_fi.qm" KeyPath="yes" /></Component>
+<Component Id="C636" Guid="BA848D08-0203-48F3-878B-AFD0396687D6"><File Id="F636" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_fr.qm" KeyPath="yes" /></Component>
+<Component Id="C637" Guid="5FB88434-D4FB-402D-8EC9-D739F8674E01"><File Id="F637" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_gd.qm" KeyPath="yes" /></Component>
+<Component Id="C638" Guid="0BB8B24A-6A90-4B03-B5A2-97E5AB3519D0"><File Id="F638" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_he.qm" KeyPath="yes" /></Component>
+<Component Id="C639" Guid="5F9055E7-BD24-4A99-9432-E6117A3256EC"><File Id="F639" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_hu.qm" KeyPath="yes" /></Component>
+<Component Id="C640" Guid="104FA9F6-404B-43AB-8E85-1056C5ABC8D2"><File Id="F640" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_it.qm" KeyPath="yes" /></Component>
+<Component Id="C641" Guid="7C3AE6DB-1DC8-40BC-A1F0-1DAFB008D7DE"><File Id="F641" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_ja.qm" KeyPath="yes" /></Component>
+<Component Id="C642" Guid="1D6CD9B2-5E4C-4A8B-8067-865194ECA43D"><File Id="F642" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_ko.qm" KeyPath="yes" /></Component>
+<Component Id="C643" Guid="DD72B683-7B1F-451C-B10C-A27FE63C253F"><File Id="F643" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_lv.qm" KeyPath="yes" /></Component>
+<Component Id="C644" Guid="E8A41CF7-7DEA-45A9-B603-EDBBB99F5C28"><File Id="F644" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_pl.qm" KeyPath="yes" /></Component>
+<Component Id="C645" Guid="8425B47E-D088-4436-8CEE-423FC9C61CF0"><File Id="F645" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_ru.qm" KeyPath="yes" /></Component>
+<Component Id="C646" Guid="279504E1-5EBE-4CFE-9099-43DDF5E136A0"><File Id="F646" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_sk.qm" KeyPath="yes" /></Component>
+<Component Id="C647" Guid="962A2B7B-86F4-493C-865F-6600FD278A0E"><File Id="F647" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_tr.qm" KeyPath="yes" /></Component>
+<Component Id="C648" Guid="28E8C646-75EF-4C03-9C15-51ACD318CA59"><File Id="F648" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_uk.qm" KeyPath="yes" /></Component>
+<Component Id="C649" Guid="DCE0C94A-C7B5-4DB8-8FD5-5941F3D849C8"><File Id="F649" Source="$(var.SourceDir)\_internal\PyQt5\Qt5\translations\qtbase_zh_TW.qm" KeyPath="yes" /></Component>
+</Directory>
+</Directory>
+</Directory>
+<Directory Id="D650" Name="Pythonwin">
+<Component Id="C651" Guid="D45D512C-1EFB-43ED-9B72-CEFE30F88701"><File Id="F651" Source="$(var.SourceDir)\_internal\Pythonwin\mfc140u.dll" KeyPath="yes" /></Component>
+<Component Id="C652" Guid="40E1DBEA-4E78-4039-AD63-C82A72CBA395"><File Id="F652" Source="$(var.SourceDir)\_internal\Pythonwin\win32ui.pyd" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D653" Name="pywin32_system32">
+<Component Id="C654" Guid="96A74B1D-7754-4B64-8441-BC3C4C9A2D62"><File Id="F654" Source="$(var.SourceDir)\_internal\pywin32_system32\pythoncom39.dll" KeyPath="yes" /></Component>
+<Component Id="C655" Guid="224EB2D2-9D20-4745-8134-6D2662525045"><File Id="F655" Source="$(var.SourceDir)\_internal\pywin32_system32\pywintypes39.dll" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D656" Name="setuptools-58.1.0.dist-info">
+<Component Id="C657" Guid="8B055409-4A73-44EE-B3EF-59AC858597C3"><File Id="F657" Source="$(var.SourceDir)\_internal\setuptools-58.1.0.dist-info\entry_points.txt" KeyPath="yes" /></Component>
+<Component Id="C658" Guid="A092666A-1DE2-4754-B8F2-223682184FAF"><File Id="F658" Source="$(var.SourceDir)\_internal\setuptools-58.1.0.dist-info\INSTALLER" KeyPath="yes" /></Component>
+<Component Id="C659" Guid="61E6E7CB-C470-4180-A5F2-CF064DCB1BB9"><File Id="F659" Source="$(var.SourceDir)\_internal\setuptools-58.1.0.dist-info\LICENSE" KeyPath="yes" /></Component>
+<Component Id="C660" Guid="1CCCE916-4A19-4275-BA7D-E3270CA7A376"><File Id="F660" Source="$(var.SourceDir)\_internal\setuptools-58.1.0.dist-info\METADATA" KeyPath="yes" /></Component>
+<Component Id="C661" Guid="D1832323-9A33-4ED4-8F98-37BEF91A4F59"><File Id="F661" Source="$(var.SourceDir)\_internal\setuptools-58.1.0.dist-info\RECORD" KeyPath="yes" /></Component>
+<Component Id="C662" Guid="6F345D1D-5EF4-4992-A082-07E8270F6FE4"><File Id="F662" Source="$(var.SourceDir)\_internal\setuptools-58.1.0.dist-info\REQUESTED" KeyPath="yes" /></Component>
+<Component Id="C663" Guid="32D59B4A-39F0-400A-966E-E3CD65CBC0AD"><File Id="F663" Source="$(var.SourceDir)\_internal\setuptools-58.1.0.dist-info\top_level.txt" KeyPath="yes" /></Component>
+<Component Id="C664" Guid="23397EAB-7CAF-46A4-9C41-FB1AD8B064EF"><File Id="F664" Source="$(var.SourceDir)\_internal\setuptools-58.1.0.dist-info\WHEEL" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D665" Name="text_unidecode">
+<Component Id="C666" Guid="7C8BB15F-6E33-48AE-A83B-4FD759218D52"><File Id="F666" Source="$(var.SourceDir)\_internal\text_unidecode\data.bin" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D667" Name="win32">
+<Component Id="C668" Guid="975A2B05-951E-4270-BD96-86531B3B96BC"><File Id="F668" Source="$(var.SourceDir)\_internal\win32\_win32sysloader.pyd" KeyPath="yes" /></Component>
+<Component Id="C669" Guid="5165AB14-B6AB-4B09-AE9E-FC1A57EBABB6"><File Id="F669" Source="$(var.SourceDir)\_internal\win32\win32api.pyd" KeyPath="yes" /></Component>
+<Component Id="C670" Guid="9D2D87D4-F3B2-46B2-9954-D91656A80092"><File Id="F670" Source="$(var.SourceDir)\_internal\win32\win32cred.pyd" KeyPath="yes" /></Component>
+<Component Id="C671" Guid="563033C4-9E17-4B1F-94ED-9B377F943451"><File Id="F671" Source="$(var.SourceDir)\_internal\win32\win32event.pyd" KeyPath="yes" /></Component>
+<Component Id="C672" Guid="7DD6DD6A-9580-4D11-BB6D-3A39CE73DF08"><File Id="F672" Source="$(var.SourceDir)\_internal\win32\win32trace.pyd" KeyPath="yes" /></Component>
+</Directory>
+<Directory Id="D673" Name="win32com">
+<Directory Id="D674" Name="shell">
+<Component Id="C675" Guid="217E094B-5581-44F8-BD79-6A57270DC230"><File Id="F675" Source="$(var.SourceDir)\_internal\win32com\shell\shell.pyd" KeyPath="yes" /></Component>
+</Directory>
+</Directory>
+</Directory>
+</Directory></Directory></StandardDirectory>
+<Feature Id="MainFeature" Title="Effica" Level="1">
+<ComponentRef Id="C2" />
+<ComponentRef Id="C4" />
+<ComponentRef Id="C5" />
+<ComponentRef Id="C6" />
+<ComponentRef Id="C7" />
+<ComponentRef Id="C8" />
+<ComponentRef Id="C9" />
+<ComponentRef Id="C10" />
+<ComponentRef Id="C11" />
+<ComponentRef Id="C12" />
+<ComponentRef Id="C13" />
+<ComponentRef Id="C14" />
+<ComponentRef Id="C15" />
+<ComponentRef Id="C16" />
+<ComponentRef Id="C17" />
+<ComponentRef Id="C18" />
+<ComponentRef Id="C19" />
+<ComponentRef Id="C20" />
+<ComponentRef Id="C21" />
+<ComponentRef Id="C22" />
+<ComponentRef Id="C23" />
+<ComponentRef Id="C24" />
+<ComponentRef Id="C25" />
+<ComponentRef Id="C26" />
+<ComponentRef Id="C27" />
+<ComponentRef Id="C28" />
+<ComponentRef Id="C29" />
+<ComponentRef Id="C31" />
+<ComponentRef Id="C32" />
+<ComponentRef Id="C33" />
+<ComponentRef Id="C34" />
+<ComponentRef Id="C35" />
+<ComponentRef Id="C37" />
+<ComponentRef Id="C38" />
+<ComponentRef Id="C39" />
+<ComponentRef Id="C40" />
+<ComponentRef Id="C41" />
+<ComponentRef Id="C42" />
+<ComponentRef Id="C43" />
+<ComponentRef Id="C44" />
+<ComponentRef Id="C45" />
+<ComponentRef Id="C46" />
+<ComponentRef Id="C47" />
+<ComponentRef Id="C48" />
+<ComponentRef Id="C49" />
+<ComponentRef Id="C50" />
+<ComponentRef Id="C51" />
+<ComponentRef Id="C52" />
+<ComponentRef Id="C53" />
+<ComponentRef Id="C54" />
+<ComponentRef Id="C55" />
+<ComponentRef Id="C56" />
+<ComponentRef Id="C57" />
+<ComponentRef Id="C58" />
+<ComponentRef Id="C59" />
+<ComponentRef Id="C60" />
+<ComponentRef Id="C61" />
+<ComponentRef Id="C62" />
+<ComponentRef Id="C63" />
+<ComponentRef Id="C64" />
+<ComponentRef Id="C65" />
+<ComponentRef Id="C66" />
+<ComponentRef Id="C67" />
+<ComponentRef Id="C68" />
+<ComponentRef Id="C69" />
+<ComponentRef Id="C70" />
+<ComponentRef Id="C71" />
+<ComponentRef Id="C72" />
+<ComponentRef Id="C73" />
+<ComponentRef Id="C74" />
+<ComponentRef Id="C75" />
+<ComponentRef Id="C76" />
+<ComponentRef Id="C77" />
+<ComponentRef Id="C78" />
+<ComponentRef Id="C79" />
+<ComponentRef Id="C80" />
+<ComponentRef Id="C81" />
+<ComponentRef Id="C82" />
+<ComponentRef Id="C83" />
+<ComponentRef Id="C84" />
+<ComponentRef Id="C85" />
+<ComponentRef Id="C86" />
+<ComponentRef Id="C87" />
+<ComponentRef Id="C88" />
+<ComponentRef Id="C89" />
+<ComponentRef Id="C90" />
+<ComponentRef Id="C91" />
+<ComponentRef Id="C92" />
+<ComponentRef Id="C93" />
+<ComponentRef Id="C94" />
+<ComponentRef Id="C95" />
+<ComponentRef Id="C96" />
+<ComponentRef Id="C97" />
+<ComponentRef Id="C98" />
+<ComponentRef Id="C99" />
+<ComponentRef Id="C100" />
+<ComponentRef Id="C101" />
+<ComponentRef Id="C102" />
+<ComponentRef Id="C103" />
+<ComponentRef Id="C104" />
+<ComponentRef Id="C105" />
+<ComponentRef Id="C106" />
+<ComponentRef Id="C107" />
+<ComponentRef Id="C108" />
+<ComponentRef Id="C109" />
+<ComponentRef Id="C110" />
+<ComponentRef Id="C111" />
+<ComponentRef Id="C112" />
+<ComponentRef Id="C113" />
+<ComponentRef Id="C114" />
+<ComponentRef Id="C115" />
+<ComponentRef Id="C116" />
+<ComponentRef Id="C117" />
+<ComponentRef Id="C118" />
+<ComponentRef Id="C119" />
+<ComponentRef Id="C120" />
+<ComponentRef Id="C121" />
+<ComponentRef Id="C122" />
+<ComponentRef Id="C123" />
+<ComponentRef Id="C124" />
+<ComponentRef Id="C125" />
+<ComponentRef Id="C126" />
+<ComponentRef Id="C127" />
+<ComponentRef Id="C128" />
+<ComponentRef Id="C129" />
+<ComponentRef Id="C130" />
+<ComponentRef Id="C131" />
+<ComponentRef Id="C132" />
+<ComponentRef Id="C133" />
+<ComponentRef Id="C134" />
+<ComponentRef Id="C135" />
+<ComponentRef Id="C136" />
+<ComponentRef Id="C137" />
+<ComponentRef Id="C138" />
+<ComponentRef Id="C139" />
+<ComponentRef Id="C140" />
+<ComponentRef Id="C141" />
+<ComponentRef Id="C142" />
+<ComponentRef Id="C143" />
+<ComponentRef Id="C144" />
+<ComponentRef Id="C145" />
+<ComponentRef Id="C146" />
+<ComponentRef Id="C147" />
+<ComponentRef Id="C148" />
+<ComponentRef Id="C149" />
+<ComponentRef Id="C150" />
+<ComponentRef Id="C152" />
+<ComponentRef Id="C153" />
+<ComponentRef Id="C154" />
+<ComponentRef Id="C155" />
+<ComponentRef Id="C156" />
+<ComponentRef Id="C157" />
+<ComponentRef Id="C158" />
+<ComponentRef Id="C159" />
+<ComponentRef Id="C160" />
+<ComponentRef Id="C161" />
+<ComponentRef Id="C162" />
+<ComponentRef Id="C163" />
+<ComponentRef Id="C164" />
+<ComponentRef Id="C165" />
+<ComponentRef Id="C166" />
+<ComponentRef Id="C167" />
+<ComponentRef Id="C168" />
+<ComponentRef Id="C169" />
+<ComponentRef Id="C170" />
+<ComponentRef Id="C171" />
+<ComponentRef Id="C172" />
+<ComponentRef Id="C173" />
+<ComponentRef Id="C174" />
+<ComponentRef Id="C175" />
+<ComponentRef Id="C176" />
+<ComponentRef Id="C177" />
+<ComponentRef Id="C178" />
+<ComponentRef Id="C179" />
+<ComponentRef Id="C180" />
+<ComponentRef Id="C181" />
+<ComponentRef Id="C182" />
+<ComponentRef Id="C183" />
+<ComponentRef Id="C184" />
+<ComponentRef Id="C185" />
+<ComponentRef Id="C186" />
+<ComponentRef Id="C187" />
+<ComponentRef Id="C188" />
+<ComponentRef Id="C189" />
+<ComponentRef Id="C190" />
+<ComponentRef Id="C191" />
+<ComponentRef Id="C192" />
+<ComponentRef Id="C193" />
+<ComponentRef Id="C194" />
+<ComponentRef Id="C195" />
+<ComponentRef Id="C196" />
+<ComponentRef Id="C197" />
+<ComponentRef Id="C198" />
+<ComponentRef Id="C199" />
+<ComponentRef Id="C200" />
+<ComponentRef Id="C201" />
+<ComponentRef Id="C202" />
+<ComponentRef Id="C203" />
+<ComponentRef Id="C204" />
+<ComponentRef Id="C205" />
+<ComponentRef Id="C206" />
+<ComponentRef Id="C207" />
+<ComponentRef Id="C208" />
+<ComponentRef Id="C209" />
+<ComponentRef Id="C210" />
+<ComponentRef Id="C211" />
+<ComponentRef Id="C212" />
+<ComponentRef Id="C213" />
+<ComponentRef Id="C214" />
+<ComponentRef Id="C215" />
+<ComponentRef Id="C216" />
+<ComponentRef Id="C217" />
+<ComponentRef Id="C218" />
+<ComponentRef Id="C219" />
+<ComponentRef Id="C220" />
+<ComponentRef Id="C221" />
+<ComponentRef Id="C222" />
+<ComponentRef Id="C223" />
+<ComponentRef Id="C224" />
+<ComponentRef Id="C225" />
+<ComponentRef Id="C226" />
+<ComponentRef Id="C227" />
+<ComponentRef Id="C228" />
+<ComponentRef Id="C229" />
+<ComponentRef Id="C230" />
+<ComponentRef Id="C231" />
+<ComponentRef Id="C232" />
+<ComponentRef Id="C233" />
+<ComponentRef Id="C234" />
+<ComponentRef Id="C235" />
+<ComponentRef Id="C236" />
+<ComponentRef Id="C237" />
+<ComponentRef Id="C238" />
+<ComponentRef Id="C239" />
+<ComponentRef Id="C240" />
+<ComponentRef Id="C241" />
+<ComponentRef Id="C242" />
+<ComponentRef Id="C243" />
+<ComponentRef Id="C244" />
+<ComponentRef Id="C245" />
+<ComponentRef Id="C246" />
+<ComponentRef Id="C247" />
+<ComponentRef Id="C248" />
+<ComponentRef Id="C249" />
+<ComponentRef Id="C250" />
+<ComponentRef Id="C251" />
+<ComponentRef Id="C252" />
+<ComponentRef Id="C253" />
+<ComponentRef Id="C254" />
+<ComponentRef Id="C255" />
+<ComponentRef Id="C256" />
+<ComponentRef Id="C257" />
+<ComponentRef Id="C258" />
+<ComponentRef Id="C259" />
+<ComponentRef Id="C260" />
+<ComponentRef Id="C261" />
+<ComponentRef Id="C262" />
+<ComponentRef Id="C263" />
+<ComponentRef Id="C264" />
+<ComponentRef Id="C265" />
+<ComponentRef Id="C266" />
+<ComponentRef Id="C267" />
+<ComponentRef Id="C268" />
+<ComponentRef Id="C269" />
+<ComponentRef Id="C270" />
+<ComponentRef Id="C271" />
+<ComponentRef Id="C272" />
+<ComponentRef Id="C273" />
+<ComponentRef Id="C274" />
+<ComponentRef Id="C275" />
+<ComponentRef Id="C276" />
+<ComponentRef Id="C277" />
+<ComponentRef Id="C278" />
+<ComponentRef Id="C279" />
+<ComponentRef Id="C280" />
+<ComponentRef Id="C281" />
+<ComponentRef Id="C282" />
+<ComponentRef Id="C283" />
+<ComponentRef Id="C284" />
+<ComponentRef Id="C285" />
+<ComponentRef Id="C286" />
+<ComponentRef Id="C287" />
+<ComponentRef Id="C288" />
+<ComponentRef Id="C289" />
+<ComponentRef Id="C290" />
+<ComponentRef Id="C291" />
+<ComponentRef Id="C292" />
+<ComponentRef Id="C293" />
+<ComponentRef Id="C294" />
+<ComponentRef Id="C295" />
+<ComponentRef Id="C296" />
+<ComponentRef Id="C297" />
+<ComponentRef Id="C298" />
+<ComponentRef Id="C299" />
+<ComponentRef Id="C300" />
+<ComponentRef Id="C301" />
+<ComponentRef Id="C302" />
+<ComponentRef Id="C303" />
+<ComponentRef Id="C304" />
+<ComponentRef Id="C305" />
+<ComponentRef Id="C306" />
+<ComponentRef Id="C307" />
+<ComponentRef Id="C308" />
+<ComponentRef Id="C309" />
+<ComponentRef Id="C310" />
+<ComponentRef Id="C311" />
+<ComponentRef Id="C312" />
+<ComponentRef Id="C313" />
+<ComponentRef Id="C314" />
+<ComponentRef Id="C315" />
+<ComponentRef Id="C316" />
+<ComponentRef Id="C317" />
+<ComponentRef Id="C318" />
+<ComponentRef Id="C319" />
+<ComponentRef Id="C320" />
+<ComponentRef Id="C321" />
+<ComponentRef Id="C322" />
+<ComponentRef Id="C323" />
+<ComponentRef Id="C324" />
+<ComponentRef Id="C325" />
+<ComponentRef Id="C326" />
+<ComponentRef Id="C327" />
+<ComponentRef Id="C328" />
+<ComponentRef Id="C329" />
+<ComponentRef Id="C330" />
+<ComponentRef Id="C331" />
+<ComponentRef Id="C332" />
+<ComponentRef Id="C333" />
+<ComponentRef Id="C334" />
+<ComponentRef Id="C335" />
+<ComponentRef Id="C336" />
+<ComponentRef Id="C337" />
+<ComponentRef Id="C338" />
+<ComponentRef Id="C339" />
+<ComponentRef Id="C340" />
+<ComponentRef Id="C341" />
+<ComponentRef Id="C342" />
+<ComponentRef Id="C343" />
+<ComponentRef Id="C344" />
+<ComponentRef Id="C345" />
+<ComponentRef Id="C346" />
+<ComponentRef Id="C347" />
+<ComponentRef Id="C348" />
+<ComponentRef Id="C349" />
+<ComponentRef Id="C350" />
+<ComponentRef Id="C351" />
+<ComponentRef Id="C352" />
+<ComponentRef Id="C353" />
+<ComponentRef Id="C354" />
+<ComponentRef Id="C355" />
+<ComponentRef Id="C356" />
+<ComponentRef Id="C357" />
+<ComponentRef Id="C358" />
+<ComponentRef Id="C359" />
+<ComponentRef Id="C360" />
+<ComponentRef Id="C361" />
+<ComponentRef Id="C362" />
+<ComponentRef Id="C363" />
+<ComponentRef Id="C364" />
+<ComponentRef Id="C365" />
+<ComponentRef Id="C366" />
+<ComponentRef Id="C367" />
+<ComponentRef Id="C368" />
+<ComponentRef Id="C369" />
+<ComponentRef Id="C370" />
+<ComponentRef Id="C371" />
+<ComponentRef Id="C372" />
+<ComponentRef Id="C373" />
+<ComponentRef Id="C374" />
+<ComponentRef Id="C375" />
+<ComponentRef Id="C376" />
+<ComponentRef Id="C377" />
+<ComponentRef Id="C378" />
+<ComponentRef Id="C379" />
+<ComponentRef Id="C380" />
+<ComponentRef Id="C381" />
+<ComponentRef Id="C382" />
+<ComponentRef Id="C383" />
+<ComponentRef Id="C384" />
+<ComponentRef Id="C385" />
+<ComponentRef Id="C386" />
+<ComponentRef Id="C387" />
+<ComponentRef Id="C388" />
+<ComponentRef Id="C389" />
+<ComponentRef Id="C390" />
+<ComponentRef Id="C391" />
+<ComponentRef Id="C392" />
+<ComponentRef Id="C393" />
+<ComponentRef Id="C394" />
+<ComponentRef Id="C395" />
+<ComponentRef Id="C396" />
+<ComponentRef Id="C397" />
+<ComponentRef Id="C398" />
+<ComponentRef Id="C399" />
+<ComponentRef Id="C400" />
+<ComponentRef Id="C401" />
+<ComponentRef Id="C402" />
+<ComponentRef Id="C403" />
+<ComponentRef Id="C404" />
+<ComponentRef Id="C405" />
+<ComponentRef Id="C406" />
+<ComponentRef Id="C407" />
+<ComponentRef Id="C408" />
+<ComponentRef Id="C409" />
+<ComponentRef Id="C410" />
+<ComponentRef Id="C411" />
+<ComponentRef Id="C412" />
+<ComponentRef Id="C413" />
+<ComponentRef Id="C414" />
+<ComponentRef Id="C415" />
+<ComponentRef Id="C416" />
+<ComponentRef Id="C417" />
+<ComponentRef Id="C418" />
+<ComponentRef Id="C419" />
+<ComponentRef Id="C420" />
+<ComponentRef Id="C421" />
+<ComponentRef Id="C422" />
+<ComponentRef Id="C423" />
+<ComponentRef Id="C424" />
+<ComponentRef Id="C425" />
+<ComponentRef Id="C426" />
+<ComponentRef Id="C427" />
+<ComponentRef Id="C428" />
+<ComponentRef Id="C429" />
+<ComponentRef Id="C430" />
+<ComponentRef Id="C431" />
+<ComponentRef Id="C432" />
+<ComponentRef Id="C433" />
+<ComponentRef Id="C434" />
+<ComponentRef Id="C435" />
+<ComponentRef Id="C436" />
+<ComponentRef Id="C437" />
+<ComponentRef Id="C438" />
+<ComponentRef Id="C439" />
+<ComponentRef Id="C440" />
+<ComponentRef Id="C441" />
+<ComponentRef Id="C442" />
+<ComponentRef Id="C443" />
+<ComponentRef Id="C444" />
+<ComponentRef Id="C445" />
+<ComponentRef Id="C446" />
+<ComponentRef Id="C447" />
+<ComponentRef Id="C448" />
+<ComponentRef Id="C449" />
+<ComponentRef Id="C450" />
+<ComponentRef Id="C451" />
+<ComponentRef Id="C452" />
+<ComponentRef Id="C453" />
+<ComponentRef Id="C454" />
+<ComponentRef Id="C455" />
+<ComponentRef Id="C456" />
+<ComponentRef Id="C457" />
+<ComponentRef Id="C458" />
+<ComponentRef Id="C459" />
+<ComponentRef Id="C460" />
+<ComponentRef Id="C461" />
+<ComponentRef Id="C462" />
+<ComponentRef Id="C463" />
+<ComponentRef Id="C464" />
+<ComponentRef Id="C465" />
+<ComponentRef Id="C467" />
+<ComponentRef Id="C470" />
+<ComponentRef Id="C472" />
+<ComponentRef Id="C473" />
+<ComponentRef Id="C474" />
+<ComponentRef Id="C475" />
+<ComponentRef Id="C476" />
+<ComponentRef Id="C478" />
+<ComponentRef Id="C480" />
+<ComponentRef Id="C481" />
+<ComponentRef Id="C482" />
+<ComponentRef Id="C483" />
+<ComponentRef Id="C484" />
+<ComponentRef Id="C485" />
+<ComponentRef Id="C486" />
+<ComponentRef Id="C489" />
+<ComponentRef Id="C490" />
+<ComponentRef Id="C491" />
+<ComponentRef Id="C492" />
+<ComponentRef Id="C493" />
+<ComponentRef Id="C494" />
+<ComponentRef Id="C496" />
+<ComponentRef Id="C498" />
+<ComponentRef Id="C499" />
+<ComponentRef Id="C500" />
+<ComponentRef Id="C501" />
+<ComponentRef Id="C502" />
+<ComponentRef Id="C503" />
+<ComponentRef Id="C504" />
+<ComponentRef Id="C505" />
+<ComponentRef Id="C506" />
+<ComponentRef Id="C507" />
+<ComponentRef Id="C508" />
+<ComponentRef Id="C509" />
+<ComponentRef Id="C510" />
+<ComponentRef Id="C511" />
+<ComponentRef Id="C512" />
+<ComponentRef Id="C514" />
+<ComponentRef Id="C515" />
+<ComponentRef Id="C516" />
+<ComponentRef Id="C517" />
+<ComponentRef Id="C518" />
+<ComponentRef Id="C519" />
+<ComponentRef Id="C520" />
+<ComponentRef Id="C522" />
+<ComponentRef Id="C523" />
+<ComponentRef Id="C524" />
+<ComponentRef Id="C525" />
+<ComponentRef Id="C526" />
+<ComponentRef Id="C529" />
+<ComponentRef Id="C530" />
+<ComponentRef Id="C531" />
+<ComponentRef Id="C532" />
+<ComponentRef Id="C533" />
+<ComponentRef Id="C534" />
+<ComponentRef Id="C535" />
+<ComponentRef Id="C536" />
+<ComponentRef Id="C537" />
+<ComponentRef Id="C538" />
+<ComponentRef Id="C539" />
+<ComponentRef Id="C540" />
+<ComponentRef Id="C541" />
+<ComponentRef Id="C542" />
+<ComponentRef Id="C543" />
+<ComponentRef Id="C544" />
+<ComponentRef Id="C545" />
+<ComponentRef Id="C546" />
+<ComponentRef Id="C547" />
+<ComponentRef Id="C550" />
+<ComponentRef Id="C552" />
+<ComponentRef Id="C554" />
+<ComponentRef Id="C555" />
+<ComponentRef Id="C556" />
+<ComponentRef Id="C557" />
+<ComponentRef Id="C558" />
+<ComponentRef Id="C559" />
+<ComponentRef Id="C560" />
+<ComponentRef Id="C561" />
+<ComponentRef Id="C562" />
+<ComponentRef Id="C564" />
+<ComponentRef Id="C565" />
+<ComponentRef Id="C566" />
+<ComponentRef Id="C567" />
+<ComponentRef Id="C569" />
+<ComponentRef Id="C571" />
+<ComponentRef Id="C573" />
+<ComponentRef Id="C575" />
+<ComponentRef Id="C576" />
+<ComponentRef Id="C577" />
+<ComponentRef Id="C578" />
+<ComponentRef Id="C579" />
+<ComponentRef Id="C580" />
+<ComponentRef Id="C581" />
+<ComponentRef Id="C582" />
+<ComponentRef Id="C583" />
+<ComponentRef Id="C584" />
+<ComponentRef Id="C585" />
+<ComponentRef Id="C586" />
+<ComponentRef Id="C587" />
+<ComponentRef Id="C588" />
+<ComponentRef Id="C589" />
+<ComponentRef Id="C590" />
+<ComponentRef Id="C591" />
+<ComponentRef Id="C592" />
+<ComponentRef Id="C593" />
+<ComponentRef Id="C594" />
+<ComponentRef Id="C595" />
+<ComponentRef Id="C596" />
+<ComponentRef Id="C597" />
+<ComponentRef Id="C598" />
+<ComponentRef Id="C599" />
+<ComponentRef Id="C600" />
+<ComponentRef Id="C601" />
+<ComponentRef Id="C602" />
+<ComponentRef Id="C603" />
+<ComponentRef Id="C604" />
+<ComponentRef Id="C605" />
+<ComponentRef Id="C606" />
+<ComponentRef Id="C607" />
+<ComponentRef Id="C608" />
+<ComponentRef Id="C609" />
+<ComponentRef Id="C610" />
+<ComponentRef Id="C611" />
+<ComponentRef Id="C612" />
+<ComponentRef Id="C613" />
+<ComponentRef Id="C614" />
+<ComponentRef Id="C615" />
+<ComponentRef Id="C616" />
+<ComponentRef Id="C617" />
+<ComponentRef Id="C618" />
+<ComponentRef Id="C619" />
+<ComponentRef Id="C620" />
+<ComponentRef Id="C621" />
+<ComponentRef Id="C622" />
+<ComponentRef Id="C623" />
+<ComponentRef Id="C624" />
+<ComponentRef Id="C625" />
+<ComponentRef Id="C626" />
+<ComponentRef Id="C627" />
+<ComponentRef Id="C628" />
+<ComponentRef Id="C629" />
+<ComponentRef Id="C630" />
+<ComponentRef Id="C631" />
+<ComponentRef Id="C632" />
+<ComponentRef Id="C633" />
+<ComponentRef Id="C634" />
+<ComponentRef Id="C635" />
+<ComponentRef Id="C636" />
+<ComponentRef Id="C637" />
+<ComponentRef Id="C638" />
+<ComponentRef Id="C639" />
+<ComponentRef Id="C640" />
+<ComponentRef Id="C641" />
+<ComponentRef Id="C642" />
+<ComponentRef Id="C643" />
+<ComponentRef Id="C644" />
+<ComponentRef Id="C645" />
+<ComponentRef Id="C646" />
+<ComponentRef Id="C647" />
+<ComponentRef Id="C648" />
+<ComponentRef Id="C649" />
+<ComponentRef Id="C651" />
+<ComponentRef Id="C652" />
+<ComponentRef Id="C654" />
+<ComponentRef Id="C655" />
+<ComponentRef Id="C657" />
+<ComponentRef Id="C658" />
+<ComponentRef Id="C659" />
+<ComponentRef Id="C660" />
+<ComponentRef Id="C661" />
+<ComponentRef Id="C662" />
+<ComponentRef Id="C663" />
+<ComponentRef Id="C664" />
+<ComponentRef Id="C666" />
+<ComponentRef Id="C668" />
+<ComponentRef Id="C669" />
+<ComponentRef Id="C670" />
+<ComponentRef Id="C671" />
+<ComponentRef Id="C672" />
+<ComponentRef Id="C675" />
+<ComponentRef Id="EfficaDesktopShortcut" />
+<ComponentRef Id="EfficaStartMenuShortcut" />
+</Feature>
+<Property Id="CREATE_START_MENU" Value="0" />
+<UI>
+<Dialog Id="StartMenuDlg" Width="370" Height="270" Title="[ProductName]">
+<Control Id="Title" Type="Text" X="15" Y="15" Width="340" Height="30" Transparent="yes" NoPrefix="yes" Text="Acceso directo en el menu Inicio" />
+<Control Id="Description" Type="Text" X="15" Y="55" Width="340" Height="35" Transparent="yes" NoPrefix="yes" Text="Â¿Desea crear un acceso directo de Effica en la pantalla de inicio?" />
+<Control Id="StartMenuCheckBox" Type="CheckBox" X="25" Y="110" Width="320" Height="18" Property="CREATE_START_MENU" CheckBoxValue="1" Text="Crear acceso directo en el menu Inicio" />
+<Control Id="Back" Type="PushButton" X="220" Y="243" Width="56" Height="17" Text="Atras"><Publish Event="NewDialog" Value="InstallDirDlg" /></Control>
+<Control Id="Next" Type="PushButton" X="280" Y="243" Width="56" Height="17" Default="yes" Text="Siguiente"><Publish Event="NewDialog" Value="VerifyReadyDlg" /></Control>
+<Control Id="Cancel" Type="PushButton" X="320" Y="243" Width="56" Height="17" Cancel="yes" Text="Cancelar"><Publish Event="SpawnDialog" Value="CancelDlg" /></Control>
+</Dialog>
+<Publish Dialog="InstallDirDlg" Control="Next" Event="NewDialog" Value="StartMenuDlg" Order="3" Condition="1" />
+<Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="StartMenuDlg" Order="3" Condition="1" />
+</UI>
+<ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER" />
+<StandardDirectory Id="DesktopFolder"><Component Id="EfficaDesktopShortcut" Guid="51B62FE8-EBCF-44E6-81FC-406C86DDF223">
+<Shortcut Id="EfficaShortcut" Name="Effica" Target="[INSTALLFOLDER]pospro.exe" WorkingDirectory="INSTALLFOLDER" Icon="EfficaIcon" />
+<CreateFolder />
+<RemoveFolder Id="RemoveEfficaShortcutFolder" On="uninstall" />
+</Component></StandardDirectory>
+<StandardDirectory Id="ProgramMenuFolder"><Directory Id="EFFICA_PROGRAMMENU" Name="Effica"><Component Id="EfficaStartMenuShortcut" Guid="1524B177-1A31-4ADE-9EEC-703027235721" Condition="CREATE_START_MENU">
+<Shortcut Id="EfficaStartMenuShortcut" Name="Effica" Target="[INSTALLFOLDER]pospro.exe" WorkingDirectory="INSTALLFOLDER" Icon="EfficaIcon" />
+<CreateFolder />
+<RemoveFolder Id="RemoveEfficaStartMenuFolder" On="uninstall" />
+</Component></Directory></StandardDirectory>
+</Package></Wix>

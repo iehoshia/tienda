@@ -10,13 +10,13 @@ from PyQt5.QtCore import Qt, pyqtSlot, QModelIndex
 from neox.commons.qt_models import get_simple_model
 from neox.commons.forms import GridForm
 from neox.commons.buttons import ActionButton
+from neox.commons.resources import resource_path
 
 __all__ = ['QuickDialog', 'SearchDialog', 'HelpDialog',
     'CategoryDialog',
     'ProductDialog','FactoryIcons']
 
-current_dir = os.path.dirname(__file__)
-par_dir = os.path.dirname(current_dir) 
+par_dir = resource_path('neox')
 
 _SIZE = (500, 200)
 _TSIZE = (800,200)
@@ -38,14 +38,14 @@ class QuickDialog(QDialog):
         self.active_widget = active_widget
         self.parent_model = None
         titles = {
-            'warning': self.tr('Warning...'),
-            'info': self.tr('Information...'),
-            'action': self.tr('Action...'),
-            'help': self.tr('Help...'),
+            'warning': self.tr('Advertencia...'),
+            'info': self.tr('Información...'),
+            'action': self.tr('Acción...'),
+            'help': self.tr('Ayuda...'),
             'error': self.tr('Error...'),
-            'question': self.tr('Question...'),
-            'selection': self.tr('Selection...'),
-            None: self.tr('Dialog...')
+            'question': self.tr('Pregunta...'),
+            'selection': self.tr('Selección...'),
+            None: self.tr('Diálogo...')
         }
         self.setWindowTitle(titles[kind])
         self.setModal(True)
@@ -258,7 +258,7 @@ class SearchDialog(QDialog):
         self.headers = headers
         self.values = values
         if not title:
-            title = self.tr('Search Products...')
+            title = self.tr('Buscar productos...')
         self.setWindowTitle(title)
 
         self._product_line = QLineEdit()
@@ -329,7 +329,7 @@ class HelpDialog(QuickDialog):
         self.treeview.setEditTriggers(QAbstractItemView.NoEditTriggers)
         super(HelpDialog, self).__init__(parent, 'help', widgets=[self.treeview],
             size=(400, 500))
-        self.set_info(self.tr('Keys Shortcuts...'))
+        self.set_info(self.tr('Atajos de teclado...'))
         self.hide()
 
     def set_shortcuts(self, shortcuts):
@@ -340,8 +340,8 @@ class HelpDialog(QuickDialog):
 
     def _help_model(self, shortcuts):
         model = QStandardItemModel(0, 2, self)
-        model.setHeaderData(0, Qt.Horizontal, self.tr('Action'))
-        model.setHeaderData(1, Qt.Horizontal, self.tr('Shortcut'))
+        model.setHeaderData(0, Qt.Horizontal, self.tr('Acción'))
+        model.setHeaderData(1, Qt.Horizontal, self.tr('Atajo'))
 
         for short in shortcuts:
             model.insertRow(0)

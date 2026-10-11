@@ -3,6 +3,7 @@ from datetime import datetime
 from decimal import Decimal
 
 from PyQt5.QtCore import Qt
+from neox.commons.resources import resource_path
 from PyQt5.QtWidgets import QHeaderView
 
 EMAIL = 'jepgez@gmail.com'
@@ -34,7 +35,7 @@ FRACTIONS = [
     ('0.0313', '1/32')
 ]
 
-current_dir = os.path.dirname(__file__)
+current_dir = resource_path('app')
 
 SCREENS = {
     'large': os.path.join(current_dir, 'large_screen.css'),

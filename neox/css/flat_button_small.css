@@ -68,18 +68,27 @@
 
 #toolbar_button {
     font-family: "DejaVu Sans";
-    border-style: groove;
-    font: 9pt;
-    background-color : white;
-    height: 55px;
-    width : 130px;
-    border-width: 1px;
+    font: 10pt;
+    color: #155b70;
+    background-color: #f8fbfc;
+    min-height: 72px;
+    min-width: 110px;
+    border: 1px solid #c8d8dd;
+    border-radius: 8px;
+    padding: 5px;
 }
 
-#toolbar_button::hover {
-    background-color: rgb(225, 240, 245);
+#toolbar_button:hover {
+    background-color: #dff3f7;
+    border: 1px solid #55b9cf;
 }
 
-#toolbar_button::pressed {
-    background-color: rgb(204, 227, 235);
+#toolbar_button:pressed {
+    background-color: #b9e4ed;
+    border: 1px solid #168aa7;
+}
+
+#toolbar_button #label_icon,
+#toolbar_button #label_desc_small {
+    background-color: transparent;
 }

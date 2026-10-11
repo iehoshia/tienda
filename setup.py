@@ -20,16 +20,38 @@ def read(fname):
     return open(os.path.join(os.path.dirname(sys.argv[0]), fname)).read()
 
 args = {}
+def files(pattern):
+    return glob.glob(pattern)
+
+
+def include_files(pattern, target_dir):
+    return [
+        (filename, os.path.join(target_dir, os.path.basename(filename)))
+        for filename in glob.glob(pattern)
+    ]
+
+
 data_files = [
-            ('app', glob.glob('*.ini')),
-            ('app/frontend', glob.glob('pos/share/*.css')),
-            ('app/share', glob.glob('app/share/*.png')),
-            ('app/translations', glob.glob('app/translations/*.qm')),
-            ('neox/share', glob.glob('neox/share/*.css')),
+            ('app', files('*.ini') + files('app/*.css')),
+            ('app/share', files('app/share/*.png') + files('app/share/*.jpg')
+                + files('app/share/*.svg') + files('app/share/*.ico')),
+            ('app/translations', files('app/translations/*.qm')),
+            ('neox/css', files('neox/css/*.css')),
+            ('neox/share', files('neox/share/*.png') + files('neox/share/*.svg')),
+            ('neox/locale', files('neox/locale/*.qm')),
 ]
 
-include_files = [
-    (os.path.join('app', 'frontend'), 'frontend'),
+build_include_files = [
+    *include_files('app/*.css', 'app'),
+    *include_files('app/share/*.png', 'app/share'),
+    *include_files('app/share/*.jpg', 'app/share'),
+    *include_files('app/share/*.svg', 'app/share'),
+    *include_files('app/share/*.ico', 'app/share'),
+    *include_files('app/translations/*.qm', 'app/translations'),
+    *include_files('neox/css/*.css', 'neox/css'),
+    *include_files('neox/share/*.png', 'neox/share'),
+    *include_files('neox/share/*.svg', 'neox/share'),
+    *include_files('neox/locale/*.qm', 'neox/locale'),
     #(os.path.join('tryton', 'plugins'), 'plugins'),
     #(os.path.join(sys.prefix, 'share', 'glib-2.0', 'schemas'),
     #    os.path.join('share', 'glib-2.0', 'schemas')),
@@ -114,7 +136,7 @@ setup(name='pospro',
     options={
         'build_exe': {
             'no_compress': True,
-            'include_files': include_files,
+            'include_files': build_include_files,
             'silent': True,
             #'packages': ['PyQt5'],
             'include_msvcr': True,

@@ -11,12 +11,12 @@ from PyQt5.QtWidgets import QTableView, QVBoxLayout,  \
 from PyQt5.QtGui import QPixmap, QIcon
 
 from neox.commons.buttons import ActionButton
+from neox.commons.resources import resource_path
 
 __all__ = ['Item', 'SearchWindow', 'TableModel']
 
 DELTA_LOCALE = -5 # deltatime col
-DIR = os.path.abspath(os.path.normpath(os.path.join(__file__,
-    '..', '..')))
+DIR = resource_path('neox')
 
 ICONS = {
     'camera': os.path.join(DIR, 'share/icon-camera.svg'),
@@ -63,7 +63,7 @@ class SearchWindow(QDialog):
         self.rows = []
         self.current_row = None
         if not title:
-            title = self.tr('SEARCH...')
+            title = self.tr('BUSCAR...')
             self.setWindowTitle(title)
         else:
             self.setWindowTitle(title)
@@ -169,7 +169,7 @@ class SearchWindow(QDialog):
         self.table_view.setSortingEnabled(True)
 
     def create_widgets(self):
-        self.filter_label = QLabel(self.tr("FILTER:"))
+        self.filter_label = QLabel(self.tr("FILTRO:"))
         self.filter_field = QLineEdit()
         self.label_count = QLabel('0')
         self.label_count.setObjectName('label_count')
@@ -346,7 +346,11 @@ class TableModel(QAbstractTableModel):
                 val = values.get(name)
             #val = values.get(name)
             if isinstance(val, Decimal):
-                val = '{0:,}'.format(val)
+                if name in ('template.list_price', 'unit_price', 'amount',
+                            'total_amount'):
+                    val = '{:,.2f}'.format(val)
+                else:
+                    val = '{0:,}'.format(val)
             elif isinstance(val, datetime):
                 mod_hours = val + timedelta(hours=DELTA_LOCALE)
                 val = mod_hours.strftime('%d/%m/%Y %I:%M %p')
@@ -419,10 +423,12 @@ class TableModel(QAbstractTableModel):
             if item and 'icon_' in name_field:
                 return item[name_field]
         elif role == Qt.TextAlignmentRole:
-            # Fixme: Remove hardcoded quantity
             if item and name_field == 'quantity':
                 align = Qt.AlignmentFlag(Qt.AlignCenter)
                 return align
+            if item and name_field in ('template.list_price', 'unit_price', 'amount',
+                                       'total_amount'):
+                return Qt.AlignmentFlag(Qt.AlignRight | Qt.AlignVCenter)
         elif role == Qt.UserRole:
             return item
 
